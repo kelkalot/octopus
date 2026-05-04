@@ -101,4 +101,4 @@ Data files (generation samples, intervention outputs, SAE feature rankings) are 
 
 ## Contact
 
-Michael A. Riegler
+XXX
