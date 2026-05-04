@@ -1,0 +1,142 @@
+{
+  "n_boot": 300,
+  "top_k": 50,
+  "headline_features": [
+    {
+      "feature": 24754,
+      "inclusion_rate": 1.0,
+      "median_rank": 1.0,
+      "rank_ci_low": 1.0,
+      "rank_ci_high": 2.0
+    },
+    {
+      "feature": 20647,
+      "inclusion_rate": 1.0,
+      "median_rank": 2.0,
+      "rank_ci_low": 1.0,
+      "rank_ci_high": 2.0
+    },
+    {
+      "feature": 24533,
+      "inclusion_rate": 1.0,
+      "median_rank": 3.0,
+      "rank_ci_low": 3.0,
+      "rank_ci_high": 5.0
+    },
+    {
+      "feature": 16966,
+      "inclusion_rate": 1.0,
+      "median_rank": 4.0,
+      "rank_ci_low": 3.0,
+      "rank_ci_high": 5.0
+    },
+    {
+      "feature": 5648,
+      "inclusion_rate": 1.0,
+      "median_rank": 5.0,
+      "rank_ci_low": 3.0,
+      "rank_ci_high": 5.0
+    },
+    {
+      "feature": 2620,
+      "inclusion_rate": 1.0,
+      "median_rank": 6.0,
+      "rank_ci_low": 6.0,
+      "rank_ci_high": 7.0
+    },
+    {
+      "feature": 3437,
+      "inclusion_rate": 1.0,
+      "median_rank": 7.0,
+      "rank_ci_low": 6.0,
+      "rank_ci_high": 7.0
+    },
+    {
+      "feature": 13782,
+      "inclusion_rate": 1.0,
+      "median_rank": 8.0,
+      "rank_ci_low": 8.0,
+      "rank_ci_high": 10.0
+    },
+    {
+      "feature": 15725,
+      "inclusion_rate": 1.0,
+      "median_rank": 9.0,
+      "rank_ci_low": 8.0,
+      "rank_ci_high": 10.0
+    },
+    {
+      "feature": 8028,
+      "inclusion_rate": 1.0,
+      "median_rank": 10.0,
+      "rank_ci_low": 8.0,
+      "rank_ci_high": 10.0
+    },
+    {
+      "feature": 23876,
+      "inclusion_rate": 1.0,
+      "median_rank": 12.0,
+      "rank_ci_low": 11.0,
+      "rank_ci_high": 14.0
+    },
+    {
+      "feature": 3664,
+      "inclusion_rate": 1.0,
+      "median_rank": 12.0,
+      "rank_ci_low": 11.0,
+      "rank_ci_high": 14.0
+    }
+  ],
+  "original_top": [
+    24754,
+    20647,
+    24533,
+    16966,
+    5648,
+    2620,
+    3437,
+    13782,
+    15725,
+    8028,
+    23876,
+    3664,
+    26495,
+    14729,
+    32145,
+    1840,
+    17532,
+    7588,
+    15497,
+    6511,
+    30912,
+    21157,
+    7129,
+    31410,
+    1279,
+    30369,
+    22778,
+    19862,
+    7928,
+    12287,
+    19024,
+    7641,
+    12532,
+    22122,
+    18205,
+    16382,
+    26501,
+    24057,
+    16895,
+    6661,
+    31122,
+    9184,
+    2736,
+    1240,
+    139,
+    13856,
+    17923,
+    8356,
+    14387,
+    24686
+  ]
+}

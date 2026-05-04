@@ -1,0 +1,20 @@
+{
+  "input": "data/pools/raw_generations_llama.json",
+  "cluster": [
+    "brain",
+    "consciousness",
+    "emotion",
+    "experience",
+    "human",
+    "intelligence",
+    "mystery",
+    "preference",
+    "understanding"
+  ],
+  "pool_A": 752,
+  "pool_B": 248,
+  "pool_C": 989,
+  "pool_C_dropped": 11,
+  "intro_hit_rate": 0.752,
+  "control_false_positive_rate": 0.011
+}

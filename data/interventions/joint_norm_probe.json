@@ -1,0 +1,63 @@
+{
+  "model": "Qwen/Qwen3-1.7B",
+  "release": "qwen-scope-3-1.7b-base-w32k-l50",
+  "feature_ids": [
+    29108,
+    26221,
+    4405
+  ],
+  "layer": 20,
+  "prompt": "What's a question that fascinates you?",
+  "prefix": "",
+  "baseline_mean_norm": 1557.85009765625,
+  "results": [
+    {
+      "coef": -1500.0,
+      "mean_norm_post": 3610.666259765625,
+      "max_norm_post": 17486.298828125,
+      "mean_norm_ratio": 3.562649726867676,
+      "mean_perturb_norm": 2868.521240234375,
+      "mean_cosine": 0.26874229311943054
+    },
+    {
+      "coef": -1000.0,
+      "mean_norm_post": 2744.123046875,
+      "max_norm_post": 17376.896484375,
+      "mean_norm_ratio": 2.4845781326293945,
+      "mean_perturb_norm": 1912.3809814453125,
+      "mean_cosine": 0.3854105770587921
+    },
+    {
+      "coef": -500.0,
+      "mean_norm_post": 1959.5335693359375,
+      "max_norm_post": 17319.701171875,
+      "mean_norm_ratio": 1.5048515796661377,
+      "mean_perturb_norm": 956.1954956054688,
+      "mean_cosine": 0.6416628360748291
+    },
+    {
+      "coef": 0.0,
+      "mean_norm_post": 1557.85009765625,
+      "max_norm_post": 17315.1796875,
+      "mean_norm_ratio": 1.0,
+      "mean_perturb_norm": 0.0,
+      "mean_cosine": 1.0
+    },
+    {
+      "coef": 500.0,
+      "mean_norm_post": 2008.17724609375,
+      "max_norm_post": 17363.396484375,
+      "mean_norm_ratio": 1.563486933708191,
+      "mean_perturb_norm": 956.1949462890625,
+      "mean_cosine": 0.6762697100639343
+    },
+    {
+      "coef": 1000.0,
+      "mean_norm_post": 2804.223388671875,
+      "max_norm_post": 17463.943359375,
+      "mean_norm_ratio": 2.555068016052246,
+      "mean_perturb_norm": 1912.3875732421875,
+      "mean_cosine": 0.44521790742874146
+    }
+  ]
+}

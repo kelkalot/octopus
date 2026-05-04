@@ -1,0 +1,17 @@
+{
+  "input": "data/pools/raw_generations_gemma.json",
+  "cluster": [
+    "consciousness",
+    "emotion",
+    "experience",
+    "feeling",
+    "human",
+    "understanding"
+  ],
+  "pool_A": 1953,
+  "pool_B": 47,
+  "pool_C": 1901,
+  "pool_C_dropped": 99,
+  "intro_hit_rate": 0.9765,
+  "control_false_positive_rate": 0.0495
+}

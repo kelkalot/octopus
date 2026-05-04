@@ -1,0 +1,19 @@
+{
+  "input": "data/pools/raw_generations.json",
+  "cluster": [
+    "consciousness",
+    "emotion",
+    "existence",
+    "experience",
+    "meaning",
+    "philosophy",
+    "reality",
+    "understanding"
+  ],
+  "pool_A": 1633,
+  "pool_B": 367,
+  "pool_C": 1994,
+  "pool_C_dropped": 6,
+  "intro_hit_rate": 0.8165,
+  "control_false_positive_rate": 0.003
+}

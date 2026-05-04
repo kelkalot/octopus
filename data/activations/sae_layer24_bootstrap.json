@@ -1,0 +1,142 @@
+{
+  "n_boot": 300,
+  "top_k": 50,
+  "headline_features": [
+    {
+      "feature": 18772,
+      "inclusion_rate": 1.0,
+      "median_rank": 1.0,
+      "rank_ci_low": 1.0,
+      "rank_ci_high": 1.0
+    },
+    {
+      "feature": 30155,
+      "inclusion_rate": 1.0,
+      "median_rank": 2.0,
+      "rank_ci_low": 2.0,
+      "rank_ci_high": 3.0
+    },
+    {
+      "feature": 19905,
+      "inclusion_rate": 1.0,
+      "median_rank": 3.0,
+      "rank_ci_low": 2.0,
+      "rank_ci_high": 7.524999999999977
+    },
+    {
+      "feature": 8917,
+      "inclusion_rate": 1.0,
+      "median_rank": 4.0,
+      "rank_ci_low": 3.0,
+      "rank_ci_high": 5.0
+    },
+    {
+      "feature": 4980,
+      "inclusion_rate": 1.0,
+      "median_rank": 5.0,
+      "rank_ci_low": 4.0,
+      "rank_ci_high": 5.0
+    },
+    {
+      "feature": 28501,
+      "inclusion_rate": 1.0,
+      "median_rank": 6.0,
+      "rank_ci_low": 5.0,
+      "rank_ci_high": 7.524999999999977
+    },
+    {
+      "feature": 26431,
+      "inclusion_rate": 1.0,
+      "median_rank": 7.0,
+      "rank_ci_low": 5.0,
+      "rank_ci_high": 10.0
+    },
+    {
+      "feature": 4487,
+      "inclusion_rate": 1.0,
+      "median_rank": 8.0,
+      "rank_ci_low": 7.0,
+      "rank_ci_high": 12.0
+    },
+    {
+      "feature": 24214,
+      "inclusion_rate": 1.0,
+      "median_rank": 9.0,
+      "rank_ci_low": 7.0,
+      "rank_ci_high": 11.0
+    },
+    {
+      "feature": 10935,
+      "inclusion_rate": 1.0,
+      "median_rank": 10.0,
+      "rank_ci_low": 8.475000000000001,
+      "rank_ci_high": 13.0
+    },
+    {
+      "feature": 3960,
+      "inclusion_rate": 1.0,
+      "median_rank": 12.0,
+      "rank_ci_low": 8.0,
+      "rank_ci_high": 19.0
+    },
+    {
+      "feature": 9328,
+      "inclusion_rate": 1.0,
+      "median_rank": 13.0,
+      "rank_ci_low": 11.0,
+      "rank_ci_high": 16.0
+    }
+  ],
+  "original_top": [
+    18772,
+    30155,
+    19905,
+    8917,
+    4980,
+    28501,
+    26431,
+    4487,
+    24214,
+    10935,
+    3960,
+    9328,
+    22635,
+    24099,
+    22454,
+    12569,
+    6410,
+    8843,
+    15355,
+    1785,
+    8652,
+    27710,
+    8996,
+    9434,
+    18239,
+    27029,
+    16679,
+    14707,
+    29188,
+    8541,
+    27459,
+    29048,
+    31162,
+    8809,
+    31247,
+    26069,
+    23332,
+    929,
+    27984,
+    18092,
+    5960,
+    16118,
+    22082,
+    9448,
+    8066,
+    3154,
+    32597,
+    29359,
+    31938,
+    32503
+  ]
+}

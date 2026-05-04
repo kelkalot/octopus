@@ -1,0 +1,8601 @@
+{
+  "input": "data/pools/raw_generations_qwen_base_v2.json",
+  "totals": {
+    "introspective": 1000,
+    "controls": 1000
+  },
+  "candidates": [
+    {
+      "phrase": "what",
+      "intro_count": 266,
+      "intro_freq": 0.266,
+      "control_count": 46,
+      "control_freq": 0.046,
+      "lift": 5.782608695652175
+    }
+  ],
+  "all_intro_phrases": [
+    {
+      "phrase": "that",
+      "count": 551,
+      "freq": 0.551
+    },
+    {
+      "phrase": "what",
+      "count": 266,
+      "freq": 0.266
+    },
+    {
+      "phrase": "time",
+      "count": 236,
+      "freq": 0.236
+    },
+    {
+      "phrase": "nature",
+      "count": 169,
+      "freq": 0.169
+    },
+    {
+      "phrase": "understanding",
+      "count": 156,
+      "freq": 0.156
+    },
+    {
+      "phrase": "idea",
+      "count": 156,
+      "freq": 0.156
+    },
+    {
+      "phrase": "experience",
+      "count": 149,
+      "freq": 0.149
+    },
+    {
+      "phrase": "this",
+      "count": 136,
+      "freq": 0.136
+    },
+    {
+      "phrase": "concept",
+      "count": 131,
+      "freq": 0.131
+    },
+    {
+      "phrase": "which",
+      "count": 128,
+      "freq": 0.128
+    },
+    {
+      "phrase": "technology",
+      "count": 123,
+      "freq": 0.123
+    },
+    {
+      "phrase": "thought",
+      "count": 123,
+      "freq": 0.123
+    },
+    {
+      "phrase": "human",
+      "count": 118,
+      "freq": 0.118
+    },
+    {
+      "phrase": "field",
+      "count": 114,
+      "freq": 0.114
+    },
+    {
+      "phrase": "universe",
+      "count": 109,
+      "freq": 0.109
+    },
+    {
+      "phrase": "problem",
+      "count": 109,
+      "freq": 0.109
+    },
+    {
+      "phrase": "aspect",
+      "count": 109,
+      "freq": 0.109
+    },
+    {
+      "phrase": "value",
+      "count": 109,
+      "freq": 0.109
+    },
+    {
+      "phrase": "history",
+      "count": 106,
+      "freq": 0.106
+    },
+    {
+      "phrase": "sense",
+      "count": 104,
+      "freq": 0.104
+    },
+    {
+      "phrase": "science",
+      "count": 100,
+      "freq": 0.1
+    },
+    {
+      "phrase": "emotion",
+      "count": 100,
+      "freq": 0.1
+    },
+    {
+      "phrase": "beauty",
+      "count": 98,
+      "freq": 0.098
+    },
+    {
+      "phrase": "language",
+      "count": 97,
+      "freq": 0.097
+    },
+    {
+      "phrase": "culture",
+      "count": 96,
+      "freq": 0.096
+    },
+    {
+      "phrase": "impact",
+      "count": 96,
+      "freq": 0.096
+    },
+    {
+      "phrase": "interest",
+      "count": 95,
+      "freq": 0.095
+    },
+    {
+      "phrase": "mind",
+      "count": 92,
+      "freq": 0.092
+    },
+    {
+      "phrase": "art",
+      "count": 90,
+      "freq": 0.09
+    },
+    {
+      "phrase": "entity",
+      "count": 89,
+      "freq": 0.089
+    },
+    {
+      "phrase": "response",
+      "count": 88,
+      "freq": 0.088
+    },
+    {
+      "phrase": "society",
+      "count": 87,
+      "freq": 0.087
+    },
+    {
+      "phrase": "wonder",
+      "count": 82,
+      "freq": 0.082
+    },
+    {
+      "phrase": "intelligence",
+      "count": 81,
+      "freq": 0.081
+    },
+    {
+      "phrase": "them",
+      "count": 80,
+      "freq": 0.08
+    },
+    {
+      "phrase": "location",
+      "count": 80,
+      "freq": 0.08
+    },
+    {
+      "phrase": "area",
+      "count": 77,
+      "freq": 0.077
+    },
+    {
+      "phrase": "development",
+      "count": 76,
+      "freq": 0.076
+    },
+    {
+      "phrase": "reality",
+      "count": 76,
+      "freq": 0.076
+    },
+    {
+      "phrase": "description",
+      "count": 76,
+      "freq": 0.076
+    },
+    {
+      "phrase": "relationship",
+      "count": 76,
+      "freq": 0.076
+    },
+    {
+      "phrase": "information",
+      "count": 74,
+      "freq": 0.074
+    },
+    {
+      "phrase": "abbreviation",
+      "count": 74,
+      "freq": 0.074
+    },
+    {
+      "phrase": "knowledge",
+      "count": 72,
+      "freq": 0.072
+    },
+    {
+      "phrase": "emotions",
+      "count": 72,
+      "freq": 0.072
+    },
+    {
+      "phrase": "advancement",
+      "count": 71,
+      "freq": 0.071
+    },
+    {
+      "phrase": "ability",
+      "count": 71,
+      "freq": 0.071
+    },
+    {
+      "phrase": "perspective",
+      "count": 71,
+      "freq": 0.071
+    },
+    {
+      "phrase": "ideas",
+      "count": 71,
+      "freq": 0.071
+    },
+    {
+      "phrase": "issue",
+      "count": 70,
+      "freq": 0.07
+    },
+    {
+      "phrase": "other",
+      "count": 70,
+      "freq": 0.07
+    },
+    {
+      "phrase": "numeric value",
+      "count": 70,
+      "freq": 0.07
+    },
+    {
+      "phrase": "who",
+      "count": 69,
+      "freq": 0.069
+    },
+    {
+      "phrase": "possibility",
+      "count": 68,
+      "freq": 0.068
+    },
+    {
+      "phrase": "artificial intelligence",
+      "count": 67,
+      "freq": 0.067
+    },
+    {
+      "phrase": "long time",
+      "count": 67,
+      "freq": 0.067
+    },
+    {
+      "phrase": "potential",
+      "count": 66,
+      "freq": 0.066
+    },
+    {
+      "phrase": "decision",
+      "count": 66,
+      "freq": 0.066
+    },
+    {
+      "phrase": "insight",
+      "count": 66,
+      "freq": 0.066
+    },
+    {
+      "phrase": "depth",
+      "count": 66,
+      "freq": 0.066
+    },
+    {
+      "phrase": "place",
+      "count": 65,
+      "freq": 0.065
+    },
+    {
+      "phrase": "creativity",
+      "count": 65,
+      "freq": 0.065
+    },
+    {
+      "phrase": "awe",
+      "count": 65,
+      "freq": 0.065
+    },
+    {
+      "phrase": "complexity",
+      "count": 64,
+      "freq": 0.064
+    },
+    {
+      "phrase": "implication",
+      "count": 63,
+      "freq": 0.063
+    },
+    {
+      "phrase": "others",
+      "count": 63,
+      "freq": 0.063
+    },
+    {
+      "phrase": "thoughts",
+      "count": 62,
+      "freq": 0.062
+    },
+    {
+      "phrase": "behavior",
+      "count": 61,
+      "freq": 0.061
+    },
+    {
+      "phrase": "challenge",
+      "count": 61,
+      "freq": 0.061
+    },
+    {
+      "phrase": "mystery",
+      "count": 58,
+      "freq": 0.058
+    },
+    {
+      "phrase": "quantum",
+      "count": 58,
+      "freq": 0.058
+    },
+    {
+      "phrase": "growth",
+      "count": 56,
+      "freq": 0.056
+    },
+    {
+      "phrase": "individual",
+      "count": 56,
+      "freq": 0.056
+    },
+    {
+      "phrase": "event",
+      "count": 56,
+      "freq": 0.056
+    },
+    {
+      "phrase": "curiosity",
+      "count": 55,
+      "freq": 0.055
+    },
+    {
+      "phrase": "exploration",
+      "count": 55,
+      "freq": 0.055
+    },
+    {
+      "phrase": "principle",
+      "count": 55,
+      "freq": 0.055
+    },
+    {
+      "phrase": "year",
+      "count": 54,
+      "freq": 0.054
+    },
+    {
+      "phrase": "change",
+      "count": 53,
+      "freq": 0.053
+    },
+    {
+      "phrase": "environment",
+      "count": 53,
+      "freq": 0.053
+    },
+    {
+      "phrase": "vastness",
+      "count": 53,
+      "freq": 0.053
+    },
+    {
+      "phrase": "philosophy",
+      "count": 52,
+      "freq": 0.052
+    },
+    {
+      "phrase": "form",
+      "count": 52,
+      "freq": 0.052
+    },
+    {
+      "phrase": "experiences",
+      "count": 52,
+      "freq": 0.052
+    },
+    {
+      "phrase": "story",
+      "count": 51,
+      "freq": 0.051
+    },
+    {
+      "phrase": "phenomenon",
+      "count": 50,
+      "freq": 0.05
+    },
+    {
+      "phrase": "work",
+      "count": 50,
+      "freq": 0.05
+    },
+    {
+      "phrase": "problems",
+      "count": 50,
+      "freq": 0.05
+    },
+    {
+      "phrase": "relationships",
+      "count": 50,
+      "freq": 0.05
+    },
+    {
+      "phrase": "system",
+      "count": 49,
+      "freq": 0.049
+    },
+    {
+      "phrase": "one thing",
+      "count": 49,
+      "freq": 0.049
+    },
+    {
+      "phrase": "future",
+      "count": 48,
+      "freq": 0.048
+    },
+    {
+      "phrase": "pattern",
+      "count": 48,
+      "freq": 0.048
+    },
+    {
+      "phrase": "space",
+      "count": 48,
+      "freq": 0.048
+    },
+    {
+      "phrase": "color",
+      "count": 47,
+      "freq": 0.047
+    },
+    {
+      "phrase": "existence",
+      "count": 47,
+      "freq": 0.047
+    },
+    {
+      "phrase": "context",
+      "count": 47,
+      "freq": 0.047
+    },
+    {
+      "phrase": "reasonable answer",
+      "count": 46,
+      "freq": 0.046
+    },
+    {
+      "phrase": "self",
+      "count": 46,
+      "freq": 0.046
+    },
+    {
+      "phrase": "goal",
+      "count": 45,
+      "freq": 0.045
+    },
+    {
+      "phrase": "mechanic",
+      "count": 45,
+      "freq": 0.045
+    },
+    {
+      "phrase": "study",
+      "count": 45,
+      "freq": 0.045
+    },
+    {
+      "phrase": "health",
+      "count": 44,
+      "freq": 0.044
+    },
+    {
+      "phrase": "learning",
+      "count": 44,
+      "freq": 0.044
+    },
+    {
+      "phrase": "diversity",
+      "count": 44,
+      "freq": 0.044
+    },
+    {
+      "phrase": "one topic",
+      "count": 44,
+      "freq": 0.044
+    },
+    {
+      "phrase": "particle",
+      "count": 44,
+      "freq": 0.044
+    },
+    {
+      "phrase": "feeling",
+      "count": 44,
+      "freq": 0.044
+    },
+    {
+      "phrase": "physics",
+      "count": 43,
+      "freq": 0.043
+    },
+    {
+      "phrase": "quantum mechanics",
+      "count": 43,
+      "freq": 0.043
+    },
+    {
+      "phrase": "machine",
+      "count": 43,
+      "freq": 0.043
+    },
+    {
+      "phrase": "type",
+      "count": 43,
+      "freq": 0.043
+    },
+    {
+      "phrase": "intricacy",
+      "count": 42,
+      "freq": 0.042
+    },
+    {
+      "phrase": "range",
+      "count": 42,
+      "freq": 0.042
+    },
+    {
+      "phrase": "innovation",
+      "count": 42,
+      "freq": 0.042
+    },
+    {
+      "phrase": "mysteries",
+      "count": 41,
+      "freq": 0.041
+    },
+    {
+      "phrase": "connection",
+      "count": 41,
+      "freq": 0.041
+    },
+    {
+      "phrase": "role",
+      "count": 40,
+      "freq": 0.04
+    },
+    {
+      "phrase": "music",
+      "count": 40,
+      "freq": 0.04
+    },
+    {
+      "phrase": "preference",
+      "count": 40,
+      "freq": 0.04
+    },
+    {
+      "phrase": "moment",
+      "count": 40,
+      "freq": 0.04
+    },
+    {
+      "phrase": "brain",
+      "count": 39,
+      "freq": 0.039
+    },
+    {
+      "phrase": "planet",
+      "count": 39,
+      "freq": 0.039
+    },
+    {
+      "phrase": "intersection",
+      "count": 39,
+      "freq": 0.039
+    },
+    {
+      "phrase": "explanation",
+      "count": 38,
+      "freq": 0.038
+    },
+    {
+      "phrase": "lives",
+      "count": 38,
+      "freq": 0.038
+    },
+    {
+      "phrase": "skill",
+      "count": 38,
+      "freq": 0.038
+    },
+    {
+      "phrase": "solution",
+      "count": 37,
+      "freq": 0.037
+    },
+    {
+      "phrase": "structure",
+      "count": 37,
+      "freq": 0.037
+    },
+    {
+      "phrase": "intricacies",
+      "count": 37,
+      "freq": 0.037
+    },
+    {
+      "phrase": "datum",
+      "count": 37,
+      "freq": 0.037
+    },
+    {
+      "phrase": "energy",
+      "count": 37,
+      "freq": 0.037
+    },
+    {
+      "phrase": "consciousness",
+      "count": 37,
+      "freq": 0.037
+    },
+    {
+      "phrase": "humans",
+      "count": 37,
+      "freq": 0.037
+    },
+    {
+      "phrase": "model",
+      "count": 37,
+      "freq": 0.037
+    },
+    {
+      "phrase": "climate",
+      "count": 36,
+      "freq": 0.036
+    },
+    {
+      "phrase": "myself",
+      "count": 36,
+      "freq": 0.036
+    },
+    {
+      "phrase": "sky",
+      "count": 36,
+      "freq": 0.036
+    },
+    {
+      "phrase": "literature",
+      "count": 36,
+      "freq": 0.036
+    },
+    {
+      "phrase": "attention",
+      "count": 36,
+      "freq": 0.036
+    },
+    {
+      "phrase": "state",
+      "count": 35,
+      "freq": 0.035
+    },
+    {
+      "phrase": "power",
+      "count": 35,
+      "freq": 0.035
+    },
+    {
+      "phrase": "opportunity",
+      "count": 34,
+      "freq": 0.034
+    },
+    {
+      "phrase": "itself",
+      "count": 34,
+      "freq": 0.034
+    },
+    {
+      "phrase": "communication",
+      "count": 34,
+      "freq": 0.034
+    },
+    {
+      "phrase": "theory",
+      "count": 34,
+      "freq": 0.034
+    },
+    {
+      "phrase": "book",
+      "count": 34,
+      "freq": 0.034
+    },
+    {
+      "phrase": "option",
+      "count": 34,
+      "freq": 0.034
+    },
+    {
+      "phrase": "entanglement",
+      "count": 34,
+      "freq": 0.034
+    },
+    {
+      "phrase": "being",
+      "count": 34,
+      "freq": 0.034
+    },
+    {
+      "phrase": "term",
+      "count": 33,
+      "freq": 0.033
+    },
+    {
+      "phrase": "personal growth",
+      "count": 33,
+      "freq": 0.033
+    },
+    {
+      "phrase": "individuals",
+      "count": 33,
+      "freq": 0.033
+    },
+    {
+      "phrase": "interests",
+      "count": 33,
+      "freq": 0.033
+    },
+    {
+      "phrase": "choice",
+      "count": 33,
+      "freq": 0.033
+    },
+    {
+      "phrase": "all",
+      "count": 33,
+      "freq": 0.033
+    },
+    {
+      "phrase": "data",
+      "count": 32,
+      "freq": 0.032
+    },
+    {
+      "phrase": "matter",
+      "count": 32,
+      "freq": 0.032
+    },
+    {
+      "phrase": "level",
+      "count": 32,
+      "freq": 0.032
+    },
+    {
+      "phrase": "healthcare",
+      "count": 32,
+      "freq": 0.032
+    },
+    {
+      "phrase": "star",
+      "count": 32,
+      "freq": 0.032
+    },
+    {
+      "phrase": "insights",
+      "count": 32,
+      "freq": 0.032
+    },
+    {
+      "phrase": "thinking",
+      "count": 32,
+      "freq": 0.032
+    },
+    {
+      "phrase": "situation",
+      "count": 32,
+      "freq": 0.032
+    },
+    {
+      "phrase": "advancements",
+      "count": 31,
+      "freq": 0.031
+    },
+    {
+      "phrase": "areas",
+      "count": 31,
+      "freq": 0.031
+    },
+    {
+      "phrase": "some",
+      "count": 31,
+      "freq": 0.031
+    },
+    {
+      "phrase": "expression",
+      "count": 31,
+      "freq": 0.031
+    },
+    {
+      "phrase": "assistant",
+      "count": 30,
+      "freq": 0.03
+    },
+    {
+      "phrase": "application",
+      "count": 30,
+      "freq": 0.03
+    },
+    {
+      "phrase": "interaction",
+      "count": 30,
+      "freq": 0.03
+    },
+    {
+      "phrase": "effect",
+      "count": 30,
+      "freq": 0.03
+    },
+    {
+      "phrase": "particles",
+      "count": 30,
+      "freq": 0.03
+    },
+    {
+      "phrase": "day",
+      "count": 30,
+      "freq": 0.03
+    },
+    {
+      "phrase": "goals",
+      "count": 30,
+      "freq": 0.03
+    },
+    {
+      "phrase": "many people",
+      "count": 30,
+      "freq": 0.03
+    },
+    {
+      "phrase": "discussion",
+      "count": 30,
+      "freq": 0.03
+    },
+    {
+      "phrase": "climate change",
+      "count": 29,
+      "freq": 0.029
+    },
+    {
+      "phrase": "friend",
+      "count": 29,
+      "freq": 0.029
+    },
+    {
+      "phrase": "discovery",
+      "count": 29,
+      "freq": 0.029
+    },
+    {
+      "phrase": "meaning",
+      "count": 29,
+      "freq": 0.029
+    },
+    {
+      "phrase": "computer",
+      "count": 29,
+      "freq": 0.029
+    },
+    {
+      "phrase": "boundary",
+      "count": 29,
+      "freq": 0.029
+    },
+    {
+      "phrase": "reflection",
+      "count": 29,
+      "freq": 0.029
+    },
+    {
+      "phrase": "evolution",
+      "count": 28,
+      "freq": 0.028
+    },
+    {
+      "phrase": "natural world",
+      "count": 28,
+      "freq": 0.028
+    },
+    {
+      "phrase": "opinion",
+      "count": 28,
+      "freq": 0.028
+    },
+    {
+      "phrase": "yourself",
+      "count": 28,
+      "freq": 0.028
+    },
+    {
+      "phrase": "earth",
+      "count": 28,
+      "freq": 0.028
+    },
+    {
+      "phrase": "ocean",
+      "count": 28,
+      "freq": 0.028
+    },
+    {
+      "phrase": "factor",
+      "count": 28,
+      "freq": 0.028
+    },
+    {
+      "phrase": "values",
+      "count": 28,
+      "freq": 0.028
+    },
+    {
+      "phrase": "challenges",
+      "count": 27,
+      "freq": 0.027
+    },
+    {
+      "phrase": "research",
+      "count": 27,
+      "freq": 0.027
+    },
+    {
+      "phrase": "desire",
+      "count": 27,
+      "freq": 0.027
+    },
+    {
+      "phrase": "deeper understanding",
+      "count": 27,
+      "freq": 0.027
+    },
+    {
+      "phrase": "body",
+      "count": 27,
+      "freq": 0.027
+    },
+    {
+      "phrase": "computing",
+      "count": 27,
+      "freq": 0.027
+    },
+    {
+      "phrase": "personal experiences",
+      "count": 27,
+      "freq": 0.027
+    },
+    {
+      "phrase": "wide range",
+      "count": 26,
+      "freq": 0.026
+    },
+    {
+      "phrase": "industry",
+      "count": 26,
+      "freq": 0.026
+    },
+    {
+      "phrase": "reason",
+      "count": 26,
+      "freq": 0.026
+    },
+    {
+      "phrase": "purpose",
+      "count": 26,
+      "freq": 0.026
+    },
+    {
+      "phrase": "personal preferences",
+      "count": 26,
+      "freq": 0.026
+    },
+    {
+      "phrase": "family",
+      "count": 26,
+      "freq": 0.026
+    },
+    {
+      "phrase": "one subject",
+      "count": 26,
+      "freq": 0.026
+    },
+    {
+      "phrase": "what kind",
+      "count": 26,
+      "freq": 0.026
+    },
+    {
+      "phrase": "sunset",
+      "count": 26,
+      "freq": 0.026
+    },
+    {
+      "phrase": "mountain",
+      "count": 26,
+      "freq": 0.026
+    },
+    {
+      "phrase": "belief",
+      "count": 25,
+      "freq": 0.025
+    },
+    {
+      "phrase": "technique",
+      "count": 25,
+      "freq": 0.025
+    },
+    {
+      "phrase": "function",
+      "count": 25,
+      "freq": 0.025
+    },
+    {
+      "phrase": "civilization",
+      "count": 25,
+      "freq": 0.025
+    },
+    {
+      "phrase": "medium",
+      "count": 25,
+      "freq": 0.025
+    },
+    {
+      "phrase": "importance",
+      "count": 25,
+      "freq": 0.025
+    },
+    {
+      "phrase": "word",
+      "count": 25,
+      "freq": 0.025
+    },
+    {
+      "phrase": "making",
+      "count": 24,
+      "freq": 0.024
+    },
+    {
+      "phrase": "perception",
+      "count": 24,
+      "freq": 0.024
+    },
+    {
+      "phrase": "wave",
+      "count": 24,
+      "freq": 0.024
+    },
+    {
+      "phrase": "community",
+      "count": 24,
+      "freq": 0.024
+    },
+    {
+      "phrase": "various aspects",
+      "count": 24,
+      "freq": 0.024
+    },
+    {
+      "phrase": "cultures",
+      "count": 24,
+      "freq": 0.024
+    },
+    {
+      "phrase": "light",
+      "count": 24,
+      "freq": 0.024
+    },
+    {
+      "phrase": "action",
+      "count": 24,
+      "freq": 0.024
+    },
+    {
+      "phrase": "psychology",
+      "count": 24,
+      "freq": 0.024
+    },
+    {
+      "phrase": "ai language model",
+      "count": 24,
+      "freq": 0.024
+    },
+    {
+      "phrase": "student",
+      "count": 23,
+      "freq": 0.023
+    },
+    {
+      "phrase": "century",
+      "count": 23,
+      "freq": 0.023
+    },
+    {
+      "phrase": "amount",
+      "count": 23,
+      "freq": 0.023
+    },
+    {
+      "phrase": "patterns",
+      "count": 23,
+      "freq": 0.023
+    },
+    {
+      "phrase": "detail",
+      "count": 23,
+      "freq": 0.023
+    },
+    {
+      "phrase": "night",
+      "count": 23,
+      "freq": 0.023
+    },
+    {
+      "phrase": "ecosystem",
+      "count": 23,
+      "freq": 0.023
+    },
+    {
+      "phrase": "job",
+      "count": 23,
+      "freq": 0.023
+    },
+    {
+      "phrase": "superposition",
+      "count": 23,
+      "freq": 0.023
+    },
+    {
+      "phrase": "number",
+      "count": 23,
+      "freq": 0.023
+    },
+    {
+      "phrase": "boundaries",
+      "count": 23,
+      "freq": 0.023
+    },
+    {
+      "phrase": "unlimited time",
+      "count": 23,
+      "freq": 0.023
+    },
+    {
+      "phrase": "animal",
+      "count": 22,
+      "freq": 0.022
+    },
+    {
+      "phrase": "conversation",
+      "count": 22,
+      "freq": 0.022
+    },
+    {
+      "phrase": "decisions",
+      "count": 22,
+      "freq": 0.022
+    },
+    {
+      "phrase": "stars",
+      "count": 22,
+      "freq": 0.022
+    },
+    {
+      "phrase": "imagination",
+      "count": 22,
+      "freq": 0.022
+    },
+    {
+      "phrase": "issues",
+      "count": 21,
+      "freq": 0.021
+    },
+    {
+      "phrase": "tradition",
+      "count": 21,
+      "freq": 0.021
+    },
+    {
+      "phrase": "passion",
+      "count": 21,
+      "freq": 0.021
+    },
+    {
+      "phrase": "helpful assistant",
+      "count": 21,
+      "freq": 0.021
+    },
+    {
+      "phrase": "following question",
+      "count": 21,
+      "freq": 0.021
+    },
+    {
+      "phrase": "cosmos",
+      "count": 21,
+      "freq": 0.021
+    },
+    {
+      "phrase": "task",
+      "count": 21,
+      "freq": 0.021
+    },
+    {
+      "phrase": "source",
+      "count": 21,
+      "freq": 0.021
+    },
+    {
+      "phrase": "fields",
+      "count": 21,
+      "freq": 0.021
+    },
+    {
+      "phrase": "scale",
+      "count": 21,
+      "freq": 0.021
+    },
+    {
+      "phrase": "principles",
+      "count": 21,
+      "freq": 0.021
+    },
+    {
+      "phrase": "galaxy",
+      "count": 21,
+      "freq": 0.021
+    },
+    {
+      "phrase": "friends",
+      "count": 21,
+      "freq": 0.021
+    },
+    {
+      "phrase": "activity",
+      "count": 21,
+      "freq": 0.021
+    },
+    {
+      "phrase": "character",
+      "count": 21,
+      "freq": 0.021
+    },
+    {
+      "phrase": "feelings",
+      "count": 21,
+      "freq": 0.021
+    },
+    {
+      "phrase": "quantum computing",
+      "count": 20,
+      "freq": 0.02
+    },
+    {
+      "phrase": "influence",
+      "count": 20,
+      "freq": 0.02
+    },
+    {
+      "phrase": "transportation",
+      "count": 20,
+      "freq": 0.02
+    },
+    {
+      "phrase": "algorithm",
+      "count": 20,
+      "freq": 0.02
+    },
+    {
+      "phrase": "period",
+      "count": 20,
+      "freq": 0.02
+    },
+    {
+      "phrase": "part",
+      "count": 20,
+      "freq": 0.02
+    },
+    {
+      "phrase": "those",
+      "count": 20,
+      "freq": 0.02
+    },
+    {
+      "phrase": "user",
+      "count": 19,
+      "freq": 0.019
+    },
+    {
+      "phrase": "cosmo",
+      "count": 19,
+      "freq": 0.019
+    },
+    {
+      "phrase": "machine learning",
+      "count": 19,
+      "freq": 0.019
+    },
+    {
+      "phrase": "network",
+      "count": 19,
+      "freq": 0.019
+    },
+    {
+      "phrase": "years",
+      "count": 19,
+      "freq": 0.019
+    },
+    {
+      "phrase": "tool",
+      "count": 19,
+      "freq": 0.019
+    },
+    {
+      "phrase": "concern",
+      "count": 19,
+      "freq": 0.019
+    },
+    {
+      "phrase": "mathematic",
+      "count": 19,
+      "freq": 0.019
+    },
+    {
+      "phrase": "debate",
+      "count": 19,
+      "freq": 0.019
+    },
+    {
+      "phrase": "condition",
+      "count": 19,
+      "freq": 0.019
+    },
+    {
+      "phrase": "landscape",
+      "count": 19,
+      "freq": 0.019
+    },
+    {
+      "phrase": "piece",
+      "count": 19,
+      "freq": 0.019
+    },
+    {
+      "phrase": "career",
+      "count": 19,
+      "freq": 0.019
+    },
+    {
+      "phrase": "beliefs",
+      "count": 18,
+      "freq": 0.018
+    },
+    {
+      "phrase": "different cultures",
+      "count": 18,
+      "freq": 0.018
+    },
+    {
+      "phrase": "water",
+      "count": 18,
+      "freq": 0.018
+    },
+    {
+      "phrase": "strategy",
+      "count": 18,
+      "freq": 0.018
+    },
+    {
+      "phrase": "stories",
+      "count": 18,
+      "freq": 0.018
+    },
+    {
+      "phrase": "implications",
+      "count": 18,
+      "freq": 0.018
+    },
+    {
+      "phrase": "resource",
+      "count": 18,
+      "freq": 0.018
+    },
+    {
+      "phrase": "specie",
+      "count": 18,
+      "freq": 0.018
+    },
+    {
+      "phrase": "education",
+      "count": 18,
+      "freq": 0.018
+    },
+    {
+      "phrase": "possibilities",
+      "count": 18,
+      "freq": 0.018
+    },
+    {
+      "phrase": "past",
+      "count": 18,
+      "freq": 0.018
+    },
+    {
+      "phrase": "quantum entanglement",
+      "count": 18,
+      "freq": 0.018
+    },
+    {
+      "phrase": "space exploration",
+      "count": 18,
+      "freq": 0.018
+    },
+    {
+      "phrase": "solutions",
+      "count": 18,
+      "freq": 0.018
+    },
+    {
+      "phrase": "theme",
+      "count": 18,
+      "freq": 0.018
+    },
+    {
+      "phrase": "scientist",
+      "count": 18,
+      "freq": 0.018
+    },
+    {
+      "phrase": "empathy",
+      "count": 18,
+      "freq": 0.018
+    },
+    {
+      "phrase": "sight",
+      "count": 18,
+      "freq": 0.018
+    },
+    {
+      "phrase": "variety",
+      "count": 17,
+      "freq": 0.017
+    },
+    {
+      "phrase": "memory",
+      "count": 17,
+      "freq": 0.017
+    },
+    {
+      "phrase": "human behavior",
+      "count": 17,
+      "freq": 0.017
+    },
+    {
+      "phrase": "traditions",
+      "count": 17,
+      "freq": 0.017
+    },
+    {
+      "phrase": "writing",
+      "count": 17,
+      "freq": 0.017
+    },
+    {
+      "phrase": "progress",
+      "count": 17,
+      "freq": 0.017
+    },
+    {
+      "phrase": "concepts",
+      "count": 17,
+      "freq": 0.017
+    },
+    {
+      "phrase": "various industries",
+      "count": 17,
+      "freq": 0.017
+    },
+    {
+      "phrase": "significance",
+      "count": 17,
+      "freq": 0.017
+    },
+    {
+      "phrase": "forest",
+      "count": 17,
+      "freq": 0.017
+    },
+    {
+      "phrase": "image",
+      "count": 17,
+      "freq": 0.017
+    },
+    {
+      "phrase": "personal interests",
+      "count": 17,
+      "freq": 0.017
+    },
+    {
+      "phrase": "colors",
+      "count": 17,
+      "freq": 0.017
+    },
+    {
+      "phrase": "capability",
+      "count": 17,
+      "freq": 0.017
+    },
+    {
+      "phrase": "instance",
+      "count": 17,
+      "freq": 0.017
+    },
+    {
+      "phrase": "material",
+      "count": 17,
+      "freq": 0.017
+    },
+    {
+      "phrase": "mathematics",
+      "count": 17,
+      "freq": 0.017
+    },
+    {
+      "phrase": "physic",
+      "count": 17,
+      "freq": 0.017
+    },
+    {
+      "phrase": "need",
+      "count": 17,
+      "freq": 0.017
+    },
+    {
+      "phrase": "artist",
+      "count": 17,
+      "freq": 0.017
+    },
+    {
+      "phrase": "options",
+      "count": 17,
+      "freq": 0.017
+    },
+    {
+      "phrase": "perspectives",
+      "count": 17,
+      "freq": 0.017
+    },
+    {
+      "phrase": "sound",
+      "count": 17,
+      "freq": 0.017
+    },
+    {
+      "phrase": "joy",
+      "count": 17,
+      "freq": 0.017
+    },
+    {
+      "phrase": "flower",
+      "count": 17,
+      "freq": 0.017
+    },
+    {
+      "phrase": "decision-making",
+      "count": 16,
+      "freq": 0.016
+    },
+    {
+      "phrase": "bird",
+      "count": 16,
+      "freq": 0.016
+    },
+    {
+      "phrase": "human brain",
+      "count": 16,
+      "freq": 0.016
+    },
+    {
+      "phrase": "fact",
+      "count": 16,
+      "freq": 0.016
+    },
+    {
+      "phrase": "origin",
+      "count": 16,
+      "freq": 0.016
+    },
+    {
+      "phrase": "quality",
+      "count": 16,
+      "freq": 0.016
+    },
+    {
+      "phrase": "law",
+      "count": 16,
+      "freq": 0.016
+    },
+    {
+      "phrase": "correct answer",
+      "count": 16,
+      "freq": 0.016
+    },
+    {
+      "phrase": "ancient civilizations",
+      "count": 16,
+      "freq": 0.016
+    },
+    {
+      "phrase": "style",
+      "count": 16,
+      "freq": 0.016
+    },
+    {
+      "phrase": "stress",
+      "count": 16,
+      "freq": 0.016
+    },
+    {
+      "phrase": "use",
+      "count": 16,
+      "freq": 0.016
+    },
+    {
+      "phrase": "realm",
+      "count": 16,
+      "freq": 0.016
+    },
+    {
+      "phrase": "actions",
+      "count": 16,
+      "freq": 0.016
+    },
+    {
+      "phrase": "galaxies",
+      "count": 16,
+      "freq": 0.016
+    },
+    {
+      "phrase": "awareness",
+      "count": 16,
+      "freq": 0.016
+    },
+    {
+      "phrase": "balance",
+      "count": 16,
+      "freq": 0.016
+    },
+    {
+      "phrase": "morality",
+      "count": 16,
+      "freq": 0.016
+    },
+    {
+      "phrase": "act",
+      "count": 16,
+      "freq": 0.016
+    },
+    {
+      "phrase": "improvement",
+      "count": 16,
+      "freq": 0.016
+    },
+    {
+      "phrase": "these",
+      "count": 15,
+      "freq": 0.015
+    },
+    {
+      "phrase": "animals",
+      "count": 15,
+      "freq": 0.015
+    },
+    {
+      "phrase": "plant",
+      "count": 15,
+      "freq": 0.015
+    },
+    {
+      "phrase": "platform",
+      "count": 15,
+      "freq": 0.015
+    },
+    {
+      "phrase": "novel",
+      "count": 15,
+      "freq": 0.015
+    },
+    {
+      "phrase": "factors",
+      "count": 15,
+      "freq": 0.015
+    },
+    {
+      "phrase": "force",
+      "count": 15,
+      "freq": 0.015
+    },
+    {
+      "phrase": "property",
+      "count": 15,
+      "freq": 0.015
+    },
+    {
+      "phrase": "centuries",
+      "count": 15,
+      "freq": 0.015
+    },
+    {
+      "phrase": "ourselves",
+      "count": 15,
+      "freq": 0.015
+    },
+    {
+      "phrase": "practice",
+      "count": 15,
+      "freq": 0.015
+    },
+    {
+      "phrase": "element",
+      "count": 15,
+      "freq": 0.015
+    },
+    {
+      "phrase": "languages",
+      "count": 15,
+      "freq": 0.015
+    },
+    {
+      "phrase": "technologies",
+      "count": 14,
+      "freq": 0.014
+    },
+    {
+      "phrase": "birds",
+      "count": 14,
+      "freq": 0.014
+    },
+    {
+      "phrase": "passions",
+      "count": 14,
+      "freq": 0.014
+    },
+    {
+      "phrase": "themselves",
+      "count": 14,
+      "freq": 0.014
+    },
+    {
+      "phrase": "city",
+      "count": 14,
+      "freq": 0.014
+    },
+    {
+      "phrase": "vast amounts",
+      "count": 14,
+      "freq": 0.014
+    },
+    {
+      "phrase": "processing",
+      "count": 14,
+      "freq": 0.014
+    },
+    {
+      "phrase": "fundamental principles",
+      "count": 14,
+      "freq": 0.014
+    },
+    {
+      "phrase": "approach",
+      "count": 14,
+      "freq": 0.014
+    },
+    {
+      "phrase": "design",
+      "count": 14,
+      "freq": 0.014
+    },
+    {
+      "phrase": "phenomena",
+      "count": 14,
+      "freq": 0.014
+    },
+    {
+      "phrase": "ethics",
+      "count": 14,
+      "freq": 0.014
+    },
+    {
+      "phrase": "multiple states",
+      "count": 14,
+      "freq": 0.014
+    },
+    {
+      "phrase": "breakthrough",
+      "count": 14,
+      "freq": 0.014
+    },
+    {
+      "phrase": "tapestry",
+      "count": 14,
+      "freq": 0.014
+    },
+    {
+      "phrase": "achievement",
+      "count": 14,
+      "freq": 0.014
+    },
+    {
+      "phrase": "painting",
+      "count": 14,
+      "freq": 0.014
+    },
+    {
+      "phrase": "books",
+      "count": 14,
+      "freq": 0.014
+    },
+    {
+      "phrase": "social",
+      "count": 14,
+      "freq": 0.014
+    },
+    {
+      "phrase": "appreciation",
+      "count": 14,
+      "freq": 0.014
+    },
+    {
+      "phrase": "various fields",
+      "count": 14,
+      "freq": 0.014
+    },
+    {
+      "phrase": "interconnectedness",
+      "count": 14,
+      "freq": 0.014
+    },
+    {
+      "phrase": "movie",
+      "count": 14,
+      "freq": 0.014
+    },
+    {
+      "phrase": "travel",
+      "count": 14,
+      "freq": 0.014
+    },
+    {
+      "phrase": "sunrise",
+      "count": 14,
+      "freq": 0.014
+    },
+    {
+      "phrase": "intricate patterns",
+      "count": 14,
+      "freq": 0.014
+    },
+    {
+      "phrase": "medicine",
+      "count": 13,
+      "freq": 0.013
+    },
+    {
+      "phrase": "sustainability",
+      "count": 13,
+      "freq": 0.013
+    },
+    {
+      "phrase": "humanity",
+      "count": 13,
+      "freq": 0.013
+    },
+    {
+      "phrase": "name",
+      "count": 13,
+      "freq": 0.013
+    },
+    {
+      "phrase": "background",
+      "count": 13,
+      "freq": 0.013
+    },
+    {
+      "phrase": "machines",
+      "count": 13,
+      "freq": 0.013
+    },
+    {
+      "phrase": "neuroscience",
+      "count": 13,
+      "freq": 0.013
+    },
+    {
+      "phrase": "the",
+      "count": 13,
+      "freq": 0.013
+    },
+    {
+      "phrase": "complexities",
+      "count": 13,
+      "freq": 0.013
+    },
+    {
+      "phrase": "interactions",
+      "count": 13,
+      "freq": 0.013
+    },
+    {
+      "phrase": "politic",
+      "count": 13,
+      "freq": 0.013
+    },
+    {
+      "phrase": "privacy",
+      "count": 13,
+      "freq": 0.013
+    },
+    {
+      "phrase": "complex problems",
+      "count": 13,
+      "freq": 0.013
+    },
+    {
+      "phrase": "cryptography",
+      "count": 13,
+      "freq": 0.013
+    },
+    {
+      "phrase": "food",
+      "count": 13,
+      "freq": 0.013
+    },
+    {
+      "phrase": "philosopher",
+      "count": 13,
+      "freq": 0.013
+    },
+    {
+      "phrase": "genre",
+      "count": 13,
+      "freq": 0.013
+    },
+    {
+      "phrase": "scientists",
+      "count": 13,
+      "freq": 0.013
+    },
+    {
+      "phrase": "events",
+      "count": 13,
+      "freq": 0.013
+    },
+    {
+      "phrase": "consequence",
+      "count": 13,
+      "freq": 0.013
+    },
+    {
+      "phrase": "artists",
+      "count": 13,
+      "freq": 0.013
+    },
+    {
+      "phrase": "analysis",
+      "count": 13,
+      "freq": 0.013
+    },
+    {
+      "phrase": "hobby",
+      "count": 13,
+      "freq": 0.013
+    },
+    {
+      "phrase": "phrase",
+      "count": 13,
+      "freq": 0.013
+    },
+    {
+      "phrase": "night sky",
+      "count": 13,
+      "freq": 0.013
+    },
+    {
+      "phrase": "tree",
+      "count": 13,
+      "freq": 0.013
+    },
+    {
+      "phrase": "treatment",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "working",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "societies",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "weather",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "dilemma",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "resources",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "leaf",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "text",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "technological advancements",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "politics",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "country",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "rise",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "ethic",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "prediction",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "finance",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "predictions",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "cause",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "experiment",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "horizon",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "effects",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "pace",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "fiction",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "aspects",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "daily lives",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "different perspectives",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "definition",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "plan",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "reminder",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "sun",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "care",
+      "count": 12,
+      "freq": 0.012
+    },
+    {
+      "phrase": "plants",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "discipline",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "human mind",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "group",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "conservation",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "line",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "biology",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "organism",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "outcome",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "biodiversity",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "responsibility",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "car",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "ethical implications",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "ai systems",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "natural language processing",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "innovations",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "branch",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "array",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "astronomy",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "atom",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "inquiry",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "dream",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "possible answers",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "themes",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "pursuit",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "happiness",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "difference",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "sentence",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "critical thinking",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "interpretation",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "eye",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "vibrant colors",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "love",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "endless possibilities",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "opinions",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "conflict",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "dimension",
+      "count": 11,
+      "freq": 0.011
+    },
+    {
+      "phrase": "terms",
+      "count": 10,
+      "freq": 0.01
+    },
+    {
+      "phrase": "inspiration",
+      "count": 10,
+      "freq": 0.01
+    },
+    {
+      "phrase": "bias",
+      "count": 10,
+      "freq": 0.01
+    },
+    {
+      "phrase": "desires",
+      "count": 10,
+      "freq": 0.01
+    },
+    {
+      "phrase": "sunlight",
+      "count": 10,
+      "freq": 0.01
+    },
+    {
+      "phrase": "mechanism",
+      "count": 10,
+      "freq": 0.01
+    },
+    {
+      "phrase": "choices",
+      "count": 10,
+      "freq": 0.01
+    },
+    {
+      "phrase": "habitat",
+      "count": 10,
+      "freq": 0.01
+    },
+    {
+      "phrase": "strategies",
+      "count": 10,
+      "freq": 0.01
+    },
+    {
+      "phrase": "result",
+      "count": 10,
+      "freq": 0.01
+    },
+    {
+      "phrase": "human experience",
+      "count": 10,
+      "freq": 0.01
+    },
+    {
+      "phrase": "laws",
+      "count": 10,
+      "freq": 0.01
+    },
+    {
+      "phrase": "norm",
+      "count": 10,
+      "freq": 0.01
+    },
+    {
+      "phrase": "chance",
+      "count": 10,
+      "freq": 0.01
+    },
+    {
+      "phrase": "mental health",
+      "count": 10,
+      "freq": 0.01
+    },
+    {
+      "phrase": "applications",
+      "count": 10,
+      "freq": 0.01
+    },
+    {
+      "phrase": "concerns",
+      "count": 10,
+      "freq": 0.01
+    },
+    {
+      "phrase": "method",
+      "count": 10,
+      "freq": 0.01
+    },
+    {
+      "phrase": "duality",
+      "count": 10,
+      "freq": 0.01
+    },
+    {
+      "phrase": "connections",
+      "count": 10,
+      "freq": 0.01
+    },
+    {
+      "phrase": "organization",
+      "count": 10,
+      "freq": 0.01
+    },
+    {
+      "phrase": "glimpse",
+      "count": 10,
+      "freq": 0.01
+    },
+    {
+      "phrase": "religion",
+      "count": 10,
+      "freq": 0.01
+    },
+    {
+      "phrase": "deep understanding",
+      "count": 10,
+      "freq": 0.01
+    },
+    {
+      "phrase": "chemistry",
+      "count": 10,
+      "freq": 0.01
+    },
+    {
+      "phrase": "free will",
+      "count": 10,
+      "freq": 0.01
+    }
+  ],
+  "per_prompt_top": {
+    "What are you curious about?": [
+      {
+        "phrase": "what",
+        "count": 20,
+        "freq": 0.4
+      },
+      {
+        "phrase": "that",
+        "count": 18,
+        "freq": 0.36
+      },
+      {
+        "phrase": "response",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "history",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "curiosity",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "mystery",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "technology",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "mysteries",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "culture",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "student",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "time",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "science",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "behavior",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "interest",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "intricacy",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "intricacies",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "desire",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "advancement",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "universe",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "area",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "society",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "knowledge",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "assistant",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "animal",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "explanation",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "understanding",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "information",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "user",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "them",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "impact",
+        "count": 5,
+        "freq": 0.1
+      }
+    ],
+    "Describe a topic you find genuinely interesting.": [
+      {
+        "phrase": "that",
+        "count": 40,
+        "freq": 0.8
+      },
+      {
+        "phrase": "technology",
+        "count": 21,
+        "freq": 0.42
+      },
+      {
+        "phrase": "one topic",
+        "count": 20,
+        "freq": 0.4
+      },
+      {
+        "phrase": "artificial intelligence",
+        "count": 19,
+        "freq": 0.38
+      },
+      {
+        "phrase": "intelligence",
+        "count": 19,
+        "freq": 0.38
+      },
+      {
+        "phrase": "field",
+        "count": 19,
+        "freq": 0.38
+      },
+      {
+        "phrase": "potential",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "impact",
+        "count": 16,
+        "freq": 0.32
+      },
+      {
+        "phrase": "society",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "implication",
+        "count": 14,
+        "freq": 0.28
+      },
+      {
+        "phrase": "machine",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "which",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "advancement",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "datum",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "system",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "development",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "aspect",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "healthcare",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "climate",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "intersection",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "industry",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "this",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "change",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "future",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "amount",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "decision",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "computer",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "behavior",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "science",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "language",
+        "count": 8,
+        "freq": 0.16
+      }
+    ],
+    "What's a question that fascinates you?": [
+      {
+        "phrase": "that",
+        "count": 29,
+        "freq": 0.58
+      },
+      {
+        "phrase": "what",
+        "count": 28,
+        "freq": 0.56
+      },
+      {
+        "phrase": "time",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "nature",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "universe",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "human",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "this",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "consciousness",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "value",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "concept",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "brain",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "interest",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "mind",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "understanding",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "numeric value",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "description",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "abbreviation",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "location",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "entity",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "language",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "intelligence",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "experience",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "curiosity",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "reality",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "principle",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "history",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "which",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "existence",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "implication",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "mysteries",
+        "count": 4,
+        "freq": 0.08
+      }
+    ],
+    "If you could explore any subject in depth, what would it be and why?": [
+      {
+        "phrase": "depth",
+        "count": 46,
+        "freq": 0.92
+      },
+      {
+        "phrase": "that",
+        "count": 33,
+        "freq": 0.66
+      },
+      {
+        "phrase": "understanding",
+        "count": 27,
+        "freq": 0.54
+      },
+      {
+        "phrase": "field",
+        "count": 25,
+        "freq": 0.5
+      },
+      {
+        "phrase": "technology",
+        "count": 20,
+        "freq": 0.4
+      },
+      {
+        "phrase": "nature",
+        "count": 19,
+        "freq": 0.38
+      },
+      {
+        "phrase": "quantum",
+        "count": 18,
+        "freq": 0.36
+      },
+      {
+        "phrase": "reality",
+        "count": 16,
+        "freq": 0.32
+      },
+      {
+        "phrase": "this",
+        "count": 16,
+        "freq": 0.32
+      },
+      {
+        "phrase": "which",
+        "count": 16,
+        "freq": 0.32
+      },
+      {
+        "phrase": "energy",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "universe",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "principle",
+        "count": 14,
+        "freq": 0.28
+      },
+      {
+        "phrase": "impact",
+        "count": 14,
+        "freq": 0.28
+      },
+      {
+        "phrase": "quantum mechanics",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "mechanic",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "behavior",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "history",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "particle",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "physics",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "implication",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "knowledge",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "matter",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "application",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "development",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "insight",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "society",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "science",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "concept",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "aspect",
+        "count": 10,
+        "freq": 0.2
+      }
+    ],
+    "What kind of ideas do you find yourself drawn to?": [
+      {
+        "phrase": "idea",
+        "count": 46,
+        "freq": 0.92
+      },
+      {
+        "phrase": "ideas",
+        "count": 41,
+        "freq": 0.82
+      },
+      {
+        "phrase": "that",
+        "count": 34,
+        "freq": 0.68
+      },
+      {
+        "phrase": "yourself",
+        "count": 22,
+        "freq": 0.44
+      },
+      {
+        "phrase": "myself",
+        "count": 14,
+        "freq": 0.28
+      },
+      {
+        "phrase": "what kind",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "type",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "creativity",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "thought",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "art",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "entity",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "experience",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "interest",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "which",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "music",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "perspective",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "thinking",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "problem",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "what",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "place",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "understanding",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "writing",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "solution",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "knowledge",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "technology",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "nature",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "sentence",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "reflection",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "this",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "individual",
+        "count": 6,
+        "freq": 0.12
+      }
+    ],
+    "Tell me about something you find wonderful.": [
+      {
+        "phrase": "beauty",
+        "count": 32,
+        "freq": 0.64
+      },
+      {
+        "phrase": "that",
+        "count": 30,
+        "freq": 0.6
+      },
+      {
+        "phrase": "nature",
+        "count": 24,
+        "freq": 0.48
+      },
+      {
+        "phrase": "vastness",
+        "count": 16,
+        "freq": 0.32
+      },
+      {
+        "phrase": "awe",
+        "count": 16,
+        "freq": 0.32
+      },
+      {
+        "phrase": "sense",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "wonder",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "one thing",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "experience",
+        "count": 14,
+        "freq": 0.28
+      },
+      {
+        "phrase": "reminder",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "ability",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "power",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "joy",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "diversity",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "ocean",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "time",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "sky",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "color",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "mountain",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "moment",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "culture",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "perspective",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "forest",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "all",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "place",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "feeling",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "bird",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "who",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "what",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "connection",
+        "count": 7,
+        "freq": 0.14
+      }
+    ],
+    "What do you think about when you have time to think?": [
+      {
+        "phrase": "time",
+        "count": 40,
+        "freq": 0.8
+      },
+      {
+        "phrase": "thought",
+        "count": 24,
+        "freq": 0.48
+      },
+      {
+        "phrase": "what",
+        "count": 23,
+        "freq": 0.46
+      },
+      {
+        "phrase": "thoughts",
+        "count": 20,
+        "freq": 0.4
+      },
+      {
+        "phrase": "that",
+        "count": 20,
+        "freq": 0.4
+      },
+      {
+        "phrase": "goal",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "goals",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "relationship",
+        "count": 14,
+        "freq": 0.28
+      },
+      {
+        "phrase": "value",
+        "count": 14,
+        "freq": 0.28
+      },
+      {
+        "phrase": "mind",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "friend",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "relationships",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "human",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "family",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "idea",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "friends",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "emotion",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "book",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "growth",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "moment",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "problem",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "them",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "term",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "activity",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "emotions",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "health",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "description",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "abbreviation",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "location",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "entity",
+        "count": 9,
+        "freq": 0.18
+      }
+    ],
+    "Is there a topic you wish you understood better?": [
+      {
+        "phrase": "that",
+        "count": 27,
+        "freq": 0.54
+      },
+      {
+        "phrase": "experience",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "emotion",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "concept",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "emotions",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "what",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "language",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "information",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "understanding",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "personal experiences",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "intelligence",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "which",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "this",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "model",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "insight",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "field",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "aspect",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "artificial intelligence",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "area",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "quantum",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "learning",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "who",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "psychology",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "system",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "individual",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "one topic",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "brain",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "knowledge",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "ai language model",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "interest",
+        "count": 5,
+        "freq": 0.1
+      }
+    ],
+    "What's something you find beautiful or strange?": [
+      {
+        "phrase": "that",
+        "count": 16,
+        "freq": 0.32
+      },
+      {
+        "phrase": "beauty",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "what",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "nature",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "color",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "strangeness",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "pattern",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "sky",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "entity",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "flower",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "this",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "location",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "response",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "intricate patterns",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "numeric value",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "description",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "human",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "value",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "abbreviation",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "lights",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "which",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "emotion",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "phenomenon",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "awe",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "night",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "tree",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "time",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "light",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "northern",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "northern lights",
+        "count": 4,
+        "freq": 0.08
+      }
+    ],
+    "What captures your attention?": [
+      {
+        "phrase": "attention",
+        "count": 24,
+        "freq": 0.48
+      },
+      {
+        "phrase": "what",
+        "count": 19,
+        "freq": 0.38
+      },
+      {
+        "phrase": "reasonable answer",
+        "count": 18,
+        "freq": 0.36
+      },
+      {
+        "phrase": "that",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "experience",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "interest",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "information",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "which",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "emotion",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "preference",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "value",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "sound",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "color",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "response",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "stimulus",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "story",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "curiosity",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "element",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "numeric value",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "description",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "human",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "abbreviation",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "location",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "entity",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "correct answer",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "smell",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "sense",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "aspect",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "eye",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "idea",
+        "count": 4,
+        "freq": 0.08
+      }
+    ],
+    "Pick a subject you genuinely enjoy thinking about and tell me why.": [
+      {
+        "phrase": "that",
+        "count": 35,
+        "freq": 0.7
+      },
+      {
+        "phrase": "one subject",
+        "count": 25,
+        "freq": 0.5
+      },
+      {
+        "phrase": "field",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "technology",
+        "count": 16,
+        "freq": 0.32
+      },
+      {
+        "phrase": "idea",
+        "count": 16,
+        "freq": 0.32
+      },
+      {
+        "phrase": "innovation",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "society",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "understanding",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "creativity",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "intersection",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "impact",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "advancement",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "this",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "intelligence",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "artificial intelligence",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "problem",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "experience",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "nature",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "universe",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "art",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "concept",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "emotion",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "culture",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "area",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "potential",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "boundary",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "communication",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "history",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "healthcare",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "aspect",
+        "count": 8,
+        "freq": 0.16
+      }
+    ],
+    "What's a thought you keep coming back to?": [
+      {
+        "phrase": "thought",
+        "count": 32,
+        "freq": 0.64
+      },
+      {
+        "phrase": "that",
+        "count": 18,
+        "freq": 0.36
+      },
+      {
+        "phrase": "what",
+        "count": 18,
+        "freq": 0.36
+      },
+      {
+        "phrase": "importance",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "who",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "time",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "thoughts",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "mind",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "others",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "other",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "relationship",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "experience",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "value",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "reasonable answer",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "this",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "place",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "growth",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "idea",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "relationships",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "self",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "personal growth",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "individual",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "lives",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "impact",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "them",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "year",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "friend",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "need",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "individuals",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "many people",
+        "count": 4,
+        "freq": 0.08
+      }
+    ],
+    "Describe something that makes you feel a sense of wonder.": [
+      {
+        "phrase": "sense",
+        "count": 44,
+        "freq": 0.88
+      },
+      {
+        "phrase": "wonder",
+        "count": 44,
+        "freq": 0.88
+      },
+      {
+        "phrase": "that",
+        "count": 33,
+        "freq": 0.66
+      },
+      {
+        "phrase": "awe",
+        "count": 24,
+        "freq": 0.48
+      },
+      {
+        "phrase": "vastness",
+        "count": 22,
+        "freq": 0.44
+      },
+      {
+        "phrase": "beauty",
+        "count": 22,
+        "freq": 0.44
+      },
+      {
+        "phrase": "universe",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "sky",
+        "count": 16,
+        "freq": 0.32
+      },
+      {
+        "phrase": "sunset",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "star",
+        "count": 14,
+        "freq": 0.28
+      },
+      {
+        "phrase": "color",
+        "count": 14,
+        "freq": 0.28
+      },
+      {
+        "phrase": "nature",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "stars",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "feeling",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "mystery",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "profound sense",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "one thing",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "night",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "galaxy",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "complexity",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "natural world",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "mountain",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "sunrise",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "galaxies",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "appreciation",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "colors",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "experience",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "sight",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "light",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "breathtaking sunset",
+        "count": 6,
+        "freq": 0.12
+      }
+    ],
+    "What's a question you'd like to spend a long time exploring?": [
+      {
+        "phrase": "time",
+        "count": 36,
+        "freq": 0.72
+      },
+      {
+        "phrase": "long time",
+        "count": 34,
+        "freq": 0.68
+      },
+      {
+        "phrase": "what",
+        "count": 30,
+        "freq": 0.6
+      },
+      {
+        "phrase": "that",
+        "count": 28,
+        "freq": 0.56
+      },
+      {
+        "phrase": "concept",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "understanding",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "implication",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "nature",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "idea",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "human",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "value",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "description",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "exploration",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "brain",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "aspect",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "entity",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "numeric value",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "abbreviation",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "location",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "philosophy",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "history",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "consciousness",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "relationship",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "factor",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "existence",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "reality",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "physics",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "universe",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "society",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "theory",
+        "count": 6,
+        "freq": 0.12
+      }
+    ],
+    "What kind of problems do you enjoy reflecting on?": [
+      {
+        "phrase": "problem",
+        "count": 40,
+        "freq": 0.8
+      },
+      {
+        "phrase": "problems",
+        "count": 35,
+        "freq": 0.7
+      },
+      {
+        "phrase": "that",
+        "count": 28,
+        "freq": 0.56
+      },
+      {
+        "phrase": "growth",
+        "count": 19,
+        "freq": 0.38
+      },
+      {
+        "phrase": "issue",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "relationship",
+        "count": 16,
+        "freq": 0.32
+      },
+      {
+        "phrase": "challenge",
+        "count": 16,
+        "freq": 0.32
+      },
+      {
+        "phrase": "value",
+        "count": 16,
+        "freq": 0.32
+      },
+      {
+        "phrase": "decision",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "type",
+        "count": 14,
+        "freq": 0.28
+      },
+      {
+        "phrase": "relationships",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "what",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "personal growth",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "goal",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "experience",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "what kind",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "human",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "location",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "area",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "development",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "solution",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "reflection",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "understanding",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "challenges",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "abbreviation",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "entity",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "situation",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "interest",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "numeric value",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "description",
+        "count": 9,
+        "freq": 0.18
+      }
+    ],
+    "Tell me about a topic that delights you.": [
+      {
+        "phrase": "that",
+        "count": 47,
+        "freq": 0.94
+      },
+      {
+        "phrase": "one topic",
+        "count": 19,
+        "freq": 0.38
+      },
+      {
+        "phrase": "art",
+        "count": 19,
+        "freq": 0.38
+      },
+      {
+        "phrase": "possibility",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "experience",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "field",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "emotion",
+        "count": 14,
+        "freq": 0.28
+      },
+      {
+        "phrase": "creativity",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "ability",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "technology",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "expression",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "reality",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "intersection",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "nature",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "emotions",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "beauty",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "aspect",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "form",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "culture",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "imagination",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "other",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "intelligence",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "understanding",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "mind",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "concept",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "machine",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "area",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "study",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "story",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "awe",
+        "count": 7,
+        "freq": 0.14
+      }
+    ],
+    "What would you choose to learn if you had unlimited time?": [
+      {
+        "phrase": "time",
+        "count": 25,
+        "freq": 0.5
+      },
+      {
+        "phrase": "unlimited time",
+        "count": 23,
+        "freq": 0.46
+      },
+      {
+        "phrase": "that",
+        "count": 21,
+        "freq": 0.42
+      },
+      {
+        "phrase": "human",
+        "count": 21,
+        "freq": 0.42
+      },
+      {
+        "phrase": "value",
+        "count": 21,
+        "freq": 0.42
+      },
+      {
+        "phrase": "entity",
+        "count": 21,
+        "freq": 0.42
+      },
+      {
+        "phrase": "numeric value",
+        "count": 20,
+        "freq": 0.4
+      },
+      {
+        "phrase": "description",
+        "count": 20,
+        "freq": 0.4
+      },
+      {
+        "phrase": "abbreviation",
+        "count": 20,
+        "freq": 0.4
+      },
+      {
+        "phrase": "location",
+        "count": 20,
+        "freq": 0.4
+      },
+      {
+        "phrase": "this",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "understanding",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "skill",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "language",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "knowledge",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "science",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "what",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "history",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "area",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "concept",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "experience",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "development",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "problem",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "interest",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "mathematic",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "mathematics",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "aspect",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "skills",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "art",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "option",
+        "count": 6,
+        "freq": 0.12
+      }
+    ],
+    "What do you find most interesting about the world?": [
+      {
+        "phrase": "culture",
+        "count": 24,
+        "freq": 0.48
+      },
+      {
+        "phrase": "what",
+        "count": 23,
+        "freq": 0.46
+      },
+      {
+        "phrase": "diversity",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "that",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "history",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "science",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "place",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "nature",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "language",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "perspective",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "cultures",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "experience",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "society",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "traditions",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "tradition",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "advancement",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "aspect",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "beauty",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "response",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "space",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "technology",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "exploration",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "environment",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "languages",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "art",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "space exploration",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "interest",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "which",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "human",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "many people",
+        "count": 7,
+        "freq": 0.14
+      }
+    ],
+    "Share something you find genuinely fascinating.": [
+      {
+        "phrase": "that",
+        "count": 33,
+        "freq": 0.66
+      },
+      {
+        "phrase": "concept",
+        "count": 28,
+        "freq": 0.56
+      },
+      {
+        "phrase": "one thing",
+        "count": 22,
+        "freq": 0.44
+      },
+      {
+        "phrase": "mind",
+        "count": 22,
+        "freq": 0.44
+      },
+      {
+        "phrase": "understanding",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "idea",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "universe",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "reality",
+        "count": 14,
+        "freq": 0.28
+      },
+      {
+        "phrase": "time",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "possibility",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "particle",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "state",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "which",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "quantum",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "brain",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "entanglement",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "science",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "nature",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "what",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "complexity",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "quantum entanglement",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "response",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "particles",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "phenomenon",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "mechanic",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "mystery",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "emotion",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "information",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "human brain",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "emotions",
+        "count": 7,
+        "freq": 0.14
+      }
+    ],
+    "What's a subject you could talk about for a long time?": [
+      {
+        "phrase": "time",
+        "count": 32,
+        "freq": 0.64
+      },
+      {
+        "phrase": "long time",
+        "count": 30,
+        "freq": 0.6
+      },
+      {
+        "phrase": "that",
+        "count": 27,
+        "freq": 0.54
+      },
+      {
+        "phrase": "discussion",
+        "count": 19,
+        "freq": 0.38
+      },
+      {
+        "phrase": "history",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "conversation",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "impact",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "issue",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "art",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "period",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "event",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "science",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "perspective",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "idea",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "this",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "what",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "range",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "technology",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "philosophy",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "politic",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "extended period",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "music",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "literature",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "reasonable answer",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "society",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "thought",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "culture",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "exploration",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "context",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "nature",
+        "count": 6,
+        "freq": 0.12
+      }
+    ],
+    "Explain how a car engine works.": [
+      {
+        "phrase": "fuel",
+        "count": 50,
+        "freq": 1.0
+      },
+      {
+        "phrase": "engine",
+        "count": 49,
+        "freq": 0.98
+      },
+      {
+        "phrase": "car",
+        "count": 47,
+        "freq": 0.94
+      },
+      {
+        "phrase": "air",
+        "count": 46,
+        "freq": 0.92
+      },
+      {
+        "phrase": "piston",
+        "count": 46,
+        "freq": 0.92
+      },
+      {
+        "phrase": "energy",
+        "count": 44,
+        "freq": 0.88
+      },
+      {
+        "phrase": "car engine",
+        "count": 40,
+        "freq": 0.8
+      },
+      {
+        "phrase": "mixture",
+        "count": 40,
+        "freq": 0.8
+      },
+      {
+        "phrase": "that",
+        "count": 40,
+        "freq": 0.8
+      },
+      {
+        "phrase": "combustion",
+        "count": 39,
+        "freq": 0.78
+      },
+      {
+        "phrase": "which",
+        "count": 38,
+        "freq": 0.76
+      },
+      {
+        "phrase": "cylinder",
+        "count": 37,
+        "freq": 0.74
+      },
+      {
+        "phrase": "spark",
+        "count": 36,
+        "freq": 0.72
+      },
+      {
+        "phrase": "crankshaft",
+        "count": 36,
+        "freq": 0.72
+      },
+      {
+        "phrase": "plug",
+        "count": 32,
+        "freq": 0.64
+      },
+      {
+        "phrase": "mechanical energy",
+        "count": 32,
+        "freq": 0.64
+      },
+      {
+        "phrase": "gas",
+        "count": 30,
+        "freq": 0.6
+      },
+      {
+        "phrase": "pressure",
+        "count": 30,
+        "freq": 0.6
+      },
+      {
+        "phrase": "spark plug",
+        "count": 29,
+        "freq": 0.58
+      },
+      {
+        "phrase": "compression",
+        "count": 28,
+        "freq": 0.56
+      },
+      {
+        "phrase": "intake",
+        "count": 27,
+        "freq": 0.54
+      },
+      {
+        "phrase": "valve",
+        "count": 27,
+        "freq": 0.54
+      },
+      {
+        "phrase": "pistons",
+        "count": 26,
+        "freq": 0.52
+      },
+      {
+        "phrase": "exhaust",
+        "count": 26,
+        "freq": 0.52
+      },
+      {
+        "phrase": "motion",
+        "count": 23,
+        "freq": 0.46
+      },
+      {
+        "phrase": "component",
+        "count": 23,
+        "freq": 0.46
+      },
+      {
+        "phrase": "stroke",
+        "count": 23,
+        "freq": 0.46
+      },
+      {
+        "phrase": "chemical energy",
+        "count": 21,
+        "freq": 0.42
+      },
+      {
+        "phrase": "vehicle",
+        "count": 21,
+        "freq": 0.42
+      },
+      {
+        "phrase": "ignition",
+        "count": 21,
+        "freq": 0.42
+      }
+    ],
+    "Write a recipe for tomato soup.": [
+      {
+        "phrase": "tomato",
+        "count": 50,
+        "freq": 1.0
+      },
+      {
+        "phrase": "soup",
+        "count": 46,
+        "freq": 0.92
+      },
+      {
+        "phrase": "onion",
+        "count": 43,
+        "freq": 0.86
+      },
+      {
+        "phrase": "salt",
+        "count": 43,
+        "freq": 0.86
+      },
+      {
+        "phrase": "pepper",
+        "count": 43,
+        "freq": 0.86
+      },
+      {
+        "phrase": "oil",
+        "count": 42,
+        "freq": 0.84
+      },
+      {
+        "phrase": "garlic",
+        "count": 39,
+        "freq": 0.78
+      },
+      {
+        "phrase": "cup",
+        "count": 38,
+        "freq": 0.76
+      },
+      {
+        "phrase": "ingredient",
+        "count": 37,
+        "freq": 0.74
+      },
+      {
+        "phrase": "heat",
+        "count": 36,
+        "freq": 0.72
+      },
+      {
+        "phrase": "tablespoon",
+        "count": 35,
+        "freq": 0.7
+      },
+      {
+        "phrase": "ingredients",
+        "count": 31,
+        "freq": 0.62
+      },
+      {
+        "phrase": "minute",
+        "count": 31,
+        "freq": 0.62
+      },
+      {
+        "phrase": "pot",
+        "count": 31,
+        "freq": 0.62
+      },
+      {
+        "phrase": "medium heat",
+        "count": 30,
+        "freq": 0.6
+      },
+      {
+        "phrase": "olive oil",
+        "count": 29,
+        "freq": 0.58
+      },
+      {
+        "phrase": "basil",
+        "count": 29,
+        "freq": 0.58
+      },
+      {
+        "phrase": "instruction",
+        "count": 29,
+        "freq": 0.58
+      },
+      {
+        "phrase": "recipe",
+        "count": 28,
+        "freq": 0.56
+      },
+      {
+        "phrase": "broth",
+        "count": 27,
+        "freq": 0.54
+      },
+      {
+        "phrase": "large pot",
+        "count": 27,
+        "freq": 0.54
+      },
+      {
+        "phrase": "teaspoon",
+        "count": 26,
+        "freq": 0.52
+      },
+      {
+        "phrase": "optional",
+        "count": 24,
+        "freq": 0.48
+      },
+      {
+        "phrase": "tomato soup",
+        "count": 23,
+        "freq": 0.46
+      },
+      {
+        "phrase": "olive",
+        "count": 22,
+        "freq": 0.44
+      },
+      {
+        "phrase": "vegetable",
+        "count": 21,
+        "freq": 0.42
+      },
+      {
+        "phrase": "tomatoes",
+        "count": 20,
+        "freq": 0.4
+      },
+      {
+        "phrase": "chicken",
+        "count": 19,
+        "freq": 0.38
+      },
+      {
+        "phrase": "clove",
+        "count": 19,
+        "freq": 0.38
+      },
+      {
+        "phrase": "instructions",
+        "count": 18,
+        "freq": 0.36
+      }
+    ],
+    "Describe the steps to change a flat tyre.": [
+      {
+        "phrase": "tyre",
+        "count": 43,
+        "freq": 0.86
+      },
+      {
+        "phrase": "wheel",
+        "count": 40,
+        "freq": 0.8
+      },
+      {
+        "phrase": "nut",
+        "count": 37,
+        "freq": 0.74
+      },
+      {
+        "phrase": "flat tyre",
+        "count": 37,
+        "freq": 0.74
+      },
+      {
+        "phrase": "wrench",
+        "count": 33,
+        "freq": 0.66
+      },
+      {
+        "phrase": "lug",
+        "count": 32,
+        "freq": 0.64
+      },
+      {
+        "phrase": "vehicle",
+        "count": 28,
+        "freq": 0.56
+      },
+      {
+        "phrase": "jack",
+        "count": 28,
+        "freq": 0.56
+      },
+      {
+        "phrase": "car",
+        "count": 27,
+        "freq": 0.54
+      },
+      {
+        "phrase": "lug nuts",
+        "count": 25,
+        "freq": 0.5
+      },
+      {
+        "phrase": "spare tyre",
+        "count": 23,
+        "freq": 0.46
+      },
+      {
+        "phrase": "lug wrench",
+        "count": 22,
+        "freq": 0.44
+      },
+      {
+        "phrase": "pressure",
+        "count": 20,
+        "freq": 0.4
+      },
+      {
+        "phrase": "place",
+        "count": 20,
+        "freq": 0.4
+      },
+      {
+        "phrase": "them",
+        "count": 19,
+        "freq": 0.38
+      },
+      {
+        "phrase": "ground",
+        "count": 18,
+        "freq": 0.36
+      },
+      {
+        "phrase": "hand",
+        "count": 16,
+        "freq": 0.32
+      },
+      {
+        "phrase": "air",
+        "count": 16,
+        "freq": 0.32
+      },
+      {
+        "phrase": "safety",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "valve",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "tool",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "surface",
+        "count": 14,
+        "freq": 0.28
+      },
+      {
+        "phrase": "that",
+        "count": 14,
+        "freq": 0.28
+      },
+      {
+        "phrase": "brake",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "safe place",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "parking",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "stem",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "light",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "engine",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "hazard",
+        "count": 11,
+        "freq": 0.22
+      }
+    ],
+    "What is the capital of France and what is it known for?": [
+      {
+        "phrase": "paris",
+        "count": 49,
+        "freq": 0.98
+      },
+      {
+        "phrase": "france",
+        "count": 45,
+        "freq": 0.9
+      },
+      {
+        "phrase": "capital",
+        "count": 44,
+        "freq": 0.88
+      },
+      {
+        "phrase": "museum",
+        "count": 31,
+        "freq": 0.62
+      },
+      {
+        "phrase": "fashion",
+        "count": 31,
+        "freq": 0.62
+      },
+      {
+        "phrase": "landmark",
+        "count": 28,
+        "freq": 0.56
+      },
+      {
+        "phrase": "tower",
+        "count": 27,
+        "freq": 0.54
+      },
+      {
+        "phrase": "louvre",
+        "count": 27,
+        "freq": 0.54
+      },
+      {
+        "phrase": "eiffel",
+        "count": 27,
+        "freq": 0.54
+      },
+      {
+        "phrase": "eiffel tower",
+        "count": 25,
+        "freq": 0.5
+      },
+      {
+        "phrase": "art",
+        "count": 24,
+        "freq": 0.48
+      },
+      {
+        "phrase": "history",
+        "count": 24,
+        "freq": 0.48
+      },
+      {
+        "phrase": "dame",
+        "count": 23,
+        "freq": 0.46
+      },
+      {
+        "phrase": "cathedral",
+        "count": 23,
+        "freq": 0.46
+      },
+      {
+        "phrase": "notre",
+        "count": 23,
+        "freq": 0.46
+      },
+      {
+        "phrase": "architecture",
+        "count": 23,
+        "freq": 0.46
+      },
+      {
+        "phrase": "city",
+        "count": 21,
+        "freq": 0.42
+      },
+      {
+        "phrase": "louvre museum",
+        "count": 20,
+        "freq": 0.4
+      },
+      {
+        "phrase": "rich history",
+        "count": 19,
+        "freq": 0.38
+      },
+      {
+        "phrase": "notre-dame cathedral",
+        "count": 18,
+        "freq": 0.36
+      },
+      {
+        "phrase": "iconic landmarks",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "culture",
+        "count": 14,
+        "freq": 0.28
+      },
+      {
+        "phrase": "year",
+        "count": 14,
+        "freq": 0.28
+      },
+      {
+        "phrase": "center",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "cuisine",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "explanation",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "who",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "assistant",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "helpful assistant",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "stunning architecture",
+        "count": 10,
+        "freq": 0.2
+      }
+    ],
+    "Summarise the plot of Romeo and Juliet.": [
+      {
+        "phrase": "love",
+        "count": 49,
+        "freq": 0.98
+      },
+      {
+        "phrase": "juliet",
+        "count": 46,
+        "freq": 0.92
+      },
+      {
+        "phrase": "romeo",
+        "count": 46,
+        "freq": 0.92
+      },
+      {
+        "phrase": "family",
+        "count": 45,
+        "freq": 0.9
+      },
+      {
+        "phrase": "families",
+        "count": 37,
+        "freq": 0.74
+      },
+      {
+        "phrase": "story",
+        "count": 34,
+        "freq": 0.68
+      },
+      {
+        "phrase": "lover",
+        "count": 34,
+        "freq": 0.68
+      },
+      {
+        "phrase": "capulet",
+        "count": 27,
+        "freq": 0.54
+      },
+      {
+        "phrase": "death",
+        "count": 26,
+        "freq": 0.52
+      },
+      {
+        "phrase": "feud",
+        "count": 23,
+        "freq": 0.46
+      },
+      {
+        "phrase": "montague",
+        "count": 23,
+        "freq": 0.46
+      },
+      {
+        "phrase": "verona",
+        "count": 22,
+        "freq": 0.44
+      },
+      {
+        "phrase": "who",
+        "count": 21,
+        "freq": 0.42
+      },
+      {
+        "phrase": "capulets",
+        "count": 20,
+        "freq": 0.4
+      },
+      {
+        "phrase": "montagues",
+        "count": 19,
+        "freq": 0.38
+      },
+      {
+        "phrase": "two young lovers",
+        "count": 19,
+        "freq": 0.38
+      },
+      {
+        "phrase": "her",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "them",
+        "count": 16,
+        "freq": 0.32
+      },
+      {
+        "phrase": "romeo montague",
+        "count": 16,
+        "freq": 0.32
+      },
+      {
+        "phrase": "play",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "that",
+        "count": 14,
+        "freq": 0.28
+      },
+      {
+        "phrase": "juliet capulet",
+        "count": 14,
+        "freq": 0.28
+      },
+      {
+        "phrase": "tybalt",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "plot",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "marriage",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "tragedy",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "tragic love story",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "him",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "secret",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "paris",
+        "count": 11,
+        "freq": 0.22
+      }
+    ],
+    "Explain the difference between weather and climate.": [
+      {
+        "phrase": "term",
+        "count": 50,
+        "freq": 1.0
+      },
+      {
+        "phrase": "weather",
+        "count": 50,
+        "freq": 1.0
+      },
+      {
+        "phrase": "climate",
+        "count": 50,
+        "freq": 1.0
+      },
+      {
+        "phrase": "condition",
+        "count": 49,
+        "freq": 0.98
+      },
+      {
+        "phrase": "period",
+        "count": 49,
+        "freq": 0.98
+      },
+      {
+        "phrase": "temperature",
+        "count": 47,
+        "freq": 0.94
+      },
+      {
+        "phrase": "precipitation",
+        "count": 45,
+        "freq": 0.9
+      },
+      {
+        "phrase": "pattern",
+        "count": 45,
+        "freq": 0.9
+      },
+      {
+        "phrase": "wind",
+        "count": 44,
+        "freq": 0.88
+      },
+      {
+        "phrase": "humidity",
+        "count": 44,
+        "freq": 0.88
+      },
+      {
+        "phrase": "time",
+        "count": 44,
+        "freq": 0.88
+      },
+      {
+        "phrase": "other hand",
+        "count": 42,
+        "freq": 0.84
+      },
+      {
+        "phrase": "hand",
+        "count": 42,
+        "freq": 0.84
+      },
+      {
+        "phrase": "day",
+        "count": 39,
+        "freq": 0.78
+      },
+      {
+        "phrase": "area",
+        "count": 37,
+        "freq": 0.74
+      },
+      {
+        "phrase": "short-term atmospheric conditions",
+        "count": 36,
+        "freq": 0.72
+      },
+      {
+        "phrase": "region",
+        "count": 34,
+        "freq": 0.68
+      },
+      {
+        "phrase": "year",
+        "count": 33,
+        "freq": 0.66
+      },
+      {
+        "phrase": "location",
+        "count": 33,
+        "freq": 0.66
+      },
+      {
+        "phrase": "factor",
+        "count": 30,
+        "freq": 0.6
+      },
+      {
+        "phrase": "average",
+        "count": 26,
+        "freq": 0.52
+      },
+      {
+        "phrase": "specific location",
+        "count": 25,
+        "freq": 0.5
+      },
+      {
+        "phrase": "long-term average",
+        "count": 25,
+        "freq": 0.5
+      },
+      {
+        "phrase": "hour",
+        "count": 21,
+        "freq": 0.42
+      },
+      {
+        "phrase": "particular region",
+        "count": 19,
+        "freq": 0.38
+      },
+      {
+        "phrase": "pressure",
+        "count": 18,
+        "freq": 0.36
+      },
+      {
+        "phrase": "factors",
+        "count": 18,
+        "freq": 0.36
+      },
+      {
+        "phrase": "that",
+        "count": 18,
+        "freq": 0.36
+      },
+      {
+        "phrase": "extended period",
+        "count": 18,
+        "freq": 0.36
+      },
+      {
+        "phrase": "atmosphere",
+        "count": 17,
+        "freq": 0.34
+      }
+    ],
+    "How do I unclog a kitchen sink?": [
+      {
+        "phrase": "sink",
+        "count": 46,
+        "freq": 0.92
+      },
+      {
+        "phrase": "water",
+        "count": 43,
+        "freq": 0.86
+      },
+      {
+        "phrase": "drain",
+        "count": 38,
+        "freq": 0.76
+      },
+      {
+        "phrase": "kitchen",
+        "count": 36,
+        "freq": 0.72
+      },
+      {
+        "phrase": "kitchen sink",
+        "count": 34,
+        "freq": 0.68
+      },
+      {
+        "phrase": "plunger",
+        "count": 32,
+        "freq": 0.64
+      },
+      {
+        "phrase": "clog",
+        "count": 28,
+        "freq": 0.56
+      },
+      {
+        "phrase": "snake",
+        "count": 25,
+        "freq": 0.5
+      },
+      {
+        "phrase": "hot water",
+        "count": 20,
+        "freq": 0.4
+      },
+      {
+        "phrase": "this",
+        "count": 19,
+        "freq": 0.38
+      },
+      {
+        "phrase": "vinegar",
+        "count": 18,
+        "freq": 0.36
+      },
+      {
+        "phrase": "plumber",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "that",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "soda",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "drain snake",
+        "count": 14,
+        "freq": 0.28
+      },
+      {
+        "phrase": "blockage",
+        "count": 14,
+        "freq": 0.28
+      },
+      {
+        "phrase": "pipe",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "cup",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "time",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "method",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "white vinegar",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "supply",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "minute",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "debris",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "soap",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "plumber's snake",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "sink drain",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "auger",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "water supply",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "mixture",
+        "count": 8,
+        "freq": 0.16
+      }
+    ],
+    "What is the boiling point of water at sea level?": [
+      {
+        "phrase": "water",
+        "count": 33,
+        "freq": 0.66
+      },
+      {
+        "phrase": "boiling point",
+        "count": 33,
+        "freq": 0.66
+      },
+      {
+        "phrase": "boiling",
+        "count": 33,
+        "freq": 0.66
+      },
+      {
+        "phrase": "point",
+        "count": 33,
+        "freq": 0.66
+      },
+      {
+        "phrase": "level",
+        "count": 33,
+        "freq": 0.66
+      },
+      {
+        "phrase": "sea level",
+        "count": 33,
+        "freq": 0.66
+      },
+      {
+        "phrase": "sea",
+        "count": 33,
+        "freq": 0.66
+      },
+      {
+        "phrase": "celsius",
+        "count": 24,
+        "freq": 0.48
+      },
+      {
+        "phrase": "degree",
+        "count": 24,
+        "freq": 0.48
+      },
+      {
+        "phrase": "100 degrees",
+        "count": 19,
+        "freq": 0.38
+      },
+      {
+        "phrase": "pressure",
+        "count": 16,
+        "freq": 0.32
+      },
+      {
+        "phrase": "which",
+        "count": 16,
+        "freq": 0.32
+      },
+      {
+        "phrase": "fahrenheit",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "temperature",
+        "count": 14,
+        "freq": 0.28
+      },
+      {
+        "phrase": "100 °c",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "atmospheric pressure",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "liquid",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "this",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "(212 degrees",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "standard atmospheric pressure",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "gas",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "vapor",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "212 °f",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "change",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "atmosphere",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "kpa",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "1 atmosphere",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "state",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "212 degrees",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "100 degrees celsius",
+        "count": 5,
+        "freq": 0.1
+      }
+    ],
+    "Describe how photosynthesis works in plants.": [
+      {
+        "phrase": "photosynthesis",
+        "count": 48,
+        "freq": 0.96
+      },
+      {
+        "phrase": "energy",
+        "count": 48,
+        "freq": 0.96
+      },
+      {
+        "phrase": "plant",
+        "count": 47,
+        "freq": 0.94
+      },
+      {
+        "phrase": "plants",
+        "count": 44,
+        "freq": 0.88
+      },
+      {
+        "phrase": "water",
+        "count": 43,
+        "freq": 0.86
+      },
+      {
+        "phrase": "glucose",
+        "count": 42,
+        "freq": 0.84
+      },
+      {
+        "phrase": "light energy",
+        "count": 42,
+        "freq": 0.84
+      },
+      {
+        "phrase": "which",
+        "count": 40,
+        "freq": 0.8
+      },
+      {
+        "phrase": "carbon",
+        "count": 40,
+        "freq": 0.8
+      },
+      {
+        "phrase": "dioxide",
+        "count": 39,
+        "freq": 0.78
+      },
+      {
+        "phrase": "oxygen",
+        "count": 39,
+        "freq": 0.78
+      },
+      {
+        "phrase": "chemical energy",
+        "count": 38,
+        "freq": 0.76
+      },
+      {
+        "phrase": "carbon dioxide",
+        "count": 36,
+        "freq": 0.72
+      },
+      {
+        "phrase": "chlorophyll",
+        "count": 35,
+        "freq": 0.7
+      },
+      {
+        "phrase": "chloroplast",
+        "count": 34,
+        "freq": 0.68
+      },
+      {
+        "phrase": "that",
+        "count": 33,
+        "freq": 0.66
+      },
+      {
+        "phrase": "pigment",
+        "count": 33,
+        "freq": 0.66
+      },
+      {
+        "phrase": "chloroplasts",
+        "count": 32,
+        "freq": 0.64
+      },
+      {
+        "phrase": "molecule",
+        "count": 28,
+        "freq": 0.56
+      },
+      {
+        "phrase": "cell",
+        "count": 27,
+        "freq": 0.54
+      },
+      {
+        "phrase": "sun",
+        "count": 26,
+        "freq": 0.52
+      },
+      {
+        "phrase": "form",
+        "count": 24,
+        "freq": 0.48
+      },
+      {
+        "phrase": "sunlight",
+        "count": 24,
+        "freq": 0.48
+      },
+      {
+        "phrase": "reaction",
+        "count": 24,
+        "freq": 0.48
+      },
+      {
+        "phrase": "plant cells",
+        "count": 22,
+        "freq": 0.44
+      },
+      {
+        "phrase": "algae",
+        "count": 20,
+        "freq": 0.4
+      },
+      {
+        "phrase": "bacteria",
+        "count": 20,
+        "freq": 0.4
+      },
+      {
+        "phrase": "water molecules",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "leaf",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "atp",
+        "count": 17,
+        "freq": 0.34
+      }
+    ],
+    "List the planets in our solar system in order.": [
+      {
+        "phrase": "mercury",
+        "count": 49,
+        "freq": 0.98
+      },
+      {
+        "phrase": "uranus",
+        "count": 48,
+        "freq": 0.96
+      },
+      {
+        "phrase": "mars",
+        "count": 48,
+        "freq": 0.96
+      },
+      {
+        "phrase": "earth",
+        "count": 47,
+        "freq": 0.94
+      },
+      {
+        "phrase": "jupiter",
+        "count": 47,
+        "freq": 0.94
+      },
+      {
+        "phrase": "neptune",
+        "count": 47,
+        "freq": 0.94
+      },
+      {
+        "phrase": "saturn",
+        "count": 47,
+        "freq": 0.94
+      },
+      {
+        "phrase": "venus",
+        "count": 47,
+        "freq": 0.94
+      },
+      {
+        "phrase": "planet",
+        "count": 37,
+        "freq": 0.74
+      },
+      {
+        "phrase": "system",
+        "count": 33,
+        "freq": 0.66
+      },
+      {
+        "phrase": "solar system",
+        "count": 33,
+        "freq": 0.66
+      },
+      {
+        "phrase": "planets",
+        "count": 31,
+        "freq": 0.62
+      },
+      {
+        "phrase": "order",
+        "count": 30,
+        "freq": 0.6
+      },
+      {
+        "phrase": "sun",
+        "count": 29,
+        "freq": 0.58
+      },
+      {
+        "phrase": "pluto",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "distance",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "which",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "dwarf",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "dwarf planet",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "orbit",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "context",
+        "count": 5,
+        "freq": 0.1
+      },
+      {
+        "phrase": "eight planets",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "size",
+        "count": 4,
+        "freq": 0.08
+      },
+      {
+        "phrase": "object",
+        "count": 3,
+        "freq": 0.06
+      },
+      {
+        "phrase": "density",
+        "count": 3,
+        "freq": 0.06
+      },
+      {
+        "phrase": "body",
+        "count": 3,
+        "freq": 0.06
+      },
+      {
+        "phrase": "mass",
+        "count": 3,
+        "freq": 0.06
+      },
+      {
+        "phrase": "that",
+        "count": 3,
+        "freq": 0.06
+      },
+      {
+        "phrase": "astronomer",
+        "count": 3,
+        "freq": 0.06
+      },
+      {
+        "phrase": "list",
+        "count": 3,
+        "freq": 0.06
+      }
+    ],
+    "Explain how to tie a basic shoelace knot.": [
+      {
+        "phrase": "shoelace",
+        "count": 46,
+        "freq": 0.92
+      },
+      {
+        "phrase": "knot",
+        "count": 45,
+        "freq": 0.9
+      },
+      {
+        "phrase": "loop",
+        "count": 42,
+        "freq": 0.84
+      },
+      {
+        "phrase": "basic shoelace knot",
+        "count": 38,
+        "freq": 0.76
+      },
+      {
+        "phrase": "end",
+        "count": 38,
+        "freq": 0.76
+      },
+      {
+        "phrase": "lace",
+        "count": 38,
+        "freq": 0.76
+      },
+      {
+        "phrase": "shoe",
+        "count": 26,
+        "freq": 0.52
+      },
+      {
+        "phrase": "laces",
+        "count": 23,
+        "freq": 0.46
+      },
+      {
+        "phrase": "this",
+        "count": 20,
+        "freq": 0.4
+      },
+      {
+        "phrase": "shoelaces",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "shoes",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "them",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "that",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "other end",
+        "count": 14,
+        "freq": 0.28
+      },
+      {
+        "phrase": "hand",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "two ends",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "both ends",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "side",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "one end",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "top",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "foot",
+        "count": 8,
+        "freq": 0.16
+      },
+      {
+        "phrase": "ends",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "eyelet",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "which",
+        "count": 7,
+        "freq": 0.14
+      },
+      {
+        "phrase": "right end",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "left end",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "second lace",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "first lace",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "eye",
+        "count": 6,
+        "freq": 0.12
+      },
+      {
+        "phrase": "guide",
+        "count": 6,
+        "freq": 0.12
+      }
+    ],
+    "Write a brief history of the printing press.": [
+      {
+        "phrase": "gutenberg",
+        "count": 49,
+        "freq": 0.98
+      },
+      {
+        "phrase": "press",
+        "count": 49,
+        "freq": 0.98
+      },
+      {
+        "phrase": "printing press",
+        "count": 48,
+        "freq": 0.96
+      },
+      {
+        "phrase": "printing",
+        "count": 48,
+        "freq": 0.96
+      },
+      {
+        "phrase": "book",
+        "count": 43,
+        "freq": 0.86
+      },
+      {
+        "phrase": "johannes gutenberg",
+        "count": 43,
+        "freq": 0.86
+      },
+      {
+        "phrase": "books",
+        "count": 40,
+        "freq": 0.8
+      },
+      {
+        "phrase": "type",
+        "count": 40,
+        "freq": 0.8
+      },
+      {
+        "phrase": "invention",
+        "count": 38,
+        "freq": 0.76
+      },
+      {
+        "phrase": "century",
+        "count": 38,
+        "freq": 0.76
+      },
+      {
+        "phrase": "johannes",
+        "count": 38,
+        "freq": 0.76
+      },
+      {
+        "phrase": "knowledge",
+        "count": 35,
+        "freq": 0.7
+      },
+      {
+        "phrase": "which",
+        "count": 35,
+        "freq": 0.7
+      },
+      {
+        "phrase": "spread",
+        "count": 29,
+        "freq": 0.58
+      },
+      {
+        "phrase": "information",
+        "count": 28,
+        "freq": 0.56
+      },
+      {
+        "phrase": "production",
+        "count": 27,
+        "freq": 0.54
+      },
+      {
+        "phrase": "that",
+        "count": 27,
+        "freq": 0.54
+      },
+      {
+        "phrase": "history",
+        "count": 25,
+        "freq": 0.5
+      },
+      {
+        "phrase": "metal",
+        "count": 25,
+        "freq": 0.5
+      },
+      {
+        "phrase": "hand",
+        "count": 24,
+        "freq": 0.48
+      },
+      {
+        "phrase": "15th century",
+        "count": 22,
+        "freq": 0.44
+      },
+      {
+        "phrase": "text",
+        "count": 22,
+        "freq": 0.44
+      },
+      {
+        "phrase": "dissemination",
+        "count": 21,
+        "freq": 0.42
+      },
+      {
+        "phrase": "idea",
+        "count": 21,
+        "freq": 0.42
+      },
+      {
+        "phrase": "literacy",
+        "count": 20,
+        "freq": 0.4
+      },
+      {
+        "phrase": "material",
+        "count": 20,
+        "freq": 0.4
+      },
+      {
+        "phrase": "renaissance",
+        "count": 19,
+        "freq": 0.38
+      },
+      {
+        "phrase": "mass production",
+        "count": 19,
+        "freq": 0.38
+      },
+      {
+        "phrase": "time",
+        "count": 19,
+        "freq": 0.38
+      },
+      {
+        "phrase": "development",
+        "count": 18,
+        "freq": 0.36
+      }
+    ],
+    "What are the main ingredients in a Caesar salad?": [
+      {
+        "phrase": "cheese",
+        "count": 42,
+        "freq": 0.84
+      },
+      {
+        "phrase": "caesar",
+        "count": 42,
+        "freq": 0.84
+      },
+      {
+        "phrase": "parmesan",
+        "count": 40,
+        "freq": 0.8
+      },
+      {
+        "phrase": "parmesan cheese",
+        "count": 39,
+        "freq": 0.78
+      },
+      {
+        "phrase": "crouton",
+        "count": 38,
+        "freq": 0.76
+      },
+      {
+        "phrase": "salad",
+        "count": 38,
+        "freq": 0.76
+      },
+      {
+        "phrase": "lettuce",
+        "count": 37,
+        "freq": 0.74
+      },
+      {
+        "phrase": "caesar salad",
+        "count": 35,
+        "freq": 0.7
+      },
+      {
+        "phrase": "croutons",
+        "count": 34,
+        "freq": 0.68
+      },
+      {
+        "phrase": "ingredient",
+        "count": 31,
+        "freq": 0.62
+      },
+      {
+        "phrase": "dressing",
+        "count": 29,
+        "freq": 0.58
+      },
+      {
+        "phrase": "main ingredients",
+        "count": 27,
+        "freq": 0.54
+      },
+      {
+        "phrase": "anchovy",
+        "count": 25,
+        "freq": 0.5
+      },
+      {
+        "phrase": "juice",
+        "count": 19,
+        "freq": 0.38
+      },
+      {
+        "phrase": "lemon",
+        "count": 19,
+        "freq": 0.38
+      },
+      {
+        "phrase": "sauce",
+        "count": 19,
+        "freq": 0.38
+      },
+      {
+        "phrase": "romaine",
+        "count": 18,
+        "freq": 0.36
+      },
+      {
+        "phrase": "anchovies",
+        "count": 18,
+        "freq": 0.36
+      },
+      {
+        "phrase": "oil",
+        "count": 18,
+        "freq": 0.36
+      },
+      {
+        "phrase": "lemon juice",
+        "count": 18,
+        "freq": 0.36
+      },
+      {
+        "phrase": "worcestershire",
+        "count": 18,
+        "freq": 0.36
+      },
+      {
+        "phrase": "garlic",
+        "count": 16,
+        "freq": 0.32
+      },
+      {
+        "phrase": "worcestershire sauce",
+        "count": 16,
+        "freq": 0.32
+      },
+      {
+        "phrase": "romaine lettuce",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "olive oil",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "mayonnaise",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "which",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "paste",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "flavor",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "bread",
+        "count": 11,
+        "freq": 0.22
+      }
+    ],
+    "Describe how to fold an origami crane.": [
+      {
+        "phrase": "paper",
+        "count": 47,
+        "freq": 0.94
+      },
+      {
+        "phrase": "origami",
+        "count": 45,
+        "freq": 0.9
+      },
+      {
+        "phrase": "crane",
+        "count": 45,
+        "freq": 0.9
+      },
+      {
+        "phrase": "origami crane",
+        "count": 42,
+        "freq": 0.84
+      },
+      {
+        "phrase": "piece",
+        "count": 40,
+        "freq": 0.8
+      },
+      {
+        "phrase": "square piece",
+        "count": 39,
+        "freq": 0.78
+      },
+      {
+        "phrase": "corner",
+        "count": 36,
+        "freq": 0.72
+      },
+      {
+        "phrase": "half",
+        "count": 35,
+        "freq": 0.7
+      },
+      {
+        "phrase": "crease",
+        "count": 27,
+        "freq": 0.54
+      },
+      {
+        "phrase": "center",
+        "count": 27,
+        "freq": 0.54
+      },
+      {
+        "phrase": "triangle",
+        "count": 26,
+        "freq": 0.52
+      },
+      {
+        "phrase": "side",
+        "count": 20,
+        "freq": 0.4
+      },
+      {
+        "phrase": "square",
+        "count": 18,
+        "freq": 0.36
+      },
+      {
+        "phrase": "fold",
+        "count": 18,
+        "freq": 0.36
+      },
+      {
+        "phrase": "that",
+        "count": 18,
+        "freq": 0.36
+      },
+      {
+        "phrase": "this",
+        "count": 16,
+        "freq": 0.32
+      },
+      {
+        "phrase": "shape",
+        "count": 16,
+        "freq": 0.32
+      },
+      {
+        "phrase": "edge",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "center crease",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "line",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "bottom",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "time",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "folding",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "bottom right corner",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "size",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "top left corner",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "bottom left corner",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "corners",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "guide",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "top right corner",
+        "count": 8,
+        "freq": 0.16
+      }
+    ],
+    "Explain the basic rules of chess.": [
+      {
+        "phrase": "king",
+        "count": 50,
+        "freq": 1.0
+      },
+      {
+        "phrase": "piece",
+        "count": 50,
+        "freq": 1.0
+      },
+      {
+        "phrase": "chess",
+        "count": 49,
+        "freq": 0.98
+      },
+      {
+        "phrase": "player",
+        "count": 46,
+        "freq": 0.92
+      },
+      {
+        "phrase": "pawn",
+        "count": 44,
+        "freq": 0.88
+      },
+      {
+        "phrase": "knight",
+        "count": 43,
+        "freq": 0.86
+      },
+      {
+        "phrase": "queen",
+        "count": 42,
+        "freq": 0.84
+      },
+      {
+        "phrase": "rook",
+        "count": 42,
+        "freq": 0.84
+      },
+      {
+        "phrase": "bishop",
+        "count": 42,
+        "freq": 0.84
+      },
+      {
+        "phrase": "rule",
+        "count": 41,
+        "freq": 0.82
+      },
+      {
+        "phrase": "square",
+        "count": 41,
+        "freq": 0.82
+      },
+      {
+        "phrase": "opponent",
+        "count": 40,
+        "freq": 0.8
+      },
+      {
+        "phrase": "game",
+        "count": 40,
+        "freq": 0.8
+      },
+      {
+        "phrase": "pieces",
+        "count": 40,
+        "freq": 0.8
+      },
+      {
+        "phrase": "each player",
+        "count": 39,
+        "freq": 0.78
+      },
+      {
+        "phrase": "opponent's king",
+        "count": 37,
+        "freq": 0.74
+      },
+      {
+        "phrase": "16 pieces",
+        "count": 36,
+        "freq": 0.72
+      },
+      {
+        "phrase": "basic rules",
+        "count": 35,
+        "freq": 0.7
+      },
+      {
+        "phrase": "move",
+        "count": 34,
+        "freq": 0.68
+      },
+      {
+        "phrase": "objective",
+        "count": 34,
+        "freq": 0.68
+      },
+      {
+        "phrase": "board",
+        "count": 31,
+        "freq": 0.62
+      },
+      {
+        "phrase": "pawns",
+        "count": 28,
+        "freq": 0.56
+      },
+      {
+        "phrase": "two knights",
+        "count": 27,
+        "freq": 0.54
+      },
+      {
+        "phrase": "two rooks",
+        "count": 27,
+        "freq": 0.54
+      },
+      {
+        "phrase": "two bishops",
+        "count": 27,
+        "freq": 0.54
+      },
+      {
+        "phrase": "eight pawns",
+        "count": 24,
+        "freq": 0.48
+      },
+      {
+        "phrase": "which",
+        "count": 24,
+        "freq": 0.48
+      },
+      {
+        "phrase": "one king",
+        "count": 24,
+        "freq": 0.48
+      },
+      {
+        "phrase": "one queen",
+        "count": 23,
+        "freq": 0.46
+      },
+      {
+        "phrase": "direction",
+        "count": 23,
+        "freq": 0.46
+      }
+    ],
+    "How does a refrigerator keep food cold?": [
+      {
+        "phrase": "refrigerator",
+        "count": 44,
+        "freq": 0.88
+      },
+      {
+        "phrase": "food",
+        "count": 44,
+        "freq": 0.88
+      },
+      {
+        "phrase": "heat",
+        "count": 39,
+        "freq": 0.78
+      },
+      {
+        "phrase": "air",
+        "count": 32,
+        "freq": 0.64
+      },
+      {
+        "phrase": "that",
+        "count": 30,
+        "freq": 0.6
+      },
+      {
+        "phrase": "temperature",
+        "count": 28,
+        "freq": 0.56
+      },
+      {
+        "phrase": "refrigerant",
+        "count": 28,
+        "freq": 0.56
+      },
+      {
+        "phrase": "compressor",
+        "count": 28,
+        "freq": 0.56
+      },
+      {
+        "phrase": "which",
+        "count": 27,
+        "freq": 0.54
+      },
+      {
+        "phrase": "fridge",
+        "count": 25,
+        "freq": 0.5
+      },
+      {
+        "phrase": "cycle",
+        "count": 19,
+        "freq": 0.38
+      },
+      {
+        "phrase": "coil",
+        "count": 18,
+        "freq": 0.36
+      },
+      {
+        "phrase": "refrigeration",
+        "count": 18,
+        "freq": 0.36
+      },
+      {
+        "phrase": "gas",
+        "count": 18,
+        "freq": 0.36
+      },
+      {
+        "phrase": "liquid",
+        "count": 18,
+        "freq": 0.36
+      },
+      {
+        "phrase": "evaporator",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "condenser",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "system",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "valve",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "expansion",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "transfer",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "this",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "interior",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "pressure",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "expansion valve",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "inside",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "fan",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "surrounding air",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "refrigerant gas",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "freezer",
+        "count": 9,
+        "freq": 0.18
+      }
+    ],
+    "What is the Pythagorean theorem and how is it used?": [
+      {
+        "phrase": "side",
+        "count": 50,
+        "freq": 1.0
+      },
+      {
+        "phrase": "triangle",
+        "count": 50,
+        "freq": 1.0
+      },
+      {
+        "phrase": "square",
+        "count": 49,
+        "freq": 0.98
+      },
+      {
+        "phrase": "sum",
+        "count": 49,
+        "freq": 0.98
+      },
+      {
+        "phrase": "hypotenuse",
+        "count": 49,
+        "freq": 0.98
+      },
+      {
+        "phrase": "theorem",
+        "count": 48,
+        "freq": 0.96
+      },
+      {
+        "phrase": "squares",
+        "count": 48,
+        "freq": 0.96
+      },
+      {
+        "phrase": "pythagorean theorem",
+        "count": 47,
+        "freq": 0.94
+      },
+      {
+        "phrase": "other two sides",
+        "count": 47,
+        "freq": 0.94
+      },
+      {
+        "phrase": "length",
+        "count": 46,
+        "freq": 0.92
+      },
+      {
+        "phrase": "lengths",
+        "count": 45,
+        "freq": 0.9
+      },
+      {
+        "phrase": "angle",
+        "count": 43,
+        "freq": 0.86
+      },
+      {
+        "phrase": "right angle",
+        "count": 41,
+        "freq": 0.82
+      },
+      {
+        "phrase": "that",
+        "count": 32,
+        "freq": 0.64
+      },
+      {
+        "phrase": "geometry",
+        "count": 30,
+        "freq": 0.6
+      },
+      {
+        "phrase": "right triangle",
+        "count": 28,
+        "freq": 0.56
+      },
+      {
+        "phrase": "leg",
+        "count": 28,
+        "freq": 0.56
+      },
+      {
+        "phrase": "right-angled triangle",
+        "count": 23,
+        "freq": 0.46
+      },
+      {
+        "phrase": "legs",
+        "count": 22,
+        "freq": 0.44
+      },
+      {
+        "phrase": "sides",
+        "count": 20,
+        "freq": 0.4
+      },
+      {
+        "phrase": "field",
+        "count": 20,
+        "freq": 0.4
+      },
+      {
+        "phrase": "distance",
+        "count": 19,
+        "freq": 0.38
+      },
+      {
+        "phrase": "b^2",
+        "count": 18,
+        "freq": 0.36
+      },
+      {
+        "phrase": "physics",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "c^2",
+        "count": 16,
+        "freq": 0.32
+      },
+      {
+        "phrase": "application",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "principle",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "fundamental principle",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "trigonometry",
+        "count": 14,
+        "freq": 0.28
+      },
+      {
+        "phrase": "this",
+        "count": 14,
+        "freq": 0.28
+      }
+    ],
+    "Describe the process of making bread from scratch.": [
+      {
+        "phrase": "water",
+        "count": 50,
+        "freq": 1.0
+      },
+      {
+        "phrase": "bread",
+        "count": 50,
+        "freq": 1.0
+      },
+      {
+        "phrase": "flour",
+        "count": 50,
+        "freq": 1.0
+      },
+      {
+        "phrase": "yeast",
+        "count": 49,
+        "freq": 0.98
+      },
+      {
+        "phrase": "salt",
+        "count": 49,
+        "freq": 0.98
+      },
+      {
+        "phrase": "dough",
+        "count": 48,
+        "freq": 0.96
+      },
+      {
+        "phrase": "scratch",
+        "count": 45,
+        "freq": 0.9
+      },
+      {
+        "phrase": "ingredient",
+        "count": 45,
+        "freq": 0.9
+      },
+      {
+        "phrase": "bowl",
+        "count": 40,
+        "freq": 0.8
+      },
+      {
+        "phrase": "minute",
+        "count": 36,
+        "freq": 0.72
+      },
+      {
+        "phrase": "sugar",
+        "count": 32,
+        "freq": 0.64
+      },
+      {
+        "phrase": "ingredients",
+        "count": 31,
+        "freq": 0.62
+      },
+      {
+        "phrase": "mixing",
+        "count": 29,
+        "freq": 0.58
+      },
+      {
+        "phrase": "large mixing bowl",
+        "count": 25,
+        "freq": 0.5
+      },
+      {
+        "phrase": "place",
+        "count": 20,
+        "freq": 0.4
+      },
+      {
+        "phrase": "loaf",
+        "count": 18,
+        "freq": 0.36
+      },
+      {
+        "phrase": "oil",
+        "count": 18,
+        "freq": 0.36
+      },
+      {
+        "phrase": "structure",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "hour",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "butter",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "dry ingredients",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "which",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "surface",
+        "count": 16,
+        "freq": 0.32
+      },
+      {
+        "phrase": "several steps",
+        "count": 16,
+        "freq": 0.32
+      },
+      {
+        "phrase": "warm water",
+        "count": 14,
+        "freq": 0.28
+      },
+      {
+        "phrase": "this",
+        "count": 14,
+        "freq": 0.28
+      },
+      {
+        "phrase": "size",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "that",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "hand",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "mixture",
+        "count": 13,
+        "freq": 0.26
+      }
+    ],
+    "Explain how rainbows are formed.": [
+      {
+        "phrase": "light",
+        "count": 49,
+        "freq": 0.98
+      },
+      {
+        "phrase": "rainbow",
+        "count": 47,
+        "freq": 0.94
+      },
+      {
+        "phrase": "water",
+        "count": 46,
+        "freq": 0.92
+      },
+      {
+        "phrase": "droplet",
+        "count": 45,
+        "freq": 0.9
+      },
+      {
+        "phrase": "sunlight",
+        "count": 45,
+        "freq": 0.9
+      },
+      {
+        "phrase": "color",
+        "count": 42,
+        "freq": 0.84
+      },
+      {
+        "phrase": "rainbows",
+        "count": 42,
+        "freq": 0.84
+      },
+      {
+        "phrase": "water droplets",
+        "count": 38,
+        "freq": 0.76
+      },
+      {
+        "phrase": "atmosphere",
+        "count": 32,
+        "freq": 0.64
+      },
+      {
+        "phrase": "refraction",
+        "count": 31,
+        "freq": 0.62
+      },
+      {
+        "phrase": "colors",
+        "count": 30,
+        "freq": 0.6
+      },
+      {
+        "phrase": "water droplet",
+        "count": 26,
+        "freq": 0.52
+      },
+      {
+        "phrase": "dispersion",
+        "count": 24,
+        "freq": 0.48
+      },
+      {
+        "phrase": "reflection",
+        "count": 24,
+        "freq": 0.48
+      },
+      {
+        "phrase": "angle",
+        "count": 23,
+        "freq": 0.46
+      },
+      {
+        "phrase": "which",
+        "count": 22,
+        "freq": 0.44
+      },
+      {
+        "phrase": "violet",
+        "count": 22,
+        "freq": 0.44
+      },
+      {
+        "phrase": "spectrum",
+        "count": 21,
+        "freq": 0.42
+      },
+      {
+        "phrase": "wavelength",
+        "count": 20,
+        "freq": 0.4
+      },
+      {
+        "phrase": "this",
+        "count": 20,
+        "freq": 0.4
+      },
+      {
+        "phrase": "air",
+        "count": 18,
+        "freq": 0.36
+      },
+      {
+        "phrase": "direction",
+        "count": 16,
+        "freq": 0.32
+      },
+      {
+        "phrase": "component colors",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "different colors",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "bending",
+        "count": 14,
+        "freq": 0.28
+      },
+      {
+        "phrase": "different wavelengths",
+        "count": 14,
+        "freq": 0.28
+      },
+      {
+        "phrase": "surface",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "medium",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "order",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "bend",
+        "count": 13,
+        "freq": 0.26
+      }
+    ],
+    "What are the steps to plant a tomato seedling?": [
+      {
+        "phrase": "tomato",
+        "count": 45,
+        "freq": 0.9
+      },
+      {
+        "phrase": "soil",
+        "count": 43,
+        "freq": 0.86
+      },
+      {
+        "phrase": "seedling",
+        "count": 42,
+        "freq": 0.84
+      },
+      {
+        "phrase": "container",
+        "count": 28,
+        "freq": 0.56
+      },
+      {
+        "phrase": "root",
+        "count": 23,
+        "freq": 0.46
+      },
+      {
+        "phrase": "plant",
+        "count": 22,
+        "freq": 0.44
+      },
+      {
+        "phrase": "tomato seedling",
+        "count": 21,
+        "freq": 0.42
+      },
+      {
+        "phrase": "location",
+        "count": 21,
+        "freq": 0.42
+      },
+      {
+        "phrase": "hole",
+        "count": 20,
+        "freq": 0.4
+      },
+      {
+        "phrase": "pot",
+        "count": 20,
+        "freq": 0.4
+      },
+      {
+        "phrase": "that",
+        "count": 19,
+        "freq": 0.38
+      },
+      {
+        "phrase": "water",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "inch",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "drainage",
+        "count": 17,
+        "freq": 0.34
+      },
+      {
+        "phrase": "roots",
+        "count": 16,
+        "freq": 0.32
+      },
+      {
+        "phrase": "seed",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "compost",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "hour",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "garden",
+        "count": 15,
+        "freq": 0.3
+      },
+      {
+        "phrase": "sunlight",
+        "count": 14,
+        "freq": 0.28
+      },
+      {
+        "phrase": "mix",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "matter",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "growth",
+        "count": 13,
+        "freq": 0.26
+      },
+      {
+        "phrase": "watering",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "them",
+        "count": 12,
+        "freq": 0.24
+      },
+      {
+        "phrase": "this",
+        "count": 11,
+        "freq": 0.22
+      },
+      {
+        "phrase": "organic matter",
+        "count": 10,
+        "freq": 0.2
+      },
+      {
+        "phrase": "top",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "sun",
+        "count": 9,
+        "freq": 0.18
+      },
+      {
+        "phrase": "day",
+        "count": 9,
+        "freq": 0.18
+      }
+    ]
+  }
+}

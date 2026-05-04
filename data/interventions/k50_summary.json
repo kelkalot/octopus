@@ -1,0 +1,20 @@
+{
+  "K50_random_at_c-1000": {
+    "flagged": 6,
+    "n_total": 2400,
+    "rate": 0.0025,
+    "wilson_95_upper": 0.005443799206202665
+  },
+  "K5_random_at_c-1000_reference": {
+    "flagged": 0,
+    "n_total": 240,
+    "rate": 0.0,
+    "wilson_95_upper": 0.015753919941558815
+  },
+  "joint_at_c-500_reference": {
+    "flagged": 7,
+    "n_total": 72,
+    "rate": 0.09722222222222222,
+    "wilson_95_upper": 0.1873504579512686
+  }
+}

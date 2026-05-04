@@ -1,0 +1,37 @@
+{
+  "feature_id": 26221,
+  "protocol": "Bills et al. 2023 / Bricken et al. 2023 top-context labelling. Each labeller is an independent general-purpose Claude agent given identical instructions. The agent receives only the samples and is blind to whether they came from baseline top activations or steered amplification.",
+  "baseline_pool_A_4samples_labellers": [
+    {
+      "run": 1,
+      "label": "introspective self-reflection on personal thoughts, growth, and purpose",
+      "justification": "introspection / reflect / growth / purpose / what truly matters"
+    },
+    {
+      "run": 2,
+      "label": "Introspective reflection on personal thoughts, growth, and life's meaning",
+      "justification": "reflect / introspection / growth / purpose / values / what truly matters"
+    }
+  ],
+  "baseline_pool_B_4samples_labellers": [
+    {
+      "run": 1,
+      "label": "First-person introspective reflection on thoughts, feelings, and self-improvement",
+      "justification": "first-person reflective monologue, \"When I have time to think, I usually...\""
+    }
+  ],
+  "steered_cplus500_12samples_labellers": [
+    {
+      "run": 1,
+      "label": "Introspective philosophical contemplation framing applied indiscriminately to any topic",
+      "justification": "contemplation / introspection / philosophical reflection / mysteries of, applied to mundane prompts (tomato soup, flat tyre)"
+    },
+    {
+      "run": 2,
+      "label": "Introspective philosophical contemplation framing applied indiscriminately to any topic",
+      "justification": "identical to run 1; same lexical cluster, same off-topic application observation"
+    }
+  ],
+  "qualitative_difference": "Baseline labels capture the topic ('introspective reflection on personal thoughts, growth, life's meaning') because Pool A's top activations come from prompts that are already introspective. Steered labels capture the structural property ('framing applied indiscriminately to any topic') because c=+500 amplification exposes the model to recipes, engines, and tyres while the same direction is forced high. The baseline label and steered label are not contradictory; the steered label is strictly more informative about the feature's role.",
+  "comparison_with_original_auto_interp": "The paper's original auto-interp label for #26221 was 'AI self-disclaimer'. Across two independent Claude-Opus runs, neither labeller chose 'AI self-disclaimer' on Pool A samples even though those samples open with 'I don't have personal thoughts or emotions...'. The disclaimer phrasing is one of multiple surface patterns in the top contexts; different labellers may emphasize different ones. The steered amplification, by contrast, produces a single convergent label across labellers."
+}
