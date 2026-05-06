@@ -97,8 +97,20 @@ Data files (generation samples, intervention outputs, SAE feature rankings) are 
 
 ## Citation
 
-[to do update]
+If you use this work, please cite:
+
+```bibtex
+@misc{riegler2026pairwisematricessparseautoencoders,
+      title={Pairwise matrices for sparse autoencoders: single-feature inspection mislabels causal axes}, 
+      author={Michael A. Riegler and Birk Sebastian Frostelid Torpmann-Hagen},
+      year={2026},
+      eprint={2605.03160},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2605.03160}, 
+}
+```
 
 ## Contact
-
-XXX
+Michael A. Riegler - michael@simula.no
+Birk Torpmann-Hagen - birk@simula.no
