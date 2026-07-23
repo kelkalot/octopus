@@ -4,8 +4,8 @@ The argument in §4.3 of the paper compares single-feature suppression
 at coef=-1000 with joint suppression at coef=-500 and observes that
 they produce nearly identical residual-stream distortion (norm ratio
 ~1.57x and ~1.51x; cosine 0.64 in both cases) but very different output
-coherence. Reviewer A pointed out that this comparison alone doesn't
-rule out an off-manifold reading — two perturbations matched on
+coherence. Reviewer This comparison alone does not
+rule out an off-manifold reading. Two perturbations matched on
 two scalar summaries can still be off-manifold in different ways.
 
 The cleaner test: sample random unit vectors in residual-stream space,
