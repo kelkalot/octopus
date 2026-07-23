@@ -9,17 +9,18 @@ Coefficient sign and magnitude:
 - < 0  = suppression (push residual stream away from the feature direction)
 - > 0  = amplification (push residual stream toward the feature direction)
 
-A typical residual stream norm at layer 20 of Qwen3-1.7B is ~100, so steering
-coefficients in the range ±5 to ±30 give noticeable effects without
-catastrophically degrading output.
+The coefficient scale tracks the residual-stream norm at the steered layer
+(mean over prompt-forward token positions on the six intervention prompts):
+Qwen3-1.7B layer 20 ~1577 (sweep c in +/-1000), Gemma-2-2B-it layer 20 ~772
+(+/-400), Llama-3.1-8B layer 19 ~35 (+/-10).
 
 Usage:
     uv run python src/steer.py \
-        --prompts prompts/introspective_subset.txt \
+        --prompts prompts/intervention_mixed.txt \
         --feature 29108 --layer 20 \
-        --coefficients -30 -15 -7.5 0 7.5 15 \
-        --samples 30 \
-        --out data/interventions/feat29108_suppress.json
+        --coefficients -1000 -500 -250 0 250 500 1000 \
+        --samples 12 \
+        --out data/interventions/feat29108_dose.json
 """
 
 from __future__ import annotations

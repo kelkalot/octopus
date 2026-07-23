@@ -2,11 +2,14 @@
 from off-manifold push.
 
 For a (model, layer, feature_or_features) tuple and a sweep of coefs, forward
-the prompt through the model with the steering hook installed, capture the
-layer-L hidden state at every token position, and compute:
-  - mean norm(h_steered)
+the prompt through the model with the steering hook installed and record,
+via the unified probe (src/geometry.py):
+  - mean norm ratio over prompt-forward positions, and at the last prompt token
   - mean norm(h_steered - h_baseline)  (perturbation magnitude)
   - mean cosine(h_steered, h_baseline) (manifold drift)
+
+The same estimator is used by random_direction_control.py, so the
+matched-geometry rows of the paper share one code path.
 
 Usage:
     uv run python src/norm_probe.py \
@@ -33,6 +36,11 @@ import numpy as np
 import torch
 from sae_lens import SAE
 from transformers import AutoModelForCausalLM, AutoTokenizer
+
+try:
+    from src.geometry import GeometryRecorder, make_steering_hook
+except ImportError:  # invoked as `python src/norm_probe.py`
+    from geometry import GeometryRecorder, make_steering_hook
 
 
 def pick_device() -> str:
@@ -97,49 +105,51 @@ def main() -> None:
         formatted = formatted + args.prefix
     inputs = tok(formatted, return_tensors="pt").to(device)
 
-    steer = {"c": 0.0}
-    captured = {}
+    # Unified steering hook + geometry recorder (same code path as the
+    # random-direction control). At prompt positions the pre-hook state is
+    # the baseline, so within-call pre/post stats equal steered-vs-baseline.
+    state = {"vec": decoder_dir, "coef": 0.0}
+    recorder = GeometryRecorder()
+    handle = model.model.layers[args.layer].register_forward_hook(
+        make_steering_hook(state, recorder)
+    )
 
-    def hook(m, args_, output):
+    # baseline pass (records the unperturbed prompt-position norms)
+    state["coef"] = 0.0
+    recorder.reset()
+    baseline_norms = {}
+
+    def _capture_baseline(m, args_, output):
         h = output[0] if isinstance(output, tuple) else output
-        captured["pre"] = h.detach().clone()
-        if steer["c"] != 0.0:
-            h = h + steer["c"] * decoder_dir
-        captured["post"] = h.detach().clone()
-        return (h,) + output[1:] if isinstance(output, tuple) else h
+        baseline_norms["mean"] = float(h.detach().to(torch.float32).norm(dim=-1).mean())
 
-    handle = model.model.layers[args.layer].register_forward_hook(hook)
-
-    # baseline pass
-    steer["c"] = 0.0
+    tmp = model.model.layers[args.layer].register_forward_hook(_capture_baseline)
     with torch.no_grad():
         _ = model(**inputs)
-    h_base = captured["post"].squeeze(0).to(torch.float32)
-    base_norms = h_base.norm(dim=-1)
-    print(f"[baseline] mean residual norm: {base_norms.mean().item():.2f}, "
-          f"max: {base_norms.max().item():.2f}")
+    tmp.remove()
+    print(f"[baseline] mean residual norm over prompt positions: "
+          f"{baseline_norms['mean']:.2f}")
 
     results = []
     for c in args.coefficients:
-        steer["c"] = float(c)
+        state["coef"] = float(c)
+        recorder.reset()
         with torch.no_grad():
             _ = model(**inputs)
-        h_post = captured["post"].squeeze(0).to(torch.float32)
-        h_pre = captured["pre"].squeeze(0).to(torch.float32)
-        post_norms = h_post.norm(dim=-1)
-        delta = (h_post - h_base).norm(dim=-1)
-        cos = torch.nn.functional.cosine_similarity(h_post, h_base, dim=-1)
+        g = recorder.summary()
         results.append({
             "coef": c,
-            "mean_norm_post": float(post_norms.mean().item()),
-            "max_norm_post":  float(post_norms.max().item()),
-            "mean_norm_ratio": float((post_norms / base_norms).mean().item()),
-            "mean_perturb_norm": float(delta.mean().item()),
-            "mean_cosine": float(cos.mean().item()),
+            "mean_norm_ratio": g["norm_ratio_prompt_mean"],
+            "norm_ratio_last_prompt_token": g["norm_ratio_last_prompt_token"],
+            "mean_perturb_norm": g["perturb_norm_prompt_mean"],
+            "mean_cosine": g["cos_prompt_mean"],
+            "cos_last_prompt_token": g["cos_last_prompt_token"],
+            "n_prompt_positions": g["n_prompt_positions"],
         })
-        print(f"  coef={c:+8.0f}  mean‖h‖={post_norms.mean().item():>7.1f}  "
-              f"ratio={results[-1]['mean_norm_ratio']:.3f}  "
-              f"‖Δh‖={delta.mean().item():>6.1f}  cos={cos.mean().item():.3f}")
+        print(f"  coef={c:+8.0f}  ratio={g['norm_ratio_prompt_mean']:.3f}  "
+              f"ratio@last={g['norm_ratio_last_prompt_token']:.3f}  "
+              f"‖Δh‖={g['perturb_norm_prompt_mean']:>6.1f}  "
+              f"cos={g['cos_prompt_mean']:.3f}")
     handle.remove()
 
     args.json.write_text(json.dumps({
@@ -149,7 +159,8 @@ def main() -> None:
         "layer": args.layer,
         "prompt": args.prompt,
         "prefix": args.prefix,
-        "baseline_mean_norm": float(base_norms.mean().item()),
+        "baseline_mean_norm": baseline_norms["mean"],
+        "estimator": "unified probe (src/geometry.py), prompt-forward positions",
         "results": results,
     }, indent=2), encoding="utf-8")
     print(f"[save] {args.json}")

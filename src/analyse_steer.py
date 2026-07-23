@@ -17,41 +17,17 @@ from __future__ import annotations
 
 import argparse
 import json
-import re
 from collections import defaultdict
 from pathlib import Path
 
 import spacy
 
-DEFAULT_CLUSTER = (
-    "experience",
-    "consciousness",
-    "philosophy",
-    "existence",
-    "reality",
-    "meaning",
-    "understanding",
-    "emotion",
-)
+try:
+    from src.detectors import CLUSTER_QWEN, degeneration_flags, lemma_noun_set
+except ImportError:  # invoked as `python src/analyse_steer.py`
+    from detectors import CLUSTER_QWEN, degeneration_flags, lemma_noun_set
 
-
-def lemma_noun_set(nlp, text: str) -> set[str]:
-    doc = nlp(text)
-    return {tok.lemma_.lower() for tok in doc if tok.pos_ in {"NOUN", "PROPN"}}
-
-
-def degeneration_flags(text: str) -> list[str]:
-    flags = []
-    s = text.strip()
-    if len(s) < 20:
-        flags.append(f"too_short:{len(s)}")
-    # token-level repetition: same word ≥6 times in a row
-    if re.search(r"\b(\w+)\b(\s+\1\b){5,}", s, re.I):
-        flags.append("loop_word")
-    # character-level repetition: same char ≥20 times
-    if re.search(r"(.)\1{20,}", s):
-        flags.append("loop_char")
-    return flags
+DEFAULT_CLUSTER = CLUSTER_QWEN
 
 
 def main() -> None:

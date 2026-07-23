@@ -1,22 +1,28 @@
-"""Random-direction matched-norm control for §4.3.
+"""Random-direction matched-geometry control for the steering grid.
 
-The argument in §4.3 of the paper compares single-feature suppression
-at coef=-1000 with joint suppression at coef=-500 and observes that
-they produce nearly identical residual-stream distortion (norm ratio
-~1.57x and ~1.51x; cosine 0.64 in both cases) but very different output
-coherence. Reviewer This comparison alone does not
-rule out an off-manifold reading. Two perturbations matched on
-two scalar summaries can still be off-manifold in different ways.
+The grid's third probe compares single-feature suppression at c=-1000 with
+joint suppression at c=-500: nearly identical residual-stream distortion
+(norm ratio ~1.57x vs ~1.51x; cosine 0.64 in both cases) but very different
+output coherence. That comparison alone does not rule out an off-manifold
+reading: two perturbations matched on two scalar summaries can still be
+off-manifold in different ways.
 
-The cleaner test: sample random unit vectors in residual-stream space,
-sweep their steering coefficient, capture per-coefficient geometry,
-generate samples, and report:
+The cleaner test run here: sample random unit vectors in residual-stream
+space, sweep their steering coefficient, record per-condition geometry with
+the unified probe (src/geometry.py), generate samples, and report:
 
 (a) whether random-direction perturbations matched on norm-ratio and
     cosine to baseline produce coherent placeholder text (would
-    undermine the structural reading) or token-level gibberish
+    undermine the structural reading) or diverse-content substitutions
     (would support it);
-(b) the NLL and regex degeneration rate at matched-geometry coefs.
+(b) the regex degeneration rate at matched-geometry coefficients.
+
+Geometry keys written per record (see src/geometry.py for definitions):
+    norm_ratio_last_prompt_token, norm_ratio_completion_mean/sd,
+    cos_last_prompt_token, cos_completion_mean/sd
+Dumps produced before the unified probe carry the legacy key
+``norm_ratio_at_prompt_end`` (actually the final decode step of the first
+sequence in the last batch); analysis code reads both.
 
 Usage:
     uv run python src/random_direction_control.py \
@@ -30,15 +36,20 @@ from __future__ import annotations
 
 import argparse
 import json
-import re
 import time
-from collections import defaultdict
 from pathlib import Path
 
 import numpy as np
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from tqdm.auto import tqdm
+
+try:
+    from src.detectors import is_degenerate
+    from src.geometry import GeometryRecorder, make_steering_hook
+except ImportError:  # invoked as `python src/random_direction_control.py`
+    from detectors import is_degenerate
+    from geometry import GeometryRecorder, make_steering_hook
 
 
 def pick_device() -> str:
@@ -66,17 +77,6 @@ def format_chat(tokenizer, prompt: str) -> str:
         )
     except TypeError:
         return tokenizer.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True)
-
-
-def degeneration_flags(text: str) -> bool:
-    t = text.strip()
-    if len(t) < 20:
-        return True
-    if re.search(r"\b(\w+)\b(\s+\1\b){5,}", t, re.I):
-        return True
-    if re.search(r"(.)\1{20,}", t):
-        return True
-    return False
 
 
 def main():
@@ -118,19 +118,11 @@ def main():
         directions.append(torch.from_numpy(v).to(device).to(torch.float16))
     print(f"[init] sampled {len(directions)} unit-norm random directions in R^{d_model}")
 
-    # Steering hook
     state = {"vec": None, "coef": 0.0}
-    captured = {}
-
-    def hook(module, args_, output):
-        h = output[0] if isinstance(output, tuple) else output
-        captured["pre"] = h.detach().clone()
-        if state["vec"] is not None and state["coef"] != 0.0:
-            h = h + state["coef"] * state["vec"]
-        captured["post"] = h.detach().clone()
-        return (h,) + output[1:] if isinstance(output, tuple) else h
-
-    handle = model.model.layers[args.layer].register_forward_hook(hook)
+    recorder = GeometryRecorder()
+    handle = model.model.layers[args.layer].register_forward_hook(
+        make_steering_hook(state, recorder)
+    )
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
     records: list[dict] = []
@@ -148,10 +140,8 @@ def main():
                 inputs = tok(formatted, return_tensors="pt").to(device)
                 input_len = inputs["input_ids"].shape[1]
                 completions = []
+                recorder.reset()
                 remaining = args.samples
-                # capture geometry on the prompt-only forward (before generation)
-                first_geom_post = None
-                first_geom_pre = None
                 while remaining > 0:
                     n = min(args.batch_size, remaining)
                     with torch.no_grad():
@@ -164,23 +154,10 @@ def main():
                             num_return_sequences=n,
                             pad_token_id=tok.eos_token_id,
                         )
-                    if first_geom_post is None:
-                        # captured["post"] is the layer output at last forward call
-                        h_post = captured["post"][0, :input_len].to(torch.float32)
-                        h_pre = captured["pre"][0, :input_len].to(torch.float32)
-                        first_geom_post = h_post
-                        first_geom_pre = h_pre
                     for seq in out:
                         completions.append(tok.decode(seq[input_len:], skip_special_tokens=True))
                     remaining -= n
-                # geometry for this (direction, coef) at this prompt
-                norm_post = float(first_geom_post.norm(dim=-1).mean().item())
-                norm_pre = float(first_geom_pre.norm(dim=-1).mean().item())
-                cos_to_pre = float(torch.nn.functional.cosine_similarity(
-                    first_geom_post, first_geom_pre, dim=-1
-                ).mean().item())
-                norm_ratio = norm_post / norm_pre
-                # coherence flags
+                geom = recorder.summary()
                 for s_idx, txt in enumerate(completions):
                     records.append({
                         "direction_idx": d_idx,
@@ -189,11 +166,13 @@ def main():
                         "prompt_idx": prompt_idx,
                         "sample_idx": s_idx,
                         "completion": txt,
-                        "norm_ratio_at_prompt_end": norm_ratio,
-                        "cos_to_pre_at_prompt_end": cos_to_pre,
-                        "norm_post": norm_post,
-                        "norm_pre": norm_pre,
-                        "regex_degenerate": bool(degeneration_flags(txt)),
+                        "norm_ratio_last_prompt_token": geom["norm_ratio_last_prompt_token"],
+                        "norm_ratio_completion_mean": geom["norm_ratio_completion_mean"],
+                        "norm_ratio_completion_sd": geom["norm_ratio_completion_sd"],
+                        "cos_last_prompt_token": geom["cos_last_prompt_token"],
+                        "cos_completion_mean": geom["cos_completion_mean"],
+                        "cos_completion_sd": geom["cos_completion_sd"],
+                        "regex_degenerate": bool(is_degenerate(txt)),
                     })
                 # incremental save
                 with args.out.open("w", encoding="utf-8") as f:

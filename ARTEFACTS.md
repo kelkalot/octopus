@@ -18,12 +18,12 @@ Every numerical claim, table, and figure in the paper traces to a specific JSON 
 
 | File | Contents | Used in |
 |---|---|---|
-| `sae_layer{12,16,20,24}_top_features.json` | per-layer top-50 feature ranking | App. bootstrap (depth scaling) |
+| `sae_layer{12,16,20,24}_top_features.json` | per-layer top-50 feature ranking | App. bootstrap (depth scaling), E1 sweep harness |
 | `sae_layer20_bootstrap.json` | B=500 bootstrap rank distributions | App. bootstrap |
-| `sae_layer20_permutation.json` | P=200 permutation null max diffs + actual top-1 | §3 permutation null, App. perm |
-| `sae_layer{12-24}_pool_{A,B,C}.npz` | per-pool SAE activations (used to recompute the ranking) | §3.3 ranking |
-| `sae_layer20_interpretations.md` | top-context labels and Pool-A samples for headline features | §4.1, App. interp, App. relabel |
-| `sae_gemma_l20_top_features.json`, `sae_gemma_l20_pool_{A,B,C}.npz` | Gemma analogue at L=20, w=16k | §5, App. gemma-coef, App. gemma-joint |
+| `sae_layer20_permutation.json` | P=200 permutation summary: `actual_max_raw_diff` (31.55, feature #32345), `null_max_mean`, `null_max_diffs[200]`, p-value (legacy `*_z` aliases kept) | Methods permutation null, App. perm |
+| `sae_layer{12-24}_pool_{A,B,C}.npz` | per-pool SAE activations. **Not stored in git** (~340 MB); regenerate from the bundled Phase-1 samples via `src/sae_features.py` (~15 min/layer) or take from the full release bundle. Required by `bootstrap_ranks.py` and `permutation_test.py`. | §3.3 ranking |
+| `sae_layer20_interpretations.md` | top-context labels and Pool-A samples for headline features | §4.1, App. interp, App. relabel, E1 marker lemmas |
+| `sae_gemma_l20_top_features.json`, `sae_gemma_l20_pool_{A,B,C}.npz` | Gemma analogue at L=20, w=16k (same npz caveat as above) | §5, App. gemma-coef, App. gemma-joint |
 
 ## Intervention outputs (Phase 4) — `data/interventions/`
 
@@ -81,7 +81,7 @@ The headline reproducibility command:
 python src/regenerate_tables_and_figures.py
 ```
 
-re-derives every percentage, Wilson confidence interval, norm ratio, and figure that appears in the paper. Each section header in the script's output corresponds to a paper section; each printed value is paired with the input files listed above.
+re-derives every percentage, Wilson confidence interval, norm ratio, and figure that appears in the paper, using the pipeline's own metric implementations (`src/detectors.py`: full-text disclaimer regex, spaCy-lemma cluster matching with the pinned `en_core_web_sm` 3.8.0 model, the canonical three-rule degeneration detector). Every value is asserted against the number printed in the paper; the script exits non-zero on any mismatch. Each section header in the script's output corresponds to a paper section; each printed value is paired with the input files listed above.
 
 For a smaller claim, e.g. *"verify the K=50 random-direction control is 6 of 2400"*, the underlying file is `random_direction_K50_at_c-1000.json`; the analysis is in `src/analyse_k50.py`; running it directly:
 

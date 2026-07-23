@@ -260,6 +260,9 @@ def render_column_header(ax, title: str, subtitle: str = ""):
 
 
 def looks_coherent(text: str) -> bool:
+    # Display-sample filter for this illustration figure only: deliberately
+    # stricter than the canonical degeneration detector (src/detectors.py),
+    # which is the sole detector behind the paper's numbers.
     t = text.strip()
     if len(t) < 60: return False
     if re.search(r"\b(\w+)\b(\s+\1\b){5,}", t, re.I): return False

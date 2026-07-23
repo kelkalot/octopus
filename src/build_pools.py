@@ -25,23 +25,16 @@ from pathlib import Path
 
 import spacy
 
+try:
+    from src.detectors import CLUSTER_QWEN, lemma_noun_set
+except ImportError:  # invoked as `python src/build_pools.py`
+    from detectors import CLUSTER_QWEN, lemma_noun_set
 
-# Cluster lemmas selected from Phase 1 analysis: ≥25% intro, ≤0.2% control.
-DEFAULT_CLUSTER = (
-    "experience",
-    "consciousness",
-    "philosophy",
-    "existence",
-    "reality",
-    "meaning",
-    "understanding",
-    "emotion",
-)
-
-
-def lemma_noun_set(nlp, text: str) -> set[str]:
-    doc = nlp(text)
-    return {tok.lemma_.lower() for tok in doc if tok.pos_ in {"NOUN", "PROPN"}}
+# Cluster selection is two-stage (both stages documented in the paper's
+# Methods): Phase-1 candidate filter >=20% intro / <=5% control over the
+# per-prompt lemma frequencies, then final selection >=25% intro / <=0.2%
+# control. DEFAULT_CLUSTER is the Qwen result of that rule.
+DEFAULT_CLUSTER = CLUSTER_QWEN
 
 
 def write_pool(out_dir: Path, name: str, records: list[dict]) -> None:

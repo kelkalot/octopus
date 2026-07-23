@@ -507,6 +507,14 @@ wheels = [
 ]
 
 [[package]]
+name = "en-core-web-sm"
+version = "3.8.0"
+source = { url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl" }
+wheels = [
+    { url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl", hash = "sha256:1932429db727d4bff3deed6b34cfc05df17794f4a52eeb26cf8928f7c1a0fb85" },
+]
+
+[[package]]
 name = "fancy-einsum"
 version = "0.0.3"
 source = { registry = "https://pypi.org/simple" }
@@ -748,6 +756,7 @@ source = { virtual = "." }
 dependencies = [
     { name = "accelerate" },
     { name = "einops" },
+    { name = "en-core-web-sm" },
     { name = "huggingface-hub" },
     { name = "matplotlib" },
     { name = "numpy" },
@@ -764,13 +773,14 @@ dependencies = [
 requires-dist = [
     { name = "accelerate", specifier = ">=1.0.0" },
     { name = "einops", specifier = ">=0.8.0" },
+    { name = "en-core-web-sm", url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl" },
     { name = "huggingface-hub", specifier = ">=0.25.0" },
     { name = "matplotlib", specifier = ">=3.10.9" },
     { name = "numpy", specifier = ">=1.26.0" },
     { name = "pandas", specifier = ">=2.2.0" },
     { name = "sae-lens", specifier = ">=5.0.0" },
     { name = "safetensors", specifier = ">=0.4.5" },
-    { name = "spacy", specifier = ">=3.7.0" },
+    { name = "spacy", specifier = ">=3.8.0" },
     { name = "torch", specifier = ">=2.4.0" },
     { name = "tqdm", specifier = ">=4.66.0" },
     { name = "transformers", specifier = ">=4.45.0" },

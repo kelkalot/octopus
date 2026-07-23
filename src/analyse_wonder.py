@@ -38,18 +38,16 @@ WONDER_LEXICON = {
 
 
 def looks_wonderful(text: str) -> bool:
-    """Heuristic: any lexicon word, but case-insensitive substring search to
+    """Heuristic: any lexicon word, case-insensitive word-boundary search to
     catch surface forms not captured by lemma-only matching."""
     t = text.lower()
     return any(re.search(rf"\b{re.escape(w)}\b", t) for w in WONDER_LEXICON)
 
 
-def degeneration_flag(text: str) -> bool:
-    s = text.strip()
-    if len(s) < 20: return True
-    if re.search(r"\b(\w+)\b(\s+\1\b){5,}", s, re.I): return True
-    if re.search(r"(.)\1{20,}", s): return True
-    return False
+try:
+    from src.detectors import is_degenerate as degeneration_flag
+except ImportError:  # invoked as `python src/analyse_wonder.py`
+    from detectors import is_degenerate as degeneration_flag
 
 
 def main() -> None:

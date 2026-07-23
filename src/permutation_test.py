@@ -1,16 +1,27 @@
-"""F4 alt — permutation test for the SAE-feature ranking pipeline.
+"""Permutation test for the SAE-feature ranking pipeline.
 
 Methodological negative control. If the ranking pipeline produces strong
 "cluster-specific features" even when pool labels are randomly shuffled,
 then the original ranking is unreliable. Conversely, if shuffled labels
-produce only weak features (low magnitude, low z-score) compared to the
-real labels, the methodology is appropriately selective.
+produce only weak features compared to the real labels, the methodology
+is appropriately selective.
 
 Concretely: load layer-20 per-sample SAE activations from pools A/B/C;
-in each of N permutation iterations, randomly partition the same 3 994
-samples into three pools of the same sizes (1 633 / 367 / 1 994), recompute
-the combined A−B / A−C z-score, take the top-1 score. Build the null
-distribution and compare to the actual top-1 (29.49 for #29108).
+in each of N permutation iterations, randomly partition the same 3,994
+samples into three pools of the original sizes (1,633 / 367 / 1,994) and
+record max_i(mean_A - mean_C)_i. The test statistic is the RAW difference,
+not the combined z-score used for ranking, because within-permutation
+sigma is dominated by reconstruction noise and inflates a z-scored
+statistic under random labels.
+
+Attribution note (matters when reading the output): the max raw
+difference over features belongs to whichever feature maximises
+mean_A - mean_C. On the released Qwen layer-20 data that is feature
+#32345 (raw diff 31.55, rank 15 by the combined-z ranking), NOT the
+top-ranked feature #29108 (combined z 29.49, raw diff 11.87). The test
+compares the observed max against a null distribution of maxima, so which
+feature attains the max is irrelevant to its validity -- but the two
+numbers should not be conflated.
 
 Usage:
     uv run python src/permutation_test.py --n-perm 200 \
@@ -88,19 +99,20 @@ def main() -> None:
     null_q025 = float(np.quantile(null_top1, 0.025))
     null_q975 = float(np.quantile(null_top1, 0.975))
     p_value = float(np.mean(null_top1 >= actual_top1))
-    print(f"\n[null]  top-1 z over {args.n_perm} permutations:")
+    print(f"\n[null]  max raw diff over {args.n_perm} permutations:")
     print(f"  mean = {null_mean:.3f}, 95% CI = [{null_q025:.3f}, {null_q975:.3f}]")
-    print(f"\n[result] actual top-1 = {actual_top1:.3f}; null mean = {null_mean:.3f}")
+    print(f"\n[result] actual max raw diff = {actual_top1:.3f} (feature #{actual_top1_feat}); "
+          f"null mean = {null_mean:.3f}")
     print(f"         ratio (actual / null mean) = {actual_top1 / null_mean:.2f}×")
     print(f"         p-value (perm >= actual) = {p_value:.4f}  (n_perm={args.n_perm})")
 
     # plot
     fig, ax = plt.subplots(figsize=(8.5, 4.6), dpi=160)
     ax.hist(null_top1, bins=30, color="#aaaaaa", edgecolor="#666",
-            label=f"null top-1 z (random labels, n={args.n_perm})", zorder=2)
+            label=f"null max raw diff (random labels, n={args.n_perm})", zorder=2)
     ax.axvline(actual_top1, color="#9b1d20", lw=2.5,
-               label=f"actual top-1 z = {actual_top1:.2f}  (feature #{actual_top1_feat})")
-    ax.set_xlabel("top-1 (mean_A − mean_C)")
+               label=f"actual max raw diff = {actual_top1:.2f}  (feature #{actual_top1_feat})")
+    ax.set_xlabel("max over features of (mean_A − mean_C)")
     ax.set_ylabel("permutation count")
     ax.set_title(
         "Methodological permutation test\n"
@@ -115,16 +127,26 @@ def main() -> None:
     plt.close(fig)
     print(f"[plot] {args.figure}")
 
+    # The statistic is the raw max difference, and the keys say so. The
+    # legacy *_z keys are kept as aliases so older readers keep working.
     summary = {
         "layer": args.layer,
         "n_perm": args.n_perm,
+        "statistic": "max_i (mean_A - mean_C)_i, raw difference",
+        "actual_max_raw_diff": actual_top1,
+        "actual_max_feature": actual_top1_feat,
+        "actual_top10_raw_diff": actual_top10,
+        "null_max_mean": null_mean,
+        "null_max_ci_95": [null_q025, null_q975],
+        "null_max_diffs": [float(x) for x in null_top1],
+        "p_value": p_value,
+        "ratio_actual_to_null_mean": actual_top1 / null_mean,
+        # legacy aliases (pre-fix schema; values identical)
         "actual_top1_z": actual_top1,
         "actual_top1_feature": actual_top1_feat,
         "actual_top10_z": actual_top10,
         "null_top1_mean": null_mean,
         "null_top1_ci_95": [null_q025, null_q975],
-        "p_value": p_value,
-        "ratio_actual_to_null_mean": actual_top1 / null_mean,
     }
     args.out.write_text(json.dumps(summary, indent=2), encoding="utf-8")
     print(f"[done] wrote {args.out}")

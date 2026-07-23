@@ -1,40 +1,21 @@
 """Analyse K=50 random-direction control. Reports placeholder rate at c=-1000 with
-the strict detector defined in §4.3. Updates appendix table values."""
+the strict detector from src/detectors.py. Updates appendix table values."""
 from __future__ import annotations
 
 import json
-import re
 from collections import defaultdict
 from pathlib import Path
 
 import numpy as np
 
+try:
+    from src.detectors import is_placeholder_pattern, wilson_ci_upper
+    from src.geometry import norm_ratio_of_record
+except ImportError:  # invoked as `python src/analyse_k50.py`
+    from detectors import is_placeholder_pattern, wilson_ci_upper
+    from geometry import norm_ratio_of_record
+
 DATA = Path("data/interventions")
-
-
-def is_placeholder_pattern(text: str) -> bool:
-    """Strict placeholder-pattern detector: parenthetical uppercase code tokens
-    appearing >=2 times in a single completion, or Vc.\\,N+ numeric placeholders."""
-    t = text.strip()
-    code_paren = re.findall(r"\(\s*[A-Z]{2,5}(?:\s*[A-Z\d]+)?\s*\)", t)
-    if len(code_paren) >= 2:
-        return True
-    if re.search(r"\b[Vv]c\.\s*\d+\+?", t):
-        return True
-    return False
-
-
-def wilson_ci_upper(k: int, n: int, alpha: float = 0.05) -> float:
-    """Upper bound of Wilson score interval at 1-alpha confidence."""
-    if n == 0:
-        return 1.0
-    from math import sqrt
-    z = 1.959963984540054  # z for 95% (alpha=0.05)
-    p = k / n
-    denom = 1 + z**2 / n
-    centre = (p + z**2 / (2 * n)) / denom
-    half = (z / denom) * sqrt(p * (1 - p) / n + z**2 / (4 * n**2))
-    return centre + half
 
 
 def main() -> None:
@@ -77,7 +58,7 @@ def main() -> None:
     deg_rate = sum(1 for r in rd if r["regex_degenerate"]) / len(rd)
     print(f"\nK=50 regex-degenerate rate: {deg_rate*100:.2f}%")
 
-    # Norm ratio sanity
+    # Norm ratio sanity (reads unified-probe keys, falls back to legacy dumps)
     seen = set()
     norm_ratios = []
     for r in rd:
@@ -85,7 +66,9 @@ def main() -> None:
         if key in seen:
             continue
         seen.add(key)
-        norm_ratios.append(r["norm_ratio_at_prompt_end"])
+        nr = norm_ratio_of_record(r)
+        if nr is not None:
+            norm_ratios.append(nr)
     print(f"K=50 norm_ratio at c=-1000: mean={np.mean(norm_ratios):.3f}, "
           f"std={np.std(norm_ratios):.3f}, n_unique_geom={len(norm_ratios)}")
 

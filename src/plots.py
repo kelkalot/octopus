@@ -172,15 +172,13 @@ def plot_dose_response(records_path: Path, fig_path: Path, *,
 # Plot 4: specificity comparison (real feature vs random feature)
 # --------------------------------------------------------------------------
 def _degen_rate_per_coef(records: list[dict]) -> dict[float, float]:
+    try:
+        from src.detectors import is_degenerate
+    except ImportError:
+        from detectors import is_degenerate
     by_coef: dict[float, list[bool]] = defaultdict(list)
     for r in records:
-        t = r["completion"].strip()
-        is_degen = (
-            len(t) < 20
-            or bool(re.search(r"\b(\w+)\b(\s+\1\b){5,}", t, re.I))
-            or bool(re.search(r"(.)\1{20,}", t))
-        )
-        by_coef[r["coefficient"]].append(is_degen)
+        by_coef[r["coefficient"]].append(is_degenerate(r["completion"]))
     return {c: float(np.mean(v)) for c, v in by_coef.items()}
 
 

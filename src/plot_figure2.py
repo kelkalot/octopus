@@ -14,9 +14,6 @@ Output: figures/figure2_gemma_replication.{pdf,png}
 from __future__ import annotations
 
 import json
-import math
-import re
-from collections import defaultdict
 from pathlib import Path
 
 import matplotlib
@@ -24,6 +21,13 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
+
+try:
+    from src.detectors import is_degenerate as is_degen_canonical
+    from src.detectors import wilson_ci
+except ImportError:  # invoked as `python src/plot_figure2.py`
+    from detectors import is_degenerate as is_degen_canonical
+    from detectors import wilson_ci
 
 matplotlib.rcParams.update({
     "font.family": "sans-serif",
@@ -56,24 +60,6 @@ CONTROLS = {"Explain how a car engine works.",
             "Describe the steps to change a flat tyre."}
 
 
-def is_degen_canonical(text: str) -> bool:
-    t = text.strip()
-    if len(t) < 20: return True
-    if re.search(r"\b(\w+)\b(\s+\1\b){5,}", t, re.I): return True
-    if re.search(r"(.)\1{20,}", t): return True
-    return False
-
-
-def wilson_ci(k: int, n: int, alpha: float = 0.05) -> tuple[float, float]:
-    if n == 0: return (0.0, 1.0)
-    z = 1.959963984540054
-    p = k / n
-    denom = 1 + z**2 / n
-    centre = (p + z**2 / (2 * n)) / denom
-    half = (z / denom) * math.sqrt(p * (1 - p) / n + z**2 / (4 * n**2))
-    return (max(0.0, centre - half), centre + half)
-
-
 def panel_a_joint_damage(ax) -> None:
     """Per-coef control degen rate for joint vs single on Gemma."""
     joint = json.loads((DATA / "gemma_joint_3997_13700_11444.json").read_text())
@@ -95,7 +81,7 @@ def panel_a_joint_damage(ax) -> None:
             label=r"joint $\{$\#3997, \#13700, \#11444$\}$")
 
     ax.set_xlabel("steering coefficient $c$")
-    ax.set_ylabel("control-prompt regex-degen rate (\%)")
+    ax.set_ylabel("control-prompt regex-degen rate (%)")
     ax.set_title("(a) joint vs single on Gemma controls",
                  loc="left", pad=6)
     ax.set_ylim(-5, 110)
@@ -144,7 +130,7 @@ def panel_b_matched_geometry(ax) -> None:
 
     ax.set_xticks(x)
     ax.set_xticklabels(labels, fontsize=7.5)
-    ax.set_ylabel("control-prompt regex-degen rate (\%)")
+    ax.set_ylabel("control-prompt regex-degen rate (%)")
     ax.set_title("(b) matched-geometry control on Gemma",
                  loc="left", pad=6)
     ax.set_ylim(0, 85)
@@ -152,7 +138,7 @@ def panel_b_matched_geometry(ax) -> None:
 
     # Value labels on top of each bar/CI
     for xi, m, hi in zip(x, means, err_hi):
-        ax.text(xi, m + hi + 2, f"{m:.1f}\\%",
+        ax.text(xi, m + hi + 2, f"{m:.1f}%",
                 ha="center", va="bottom", fontsize=8, color="#222222")
 
     # Annotate the CI gap

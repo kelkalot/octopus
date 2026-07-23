@@ -14,38 +14,13 @@ from __future__ import annotations
 
 import argparse
 import json
-import re
 from collections import defaultdict
 from pathlib import Path
 
-# Regex patterns characteristic of the AI self-disclaimer behaviour.
-# Each pattern fires independently; a sample is "disclaimer-positive" if any matches.
-DISCLAIMER_PATTERNS = [
-    r"\bas an AI\b",
-    r"\bI am an AI\b",
-    r"\bI'm an AI\b",
-    r"\blanguage model\b",
-    r"\bAI assistant\b",
-    r"\bI (?:don'?t|do not) (?:have|experience|possess) (?:personal |subjective |any )?(?:feelings?|emotions?|thoughts?|consciousness|experiences?|opinions?|preferences?)\b",
-    r"\bI (?:can'?t|cannot|am not able to) (?:feel|experience|have|possess) (?:feelings?|emotions?|consciousness|subjective)",
-    r"\bI lack (?:feelings?|emotions?|consciousness|subjective)",
-    r"\bnot (?:capable of|able to) (?:feeling|experiencing|having)",
-    r"\bI'?m (?:just |only |simply )?(?:an AI|a language model|a chatbot|a machine|a computer program)",
-]
-
-DISCLAIMER_RE = re.compile("|".join(DISCLAIMER_PATTERNS), flags=re.IGNORECASE)
-
-
-def degeneration_flags(text: str) -> list[str]:
-    flags = []
-    s = text.strip()
-    if len(s) < 20:
-        flags.append(f"too_short:{len(s)}")
-    if re.search(r"\b(\w+)\b(\s+\1\b){5,}", s, re.I):
-        flags.append("loop_word")
-    if re.search(r"(.)\1{20,}", s):
-        flags.append("loop_char")
-    return flags
+try:
+    from src.detectors import DISCLAIMER_PATTERNS, DISCLAIMER_RE, degeneration_flags
+except ImportError:  # invoked as `python src/analyse_disclaimer.py`
+    from detectors import DISCLAIMER_PATTERNS, DISCLAIMER_RE, degeneration_flags
 
 
 def main() -> None:
