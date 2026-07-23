@@ -171,12 +171,40 @@ def is_we_voice(text: str, n_sentences: int = 3) -> bool:
 # ---------------------------------------------------------------------------
 
 
+#: Lemma metrics are sensitive to the lemmatizer version: under a different
+#: en_core_web_sm, cluster cells can shift by a few samples and the
+#: regeneration script's assertions fail on exactly those cells. The model
+#: is pinned in pyproject.toml; this guard turns a silent metric change
+#: into an explicit error.
+PINNED_SPACY_MODEL_VERSION = "3.8.0"
+
+
 @lru_cache(maxsize=2)
 def get_nlp(model: str = "en_core_web_sm"):
-    """Load (and cache) the spaCy pipeline used for lemma extraction."""
+    """Load (and cache) the spaCy pipeline used for lemma extraction.
+
+    Raises if the installed model version differs from the pinned one,
+    unless OCTOPUS_ALLOW_LEMMATIZER_MISMATCH=1 is set.
+    """
+    import os
+
     import spacy
 
-    return spacy.load(model, disable=["ner"])
+    nlp = spacy.load(model, disable=["ner"])
+    version = nlp.meta.get("version")
+    if (model == "en_core_web_sm"
+            and version != PINNED_SPACY_MODEL_VERSION
+            and os.environ.get("OCTOPUS_ALLOW_LEMMATIZER_MISMATCH") != "1"):
+        raise RuntimeError(
+            f"en_core_web_sm {version} installed, but the paper's lemma "
+            f"metrics are pinned to {PINNED_SPACY_MODEL_VERSION}. Cluster "
+            f"cells (Gemma/Llama dose-response, cross-model table) drift by "
+            f"1-3 samples across lemmatizer versions, so assertion failures "
+            f"under a different version indicate the environment, not the "
+            f"paper. Run `uv sync` to install the pinned model, or set "
+            f"OCTOPUS_ALLOW_LEMMATIZER_MISMATCH=1 to proceed anyway."
+        )
+    return nlp
 
 
 def lemma_noun_set(nlp, text: str) -> set[str]:

@@ -8,8 +8,6 @@ features: top-context labels capture activation regimes, not causal axes"*
   experiments (`src/`).
 - All JSON sample dumps required to re-derive every numerical claim, table,
   and figure in the paper, without re-running any model (`data/`).
-- LaTeX sources for the paper (`paper/`), including the NeurIPS
-  reproducibility checklist (`paper/checklist.tex`).
 - All prompt files (`prompts/`).
 
 Reproducibility has two tiers:
@@ -34,9 +32,11 @@ uv run python src/regenerate_tables_and_figures.py
 ```
 
 The script prints each regenerated value next to the paper's value with an
-`ok`/`FAIL` mark, writes `paper/figures/figure1_three_axes.{pdf,png}` and
-`paper/figures/figure2_gemma_replication.{pdf,png}`, and exits 0 only if all
-checks pass. For a written log:
+`ok`/`FAIL` mark, writes `figure1_three_axes.{pdf,png}` and
+`figure2_gemma_replication.{pdf,png}` to `paper/figures/` (created on
+demand), and exits 0 only if all checks pass. It refuses to run under a
+non-pinned `en_core_web_sm` version, since lemma metrics shift with the
+lemmatizer. For a written log:
 
 ```bash
 uv run python src/regenerate_tables_and_figures.py --out reproduce_report.txt
@@ -107,11 +107,11 @@ or take them from the full release bundle.
 ## Prevalence sweep (top-50 screening harness)
 
 `src/sweep_class1.py` runs the pre-registered mode-switch screen from the
-paper over all 50 Class-1 features: one overnight generation run, then a
-CPU-only screening pass.
+paper over all 50 Class-1 features: a 12,000-generation sweep (~10 h on the
+reference laptop, resumable), then a CPU-only screening pass.
 
 ```bash
-uv run python src/sweep_class1.py run     # ~10 h, resumable
+uv run python src/sweep_class1.py run
 uv run python src/sweep_class1.py screen  # classification + Wilson CI report
 ```
 
@@ -125,9 +125,7 @@ data/
 ├── pools*/           # Phase 1 raw generations + Phase 2 pools (per model)
 ├── activations*/     # Phase 3 rankings, bootstrap, permutation summaries
 └── interventions/    # Phase 4 sweeps, relabelling, matched-geometry runs
-paper/                # LaTeX sources, figures, checklist.tex
 prompts/              # all prompt files used in Phases 1 and 4
-scripts/              # release-bundle builder
 pyproject.toml, uv.lock  # pinned environment (incl. the spaCy model)
 ```
 

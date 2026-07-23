@@ -10,8 +10,8 @@ Two subcommands:
   run     Generate the sweep. For each feature in the layer's top-50
           ranking: c in {-1000, -500, 0, +500, +1000} x 6 intervention
           prompts x 8 samples = 12,000 generations total on Qwen
-          (~10 h on an M4 Pro; one overnight run). Incremental save +
-          resume, so the run can be interrupted freely.
+          (~10 h on an M4 Pro). Incremental save + resume, so the run
+          can be interrupted freely.
 
   screen  Classify each swept feature from the dump with the
           pre-registered decision rule (no model needed). A feature is a
@@ -36,13 +36,13 @@ Two subcommands:
   randomly chosen unflagged features.
 
 Usage:
-    # overnight generation (resumable)
+    # generation sweep (resumable)
     uv run python src/sweep_class1.py run \
         --top-features data/activations/sae_layer20_top_features.json \
         --prompts prompts/intervention_mixed.txt \
         --out data/interventions/class1_sweep
 
-    # optional coherence pass (adds NLL; ~1 additional overnight run)
+    # optional coherence pass (adds the NLL criterion; a few additional hours)
     for f in data/interventions/class1_sweep/feat*.json; do
         uv run python src/coherence_nll.py --in "$f" --out "${f%.json}_nll.json"
     done
@@ -233,7 +233,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     sub = ap.add_subparsers(dest="cmd", required=True)
 
-    r = sub.add_parser("run", help="generate the sweep (GPU, overnight)")
+    r = sub.add_parser("run", help="generate the sweep (GPU, ~10 h)")
     r.add_argument("--top-features", type=Path,
                    default=Path("data/activations/sae_layer20_top_features.json"))
     r.add_argument("--n-features", type=int, default=50)
