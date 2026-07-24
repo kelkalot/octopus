@@ -138,13 +138,19 @@ def _feature_marker_lemmas(interp_md: Path, feature: int) -> set[str] | None:
     return markers or None
 
 
-def cmd_screen(args: argparse.Namespace) -> None:
+def screen_sweep(sweep_dir: Path, pools_dir: Path,
+                 drop_threshold: float = 0.30,
+                 degen_threshold: float = 0.10) -> dict:
+    """Apply the pre-registered mode-switch rule to every swept feature and
+    return the summary dict. Used by cmd_screen and by the regeneration
+    script, so the paper's prevalence number is re-derived from the dump by
+    the same code path."""
     nlp = get_nlp()
     cluster_default = set(CLUSTER_QWEN)
-    interp_md = args.pools_dir.parent / "activations" / "sae_layer20_interpretations.md"
+    interp_md = pools_dir.parent / "activations" / "sae_layer20_interpretations.md"
 
     results = []
-    files = sorted(args.sweep_dir.glob("feat*.json"))
+    files = sorted(sweep_dir.glob("feat*.json"))
     files = [f for f in files if not f.name.endswith("_nll.json")]
     print(f"[screen] {len(files)} sweep files")
     for path in files:
@@ -180,8 +186,8 @@ def cmd_screen(args: argparse.Namespace) -> None:
         for c, v in per_coef.items():
             if c == 0.0:
                 continue
-            drop = (peak - v["marker_rate"]) >= args.drop_threshold
-            coherent = v["degen_rate"] < args.degen_threshold
+            drop = (peak - v["marker_rate"]) >= drop_threshold
+            coherent = v["degen_rate"] < degen_threshold
             if v["mean_nll"] is not None and nll_base:
                 nll_ok = v["mean_nll"] < 2 * nll_base
             else:
@@ -208,24 +214,31 @@ def cmd_screen(args: argparse.Namespace) -> None:
     k = sum(r["classification"] == "mode_switch_candidate" for r in results)
     n = len(results)
     lo, hi = wilson_ci(k, n)
-    summary = {
+    return {
         "n_features": n,
         "mode_switch_candidates": k,
         "rate": k / n if n else 0,
         "wilson_95": [lo, hi],
         "decision_rule": {
-            "marker_drop_points": args.drop_threshold,
-            "degen_below": args.degen_threshold,
+            "marker_drop_points": drop_threshold,
+            "degen_below": degen_threshold,
             "nll_below_x_baseline": 2.0,
         },
         "results": results,
     }
+
+
+def cmd_screen(args: argparse.Namespace) -> None:
+    summary = screen_sweep(args.sweep_dir, args.pools_dir,
+                           args.drop_threshold, args.degen_threshold)
+    k, n = summary["mode_switch_candidates"], summary["n_features"]
+    lo, hi = summary["wilson_95"]
     args.report.parent.mkdir(parents=True, exist_ok=True)
     args.report.write_text(json.dumps(summary, indent=2))
     print(f"\n[headline] {k} of {n} Class-1 features are coherent mode-switch "
           f"candidates (Wilson 95% [{100*lo:.1f}, {100*hi:.1f}]%)")
     print(f"[note] candidates require the blind-relabelling confirmation stage "
-          f"before the paper's headline claim is updated")
+          f"before the label-scoped claim is made")
     print(f"[wrote] {args.report}")
 
 

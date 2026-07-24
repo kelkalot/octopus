@@ -470,6 +470,59 @@ def app_perm() -> None:
     claim_int("#29108 rank by combined z", int(f29108["rank"]), 0)
 
 
+def f_prevalence() -> None:
+    """Re-derive the top-50 prevalence screen from the sweep dump.
+
+    Skipped (without failing) when the sweep dump is not present; the dump
+    is large relative to the other artefacts and ships separately.
+    """
+    section("Prevalence: pre-registered screen over the top-50 sweep")
+    sweep_dir = DATA / "class1_sweep"
+    if not any(sweep_dir.glob("feat*.json")):
+        print("  (sweep dump not present; prevalence checks skipped)")
+        return
+    try:
+        from src.sweep_class1 import screen_sweep
+    except ImportError:
+        from sweep_class1 import screen_sweep
+    summary = screen_sweep(sweep_dir, Path("data/pools"))
+    k, n = summary["mode_switch_candidates"], summary["n_features"]
+    lo, hi = summary["wilson_95"]
+    if EXPECTED_MODE_SWITCH_K is None:
+        print(f"  observed: {k} of {n} candidates, Wilson 95% "
+              f"[{100*lo:.1f}, {100*hi:.1f}]%  "
+              f"(expected values not yet pinned; not asserted)")
+        return
+    claim_int("prevalence: features screened", n, 50)
+    claim_int("prevalence: mode-switch candidates (screen)", k,
+              EXPECTED_MODE_SWITCH_K)
+    claim("prevalence: Wilson lower %", 100 * lo, EXPECTED_PREVALENCE_CI[0])
+    claim("prevalence: Wilson upper %", 100 * hi, EXPECTED_PREVALENCE_CI[1])
+    counts = {}
+    for r in summary["results"]:
+        counts[r["classification"]] = counts.get(r["classification"], 0) + 1
+    claim_int("prevalence: breakdown class", counts.get("breakdown", 0), 11)
+    claim_int("prevalence: monotonic-or-flat class",
+              counts.get("monotonic_or_flat", 0), 38)
+    flagged = [r for r in summary["results"]
+               if r["classification"] == "mode_switch_candidate"]
+    claim_int("prevalence: flagged feature id", flagged[0]["feature"], 21165)
+    pend = sum(1 for r in summary["results"] for f in r["flagged_coefs"]
+               if f["nll_criterion"] is None)
+    claim_int("prevalence: flags with NLL criterion pending", pend, 0)
+    # The anchors classify as in the findings section.
+    by_feat = {r["feature"]: r["classification"] for r in summary["results"]}
+    claim_int("prevalence: #22082 classifies monotonic",
+              int(by_feat[22082] == "monotonic_or_flat"), 1)
+    claim_int("prevalence: #2932 classifies breakdown",
+              int(by_feat[2932] == "breakdown"), 1)
+
+
+# Screen output as printed in the paper (App. prevalence).
+EXPECTED_MODE_SWITCH_K = 1
+EXPECTED_PREVALENCE_CI = (0.35, 10.50)
+
+
 def app_relabel() -> None:
     section("Blind relabelling of #26221 (5 labeller runs)")
     path = DATA / "relabel_26221_results.json"
@@ -506,6 +559,9 @@ def main() -> None:
                     help="Mirror the report to this file (otherwise stdout only).")
     ap.add_argument("--skip-figures", action="store_true",
                     help="Skip Figure rendering.")
+    ap.add_argument("--skip-prevalence", action="store_true",
+                    help="Skip the top-50 prevalence screen (the slowest "
+                         "section; requires the class1_sweep dump).")
     args = ap.parse_args()
 
     buf = None
@@ -539,6 +595,8 @@ def main() -> None:
     s_cross_model()
     app_perm()
     app_relabel()
+    if not args.skip_prevalence:
+        f_prevalence()
 
     if not args.skip_figures:
         render("src/plot_figure1.py")
