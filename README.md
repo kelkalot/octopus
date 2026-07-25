@@ -108,12 +108,33 @@ or take them from the full release bundle.
 
 `src/sweep_class1.py` runs the pre-registered mode-switch screen from the
 paper over all 50 Class-1 features: a 12,000-generation sweep (~10 h on the
-reference laptop, resumable), then a CPU-only screening pass.
+reference laptop, resumable), then CPU-only analysis passes.
 
 ```bash
 uv run python src/sweep_class1.py run
-uv run python src/sweep_class1.py screen  # classification + Wilson CI report
+uv run python src/sweep_class1.py screen      # pre-registered rule + Wilson CI
+uv run python src/sweep_class1.py secondary   # amended gate + JS-divergence screen
 ```
+
+The decision rule, its thresholds, and the feature selections for the
+specificity and cross-model experiments were fixed before the corresponding
+runs; see [`notes/preregistration-final.md`](notes/preregistration-final.md)
+and `data/interventions/_experiment_targets.json`.
+
+## Other analysis entry points
+
+```bash
+# specificity control + cross-model grid results
+uv run python src/analyse_final.py
+
+# recompute steering geometry for existing random-direction dumps with the
+# unified probe (does NOT resample; only geometry fields are rewritten)
+uv run python src/regeometry.py --in data/interventions/random_direction_matched.json \
+    --model Qwen/Qwen3-1.7B --layer 20 --num-directions 5 --seed 42
+```
+
+Gated models (Llama-3.1, Gemma-2) require a Hugging Face token with access:
+`hf auth login`.
 
 ## What's in this repo
 

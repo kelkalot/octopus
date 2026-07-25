@@ -59,6 +59,15 @@ Every numerical claim, table, and figure in the paper traces to a specific JSON 
 | `llama_feat38565_dose.json`, `llama_feat38565_narrow.json` | Llama #38565 dose-response | §5 cross-model, App. cross-model-details |
 | **Logit-shift sanity** | | |
 | `logit_shift_29108.json`, `logit_shift_29108_continuation.json` | unembedding-step verification of #29108 | §3 / §A robustness |
+| **Top-50 prevalence screen (App. prevalence)** | | |
+| `class1_sweep/feat*.json` | coefficient sweep over all 50 Class-1 features: 5 coefs × 6 prompts × 8 samples per feature (12,000 generations) | App. prevalence |
+| `class1_sweep/feat*_nll.json` | per-completion NLL under the unsteered model (criterion (c) of the pre-registered rule) | App. prevalence |
+| `class1_sweep/screen_report.json` | pre-registered screen output: per-feature classification, flagged coefficients, Wilson CI | App. prevalence |
+| `class1_sweep/secondary_report.json` | secondary analyses: amended-gate screen and per-cell Jensen–Shannon divergence with coherence gates | App. prevalence |
+| **Specificity control (App. unrelated-triples)** | | |
+| `unrelated_triples/triple_*.json` | five geometry-matched unrelated content-bearing triples at c=−500, 6 prompts × 12 samples each | §4.2, App. unrelated-triples |
+| `unrelated_triples/triple_*_nll.json` | NLL for the same | App. unrelated-triples |
+| `_experiment_targets.json` | feature selections and selection rules fixed before the runs (see `notes/preregistration-final.md`) | §4.2, §5 |
 | **Automated relabelling (App. relabel)** | | |
 | `relabel_26221_inputs.json` | input samples for the blind labelling protocol | App. relabel |
 | `relabel_26221_formatted.json` | formatted prompt blobs sent to each labeller | App. relabel |

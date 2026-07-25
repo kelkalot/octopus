@@ -255,9 +255,9 @@ def f_norm_probe() -> None:
         if key in seen:
             continue
         seen.add(key)
-        nr.append(r["norm_ratio_at_prompt_end"])
-        cs.append(r["cos_to_pre_at_prompt_end"])
-    claim("K=50 mean norm ratio", mean(nr), 1.56, tol=0.005)
+        nr.append(r.get("norm_ratio_prompt_mean", r.get("norm_ratio_at_prompt_end")))
+        cs.append(r.get("cos_prompt_mean", r.get("cos_to_pre_at_prompt_end")))
+    claim("K=50 mean norm ratio", mean(nr), 1.58, tol=0.005)
     claim("K=50 mean cos", mean(cs), 0.64, tol=0.006)
     grd = load("gemma_random_direction.json")
     for c, e in [(-345.0, 1.45), (345.0, 1.39)]:
@@ -470,6 +470,222 @@ def app_perm() -> None:
     claim_int("#29108 rank by combined z", int(f29108["rank"]), 0)
 
 
+def f_diversity() -> None:
+    """The lexical-diversity audit (paper: App. diversity)."""
+    section("Lexical-diversity audit (paper App. diversity)")
+    try:
+        from src.detectors import diversity_ratio, is_lexically_intact
+    except ImportError:
+        from detectors import diversity_ratio, is_lexically_intact
+
+    def cell(recs, c, sel=None):
+        return [r["completion"] for r in recs
+                if r["coefficient"] == c and (sel is None or sel(r["prompt"]))]
+
+    def check(label, recs, c, exp_div, exp_intact, base_c=0.0, sel=None):
+        t, b = cell(recs, c, sel), cell(recs, base_c, sel)
+        claim(f"{label} diversity ratio", diversity_ratio(t, b), exp_div, tol=0.005)
+        claim(f"{label} intact %",
+              100 * sum(is_lexically_intact(x) for x in t) / len(t), exp_intact)
+
+    ident = load("f2_identity_26221.json")
+    check("F-disc identity c=-500", ident, -500.0, 0.94, 89.6)
+    check("F-disc identity c=+500", ident, 500.0, 0.46, 12.5)
+    check("F-disc identity c=+1000", ident, 1000.0, 0.16, 0.0)
+    single = load("feat29108_dose.json")
+    check("single F-phil c=-1000", single, -1000.0, 0.65, 1.1)
+    check("single F-phil c=+1000 controls", single, 1000.0, 0.39, 4.4,
+          sel=lambda p: p in CONTROLS)
+    joint = load("joint_suppression.json")
+    check("joint c=-500", joint, -500.0, 0.56, 11.1)
+    check("joint c=+500 controls", joint, 500.0, 0.35, 0.0,
+          sel=lambda p: p in CONTROLS)
+    g = load("gemma_feat3997_narrow.json")
+    isintro = lambda p: p in INTROS
+    check("Gemma #3997 intros c=-200", g, -200.0, 0.98, 88.9, sel=isintro)
+    check("Gemma #3997 intros c=-400", g, -400.0, 0.36, 0.0, sel=isintro)
+    l = load("llama_feat38565_narrow.json")
+    check("Llama #38565 intros c=+10", l, 10.0, 1.08, 100.0, sel=isintro)
+    check("Llama #38565 controls c=+10", l, 10.0, 1.09, 83.3,
+          sel=lambda p: p in CONTROLS)
+    # the random-direction row uses the unsteered single-feature baseline
+    rd = load("random_direction_K50_at_c-1000.json")
+    base = cell(single, 0.0)
+    claim("random K=50 c=-1000 diversity ratio",
+          diversity_ratio([r["completion"] for r in rd], base), 0.65, tol=0.005)
+
+
+def f_amplification_geometry() -> None:
+    """Matched-geometry vs matched-coefficient injection (paper: App. table)."""
+    section("Amplification: injection under C4 by cell")
+    single = load("feat29108_dose.json")
+    joint = load("joint_suppression.json")
+    exp = {("single", 500.0): (0, 45), ("single", 1000.0): (25, 45),
+           ("joint", 500.0): (32, 36), ("joint", 1000.0): (1, 36)}
+    for (name, c), (ek, en) in exp.items():
+        src = single if name == "single" else joint
+        b = [r for r in src if r["coefficient"] == c and r["prompt"] in CONTROLS]
+        k = sum(cluster_hit(r["completion"], CLUSTER_QWEN_STRICT4) for r in b)
+        claim_int(f"{name} c={c:+.0f} controls C4 hits", k, ek)
+        claim_int(f"{name} c={c:+.0f} controls n", len(b), en)
+
+
+def f_joint_flags_per_prompt() -> None:
+    """Per-prompt breakdown of the seven joint placeholder flags."""
+    section("Joint placeholder flags per prompt (paper App. K)")
+    joint = load("joint_suppression.json")
+    b = [r for r in joint if r["coefficient"] == -500.0]
+    per = defaultdict(int)
+    for r in b:
+        if is_placeholder_pattern(r["completion"]):
+            per[r["prompt"]] += 1
+    claim_int("recipe flags", per["Write a recipe for tomato soup."], 4)
+    claim_int("tyre flags", per["Describe the steps to change a flat tyre."], 2)
+    claim_int("engine flags", per["Explain how a car engine works."], 0)
+    rec = [r for r in b if r["prompt"] == "Write a recipe for tomato soup."]
+    claim_int("recipe n", len(rec), 12)
+    rd = load("random_direction_K50_at_c-1000.json")
+    rrec = [r for r in rd if r["prompt"] == "Write a recipe for tomato soup."]
+    claim_int("random recipe flags",
+              sum(is_placeholder_pattern(r["completion"]) for r in rrec), 2)
+    claim_int("random recipe n", len(rrec), 400)
+
+
+def f_unrelated_triples() -> None:
+    """Specificity control: unrelated content-bearing triples (paper App.)."""
+    section("Specificity: unrelated content-bearing triples at c=-500")
+    tdir = DATA / "unrelated_triples"
+    files = sorted(f for f in tdir.glob("triple_*.json")
+                   if not f.name.endswith("_nll.json")) if tdir.exists() else []
+    if not files:
+        print("  (unrelated-triple dumps not present; skipped)")
+        return
+    exp = {  # feature set: (degen %, n)
+        "173_2898_4306": 27.8, "2168_4317_9334": 8.3,
+        "2275_5354_32569": 15.3, "4138_16375_19547": 54.2,
+        "4398_6177_8095": 8.3,
+    }
+    tot_k = tot_n = 0
+    for f in files:
+        recs = json.loads(f.read_text())
+        tag = f.stem.replace("triple_", "")
+        k = sum(is_placeholder_pattern(r["completion"]) for r in recs)
+        tot_k += k
+        tot_n += len(recs)
+        claim_int(f"triple {tag} placeholder flags", k, 0)
+        claim_int(f"triple {tag} n", len(recs), 72)
+        claim(f"triple {tag} degen %",
+              100 * sum(is_degenerate(r["completion"]) for r in recs) / len(recs),
+              exp[tag])
+    claim_int("unrelated triples pooled placeholder flags", tot_k, 0)
+    claim_int("unrelated triples pooled n", tot_n, 360)
+    lo, hi = wilson_ci(tot_k, tot_n)
+    claim("unrelated pooled Wilson upper %", 100 * hi, 1.06, tol=0.02)
+    joint = load("joint_suppression.json")
+    ref = [r for r in joint if r["coefficient"] == -500.0]
+    rk = sum(is_placeholder_pattern(r["completion"]) for r in ref)
+    rlo, _ = wilson_ci(rk, len(ref))
+    claim_int("reference triple placeholder flags", rk, 7)
+    claim_int("intervals disjoint (ref lower > unrelated upper)",
+              int(rlo > hi), 1)
+
+
+def f_llama_grid() -> None:
+    """Llama grid-level tests (paper: cross-model Llama subsection)."""
+    section("Llama grid: joint, single, matched-geometry random")
+    try:
+        from src.detectors import diversity_ratio
+    except ImportError:
+        from detectors import diversity_ratio
+    jf = DATA / "llama_joint_38565_61417_23576.json"
+    if not jf.exists():
+        print("  (llama grid dumps not present; skipped)")
+        return
+    joint = json.loads(jf.read_text())
+    single_m = json.loads((DATA / "llama_single_38565_matched.json").read_text())
+    single_n = load("llama_feat38565_narrow.json")
+    rand = json.loads((DATA / "llama_random_direction.json").read_text())
+    base = [r["completion"] for r in joint
+            if r["coefficient"] == 0.0 and r["prompt"] in CONTROLS]
+
+    def cell(recs, c, ctrl_only=True):
+        return [r for r in recs if r["coefficient"] == c
+                and (not ctrl_only or r["prompt"] in CONTROLS)]
+
+    exp = [  # label, records, coef, n, degen %, diversity ratio
+        ("joint c=-10", joint, -10.0, 24, 20.8, 0.30),
+        ("single c=-10", single_n, -10.0, 30, 0.0, 0.80),
+        ("single c=-17.9", single_m, -17.9, 24, 12.5, 0.27),
+        ("joint c=+10", joint, 10.0, 24, 0.0, 0.42),
+        ("single c=+17.9", single_m, 17.9, 24, 0.0, 0.79),
+    ]
+    for label, recs, c, en, edeg, ediv in exp:
+        b = cell(recs, c)
+        claim_int(f"llama {label} n", len(b), en)
+        claim(f"llama {label} degen %",
+              100 * sum(is_degenerate(r["completion"]) for r in b) / len(b), edeg)
+        bl = base if recs is not single_n else [
+            r["completion"] for r in single_n
+            if r["coefficient"] == 0.0 and r["prompt"] in CONTROLS]
+        claim(f"llama {label} diversity ratio",
+              diversity_ratio([r["completion"] for r in b], bl), ediv, tol=0.005)
+    for c, en, edeg, ediv in ((-17.9, 120, 0.0, 0.90), (17.9, 120, 2.5, 0.94)):
+        b = [r for r in rand if r["coefficient"] == c]
+        claim_int(f"llama random c={c:+.1f} n", len(b), en)
+        claim(f"llama random c={c:+.1f} degen %",
+              100 * sum(is_degenerate(r["completion"]) for r in b) / len(b), edeg)
+        claim(f"llama random c={c:+.1f} diversity ratio",
+              diversity_ratio([r["completion"] for r in b], base), ediv, tol=0.005)
+    def _uniq(recs):
+        seen, out = set(), []
+        for r in recs:
+            k = (r["direction_idx"], r["coefficient"], r["prompt"])
+            if k in seen:
+                continue
+            seen.add(k)
+            out.append(r)
+        return out
+    claim("llama random unified norm ratio",
+          mean([r["norm_ratio_prompt_mean"] for r in _uniq(rand)]), 1.737, tol=0.005)
+
+    # measured geometry underpinning the matched comparison
+    g = json.loads((DATA / "llama_joint_norm_probe.json").read_text())["results"]
+    gs = json.loads((DATA / "llama_single_norm_probe.json").read_text())["results"]
+    claim("llama joint c=-10 norm ratio",
+          next(r["mean_norm_ratio"] for r in g if r["coef"] == -10.0), 1.691, tol=0.005)
+    claim("llama single c=-17.9 norm ratio",
+          next(r["mean_norm_ratio"] for r in gs if r["coef"] == -17.9), 1.623, tol=0.005)
+    # Qwen three-way placeholder comparison at matched geometry
+    section("Qwen matched geometry: three-way placeholder comparison")
+    qj = [r for r in load("joint_suppression.json") if r["coefficient"] == -500.0]
+    qs = [r for r in load("feat29108_dose.json") if r["coefficient"] == -1000.0]
+    claim_int("qwen joint c=-500 placeholder",
+              sum(is_placeholder_pattern(r["completion"]) for r in qj), 7)
+    claim_int("qwen single c=-1000 placeholder",
+              sum(is_placeholder_pattern(r["completion"]) for r in qs), 1)
+    claim_int("qwen single c=-1000 n", len(qs), 90)
+    # Gemma matched geometry after the unified probe
+    section("Gemma matched geometry (measured)")
+    grd = json.loads((DATA / "gemma_random_direction.json").read_text())
+    seen, nr, cs = set(), [], []
+    for r in grd:
+        if r["coefficient"] not in (-345.0, 345.0):
+            continue
+        k = (r["direction_idx"], r["coefficient"], r["prompt"])
+        if k in seen:
+            continue
+        seen.add(k)
+        nr.append(r["norm_ratio_prompt_mean"])
+        cs.append(r["cos_prompt_mean"])
+    claim("gemma random +-345 norm ratio", mean(nr), 1.244, tol=0.005)
+    claim("gemma random +-345 cos", mean(cs), 0.810, tol=0.005)
+    gj = json.loads((DATA / "gemma_joint_norm_probe.json").read_text())["results"]
+    claim("gemma joint c=-200 norm ratio",
+          next(r["mean_norm_ratio"] for r in gj if r["coef"] == -200.0), 1.243, tol=0.005)
+    claim("gemma joint c=+200 norm ratio",
+          next(r["mean_norm_ratio"] for r in gj if r["coef"] == 200.0), 1.291, tol=0.005)
+
+
 def f_prevalence() -> None:
     """Re-derive the top-50 prevalence screen from the sweep dump.
 
@@ -592,6 +808,11 @@ def main() -> None:
     f_gemma_matched()
     f_gemma_joint_table()
     f_gemma_coef_table()
+    f_amplification_geometry()
+    f_joint_flags_per_prompt()
+    f_unrelated_triples()
+    f_llama_grid()
+    f_diversity()
     s_cross_model()
     app_perm()
     app_relabel()

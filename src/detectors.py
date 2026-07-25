@@ -221,20 +221,104 @@ def text_cluster_hit(text: str, cluster, nlp=None) -> bool:
 
 
 # ---------------------------------------------------------------------------
+# Amended degeneration gate (SECONDARY analyses only)
+# ---------------------------------------------------------------------------
+#
+# The canonical three-rule detector misses separator-interleaved repetition
+# (documented in the paper's prevalence appendix). The amended gate adds a
+# character-set rule and a token-diversity rule. It is reported as a
+# secondary analysis; NO canonical number in the paper uses it.
+
+MIN_ALPHA_FRACTION = 0.5
+TTR_FLOOR = 0.25
+TTR_MIN_TOKENS = 12
+
+
+def is_degenerate_amended(text: str) -> bool:
+    """Canonical rules plus: alphabetic fraction of non-whitespace characters
+    < 0.5, or type-token ratio < 0.25 over >= 12 whitespace tokens."""
+    if is_degenerate(text):
+        return True
+    s = text.strip()
+    non_ws = [ch for ch in s if not ch.isspace()]
+    if non_ws:
+        alpha = sum(ch.isalpha() for ch in non_ws) / len(non_ws)
+        if alpha < MIN_ALPHA_FRACTION:
+            return True
+    words = s.split()
+    if len(words) >= TTR_MIN_TOKENS:
+        if len(set(w.lower() for w in words)) / len(words) < TTR_FLOOR:
+            return True
+    return False
+
+
+# ---------------------------------------------------------------------------
 # Descriptive statistics
 # ---------------------------------------------------------------------------
 
 
 def type_token_ratio(text: str) -> float:
-    """Unique-word fraction (descriptive only — NOT a degeneration rule).
-
-    Reported alongside the canonical detector where completions are
-    repetitive without tripping the strict loop rules.
-    """
+    """Unique-word fraction of a completion."""
     words = [w.lower() for w in text.strip().split()]
     if not words:
         return 0.0
     return len(set(words)) / len(words)
+
+
+# ---------------------------------------------------------------------------
+# Lexical diversity: the fourth coherence signal
+# ---------------------------------------------------------------------------
+#
+# The canonical three-rule detector fires only on adjacent word loops, long
+# character runs, and very short completions. It does not fire on
+# phrase-level recycling: text that stays grammatical while re-using the
+# same five-word spans and collapsing onto a small vocabulary. Steering at
+# large |c| produces exactly that, so the canonical detector reports ~0%
+# degeneration in cells whose lexical diversity is a fraction of baseline.
+#
+# Two measures are used, both defined per completion:
+#   repeated_ngram_max  -- the largest number of times any n-gram recurs
+#                          WITHIN one completion (1 = no repetition)
+#   type_token_ratio    -- unique-word fraction
+#
+# Aggregate reporting uses the prompt-controlled DIVERSITY RATIO: the mean
+# type-token ratio of a cell divided by the mean type-token ratio of the
+# same feature's unsteered baseline on the same prompts. It needs no
+# threshold and is comparable across prompt classes (markdown procedures
+# have lower absolute TTR than prose answers).
+
+NGRAM_N = 5
+TTR_FLOOR = 0.60
+
+
+def repeated_ngram_max(text: str, n: int = NGRAM_N) -> int:
+    """Largest number of occurrences of any n-gram within the completion."""
+    words = [w.lower().strip(".,!?*:;\"'()[]") for w in text.strip().split()]
+    if len(words) < n:
+        return 0
+    counts: dict[str, int] = {}
+    for i in range(len(words) - n + 1):
+        gram = " ".join(words[i:i + n])
+        counts[gram] = counts.get(gram, 0) + 1
+    return max(counts.values())
+
+
+def is_lexically_intact(text: str, ttr_floor: float = TTR_FLOOR,
+                        n: int = NGRAM_N) -> bool:
+    """No n-gram recurs within the completion and the type-token ratio is at
+    or above the floor. The complement ("lexically collapsed") is the
+    failure mode the canonical detector misses."""
+    return repeated_ngram_max(text, n) <= 1 and type_token_ratio(text) >= ttr_floor
+
+
+def diversity_ratio(cell_texts, baseline_texts) -> float:
+    """Mean type-token ratio of a cell over that of its unsteered baseline on
+    the same prompts. 1.0 = baseline diversity; 0.5 = half of it."""
+    if not cell_texts or not baseline_texts:
+        return float("nan")
+    cell = sum(type_token_ratio(t) for t in cell_texts) / len(cell_texts)
+    base = sum(type_token_ratio(t) for t in baseline_texts) / len(baseline_texts)
+    return cell / base if base else float("nan")
 
 
 # ---------------------------------------------------------------------------

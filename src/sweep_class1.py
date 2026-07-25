@@ -66,11 +66,13 @@ from statistics import mean
 
 try:
     from src.detectors import (
-        CLUSTER_QWEN, get_nlp, is_degenerate, lemma_noun_set, wilson_ci,
+        CLUSTER_QWEN, get_nlp, is_degenerate, is_degenerate_amended,
+        lemma_noun_set, wilson_ci,
     )
 except ImportError:  # invoked as `python src/sweep_class1.py`
     from detectors import (
-        CLUSTER_QWEN, get_nlp, is_degenerate, lemma_noun_set, wilson_ci,
+        CLUSTER_QWEN, get_nlp, is_degenerate, is_degenerate_amended,
+        lemma_noun_set, wilson_ci,
     )
 
 COEFFICIENTS = [-1000, -500, 0, 500, 1000]
@@ -242,6 +244,151 @@ def cmd_screen(args: argparse.Namespace) -> None:
     print(f"[wrote] {args.report}")
 
 
+def secondary_sweep(sweep_dir: Path, pools_dir: Path,
+                    drop_threshold: float = 0.30,
+                    degen_threshold: float = 0.10) -> dict:
+    """Two secondary analyses on the same sweep dump (post-processing only;
+    the pre-registered screen above stays the primary analysis):
+
+    1. Amended-gate screen: the primary rule with is_degenerate_amended
+       replacing the canonical detector in criterion (b).
+    2. JS-divergence screen: a generic distribution-shift detector. Per
+       (feature, coefficient), the base-2 Jensen-Shannon divergence between
+       the cell's aggregated noun-lemma distribution and the feature's
+       baseline (c=0) distribution, gated (i) on the pre-registered
+       coherence criteria and (ii) on amended degeneration only.
+    """
+    import math
+
+    nlp = get_nlp()
+
+    def js_divergence(p: dict, q: dict) -> float:
+        support = set(p) | set(q)
+        if not support:
+            return 0.0
+        sp, sq = sum(p.values()), sum(q.values())
+        js = 0.0
+        for w in support:
+            pi = p.get(w, 0) / sp if sp else 0.0
+            qi = q.get(w, 0) / sq if sq else 0.0
+            mi = (pi + qi) / 2
+            if pi:
+                js += 0.5 * pi * math.log2(pi / mi)
+            if qi:
+                js += 0.5 * qi * math.log2(qi / mi)
+        return js
+
+    files = sorted(f for f in args.sweep_dir.glob("feat*.json")
+                   if not f.name.endswith("_nll.json"))
+    print(f"[secondary] {len(files)} sweep files")
+    amended_flagged = []
+    cells = []
+    lemma_counts_cache: dict[str, list[str]] = {}
+
+    def lemma_tokens(text: str) -> list[str]:
+        if text not in lemma_counts_cache:
+            doc = nlp(text)
+            lemma_counts_cache[text] = [
+                t.lemma_.lower() for t in doc if t.pos_ in {"NOUN", "PROPN"}
+            ]
+        return lemma_counts_cache[text]
+
+    for path in files:
+        feat = int(path.stem.replace("feat", ""))
+        records = json.loads(path.read_text())
+        nll_path = path.with_name(path.stem + "_nll.json")
+        nll_by = defaultdict(list)
+        if nll_path.exists():
+            for r in json.loads(nll_path.read_text()):
+                if r.get("nll") is not None and r["nll"] == r["nll"]:
+                    nll_by[r["coefficient"]].append(r["nll"])
+
+        interp_md = args.pools_dir.parent / "activations" / "sae_layer20_interpretations.md"
+        markers = _feature_marker_lemmas(interp_md, feat) or set(CLUSTER_QWEN)
+
+        by_coef = defaultdict(list)
+        for r in records:
+            by_coef[r["coefficient"]].append(r)
+
+        dists, stats = {}, {}
+        for c, b in by_coef.items():
+            counts: dict[str, int] = defaultdict(int)
+            for r in b:
+                for lem in lemma_tokens(r["completion"]):
+                    counts[lem] += 1
+            dists[c] = dict(counts)
+            stats[c] = {
+                "marker_rate": mean(
+                    bool(markers & set(lemma_tokens(r["completion"]))) for r in b),
+                "degen": mean(is_degenerate(r["completion"]) for r in b),
+                "degen_amended": mean(
+                    is_degenerate_amended(r["completion"]) for r in b),
+                "nll": mean(nll_by[c]) if nll_by.get(c) else None,
+            }
+        nll_base = stats.get(0.0, {}).get("nll")
+        peak = max(v["marker_rate"] for v in stats.values())
+
+        amended_flags = []
+        for c, v in stats.items():
+            if c == 0.0:
+                continue
+            drop = (peak - v["marker_rate"]) >= args.drop_threshold
+            coherent = v["degen_amended"] < args.degen_threshold
+            nll_ok = (v["nll"] is not None and nll_base
+                      and v["nll"] < 2 * nll_base)
+            if drop and coherent and nll_ok:
+                amended_flags.append(c)
+            js = js_divergence(dists[c], dists.get(0.0, {}))
+            cells.append({
+                "feature": feat, "coef": c, "js": js,
+                "degen": v["degen"], "degen_amended": v["degen_amended"],
+                "nll": v["nll"],
+                "gates_prereg": bool(v["degen"] < args.degen_threshold
+                                     and nll_ok),
+                "gates_amended": bool(v["degen_amended"] < args.degen_threshold
+                                      and nll_ok),
+                "gate_degen_only": bool(
+                    v["degen_amended"] < args.degen_threshold),
+            })
+        if amended_flags:
+            amended_flagged.append({"feature": feat, "coefs": amended_flags})
+            print(f"  amended-gate flag: #{feat} at {amended_flags}")
+
+    fdisc = [c for c in cells if c["feature"] == 26221]
+    fdisc_js_max = max(c["js"] for c in fdisc)
+    fdisc_switch = next(c for c in fdisc if c["coef"] == 500.0)
+    above_prereg = [c for c in cells
+                    if c["gates_prereg"] and c["js"] >= fdisc_switch["js"]]
+    above_degonly = [c for c in cells
+                     if c["gate_degen_only"] and c["js"] >= fdisc_switch["js"]
+                     and c["feature"] != 26221]
+    summary = {
+        "amended_gate_flagged": amended_flagged,
+        "fdisc_js_at_plus500": fdisc_switch["js"],
+        "fdisc_cell": fdisc_switch,
+        "fdisc_js_max": fdisc_js_max,
+        "cells_gated_prereg_with_js_geq_fdisc": len(above_prereg),
+        "coherent_cells_amended_js_geq_fdisc_other_features": sorted(
+            {c["feature"] for c in above_degonly}),
+        "n_cells": len(cells),
+        "cells": cells,
+    }
+    args.report.parent.mkdir(parents=True, exist_ok=True)
+    args.report.write_text(json.dumps(summary, indent=2))
+    print(f"\n[amended gate] flagged features: "
+          f"{[f['feature'] for f in amended_flagged] or 'none'}")
+    print(f"[js] F-disc JS at c=+500: {fdisc_switch['js']:.3f} "
+          f"(degen {100*fdisc_switch['degen']:.1f}%, "
+          f"amended {100*fdisc_switch['degen_amended']:.1f}%, "
+          f"NLL {fdisc_switch['nll']:.2f})")
+    print(f"[js] cells passing pre-registered gates with JS >= F-disc's: "
+          f"{len(above_prereg)}")
+    print(f"[js] other features with an amended-coherent cell at "
+          f"JS >= F-disc's: "
+          f"{summary['coherent_cells_amended_js_geq_fdisc_other_features']}")
+    print(f"[wrote] {args.report}")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -270,6 +417,17 @@ def main() -> None:
     s.add_argument("--report", type=Path,
                    default=Path("data/interventions/class1_sweep/screen_report.json"))
     s.set_defaults(func=cmd_screen)
+
+    x = sub.add_parser("secondary",
+                       help="amended-gate + JS-divergence secondary analyses")
+    x.add_argument("--sweep-dir", type=Path,
+                   default=Path("data/interventions/class1_sweep"))
+    x.add_argument("--pools-dir", type=Path, default=Path("data/pools"))
+    x.add_argument("--drop-threshold", type=float, default=0.30)
+    x.add_argument("--degen-threshold", type=float, default=0.10)
+    x.add_argument("--report", type=Path,
+                   default=Path("data/interventions/class1_sweep/secondary_report.json"))
+    x.set_defaults(func=cmd_secondary)
 
     args = ap.parse_args()
     args.func(args)
