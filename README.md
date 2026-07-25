@@ -113,7 +113,7 @@ Phase-1 samples with the `sae_features.py` command above (~15 minutes per
 layer), or download the full archive bundle:
 
 **Full data archive (~356 MB, includes the `.npz` matrices):**
-<https://drive.google.com/file/d/1UuO0b8szkzkyBShskar5sggmh0_K85c0/view?usp=share_link>
+<https://drive.google.com/file/d/1iD_yrjyUBv2qM-nVfywGMc9Nk_joHrBL/view?usp=share_link>
 
 ## Prevalence sweep (top-50 screening harness)
 
