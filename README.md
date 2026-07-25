@@ -1,7 +1,8 @@
 # Steering grids for SAE features — code and data
 
 This repository accompanies the paper *"Steering grids for sparse-autoencoder
-features: top-context labels capture activation regimes, not causal axes"*
+features: when a top-context label names an activation regime rather than a
+causal axis"*
 (arXiv:2605.03160). It contains:
 
 - All Python source for the four-phase pipeline and the steering-grid
@@ -98,11 +99,21 @@ Gemma/Llama runs use the same commands with the model, release, layer, and
 coefficient scale swapped (see `ARTEFACTS.md` for the full file-to-claim
 mapping and per-model parameters).
 
+## Data availability
+
+Everything behind a number in the paper is in this repository: the Phase-1
+pools for all three models, all Phase-4 sweeps, the 12,000-generation
+prevalence sweep with per-completion NLL, the specificity-control triples,
+the matched-geometry controls, and the blind-labelling inputs and responses.
+
 The per-pool SAE activation matrices (`sae_layer*_pool_{A,B,C}.npz`,
-~340 MB) are not stored in git. `bootstrap_ranks.py` and
-`permutation_test.py` need them; regenerate them from the bundled Phase-1
-samples with the `sae_features.py` command above (~15 minutes per layer),
-or take them from the full release bundle.
+~350 MB) are **not** stored in git. `bootstrap_ranks.py` and
+`permutation_test.py` need them. Either regenerate them from the bundled
+Phase-1 samples with the `sae_features.py` command above (~15 minutes per
+layer), or download the full archive bundle:
+
+**Full data archive (~356 MB, includes the `.npz` matrices):**
+<https://drive.google.com/file/d/1UuO0b8szkzkyBShskar5sggmh0_K85c0/view?usp=share_link>
 
 ## Prevalence sweep (top-50 screening harness)
 
@@ -163,8 +174,9 @@ If you use this work, please cite:
 
 ```bibtex
 @misc{riegler2026steeringgrids,
-      title={Steering grids for sparse-autoencoder features: top-context
-             labels capture activation regimes, not causal axes},
+      title={Steering grids for sparse-autoencoder features: when a
+             top-context label names an activation regime rather than
+             a causal axis},
       author={Michael A. Riegler and Birk Sebastian Frostelid Torpmann-Hagen},
       year={2026},
       eprint={2605.03160},
